@@ -7,4 +7,5 @@ install:
   - pop-gnome-shell-theme
   - wezterm
   - file-roller
-  - distrobox
+remove:
+  - toolbox
