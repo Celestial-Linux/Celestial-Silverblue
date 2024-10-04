@@ -1,4 +1,4 @@
-name: template
+name: celestial-silverblue
 description: A custom image of Fedora Silverblue with personal modifications.
 
 base-image: ghcr.io/secureblue/silverblue-nvidia-hardened
