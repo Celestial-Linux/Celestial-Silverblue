@@ -11,8 +11,8 @@ on:
   workflow_dispatch: # allow manually triggering builds
 jobs:
   bluebuild:
+    runs-on: self-hosted
     name: Build Custom Image
-    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
