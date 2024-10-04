@@ -1,0 +1,8 @@
+type: fonts
+fonts:
+  nerd-fonts:
+    - Agave
+    - SourceCodePro
+    - JetBrainsMono
+  google-fonts:
+
