@@ -1,0 +1,4 @@
+type: chezmoi
+repository: "https://github.com/Celestial-Linux/dotfiles"
+all-users: true
+file-conflict-policy: replace

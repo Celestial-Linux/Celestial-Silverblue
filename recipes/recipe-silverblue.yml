@@ -1,0 +1,11 @@
+name: celestial-silverblue
+description: A custom image of Fedora Silverblue with personal modifications.
+
+base-image: ghcr.io/secureblue/silverblue-nvidia-hardened
+image-version: 40
+
+modules:
+  - from-file: common/common-packages.yml
+  - from-file: common/common-files.yml
+  - type: signing
+
