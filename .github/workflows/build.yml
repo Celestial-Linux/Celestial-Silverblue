@@ -11,6 +11,7 @@ on:
   workflow_dispatch: # allow manually triggering builds
 jobs:
   bluebuild:
+    runs-on: ubuntu-22.04
     name: Build Custom Image
     permissions:
       contents: read
