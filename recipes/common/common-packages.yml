@@ -7,4 +7,3 @@ install:
   - ubuntu-family-fonts
 remove:
   - toolbox
-  - sudo
