@@ -4,3 +4,4 @@ install:
   - gnome-shell-extension-pop-shell
   - pop-gnome-shell-theme
   - file-roller
+  - openssh-askpass
