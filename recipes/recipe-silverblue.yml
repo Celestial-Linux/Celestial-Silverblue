@@ -2,7 +2,7 @@ name: celestial-silverblue
 description: A custom image of Fedora Silverblue with personal modifications.
 
 base-image: ghcr.io/secureblue/silverblue-nvidia-userns-hardened
-image-version: br-staging-40
+image-version: br-next-41
 
 modules:
   - from-file: silverblue/silverblue-packages.yml
