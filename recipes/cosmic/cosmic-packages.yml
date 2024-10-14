@@ -4,3 +4,4 @@ repos:
 install:
   - ubuntu-family-fonts
   - file-roller
+  - openssh-askpass
