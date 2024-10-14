@@ -1,7 +1,4 @@
 type: rpm-ostree
-repos:
-  - https://copr.fedorainfracloud.org/coprs/atim/ubuntu-fonts/repo/fedora-41/atim-ubuntu-fonts-fedora-41.repo
 install:
-  - ubuntu-family-fonts
   - file-roller
   - openssh-askpass
