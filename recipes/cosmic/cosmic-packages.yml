@@ -1,4 +1,1 @@
 type: rpm-ostree
-install:
-  - file-roller
-  - openssh-askpass

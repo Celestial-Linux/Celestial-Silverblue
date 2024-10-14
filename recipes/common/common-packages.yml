@@ -3,5 +3,7 @@ repos:
   - https://copr.fedorainfracloud.org/coprs/atim/ubuntu-fonts/repo/fedora-%OS_VERSION%/atim-ubuntu-fonts-fedora-%OS_VERSION%.repo
 install:
   - ubuntu-family-fonts
+  - openssh-askpass
+  - file-roller
 remove:
   - toolbox

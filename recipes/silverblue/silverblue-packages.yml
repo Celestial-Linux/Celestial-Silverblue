@@ -3,5 +3,3 @@ install:
   - gnome-shell-extension-dash-to-dock
   - gnome-shell-extension-pop-shell
   - pop-gnome-shell-theme
-  - file-roller
-  - openssh-askpass
