@@ -1,8 +1,6 @@
 type: rpm-ostree
 repos:
-  - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-41/wezfurlong-wezterm-nightly-fedora-41.repo
   - https://copr.fedorainfracloud.org/coprs/atim/ubuntu-fonts/repo/fedora-41/atim-ubuntu-fonts-fedora-41.repo
 install:
-  - wezterm
   - ubuntu-family-fonts
   - file-roller
