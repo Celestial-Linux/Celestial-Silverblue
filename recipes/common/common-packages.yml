@@ -1,9 +1,3 @@
 type: rpm-ostree
-repos:
-  - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
-  - https://copr.fedorainfracloud.org/coprs/atim/ubuntu-fonts/repo/fedora-%OS_VERSION%/atim-ubuntu-fonts-fedora-%OS_VERSION%.repo
-install:
-  - wezterm
-  - ubuntu-family-fonts
 remove:
   - toolbox
