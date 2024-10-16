@@ -5,5 +5,9 @@ install:
   - ubuntu-family-fonts
   - openssh-askpass
   - file-roller
+  - fastfetch
+  - flatpak-builder
 remove:
   - toolbox
+  - sudo
+  - sudo-python-plugin

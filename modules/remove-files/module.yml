@@ -1,0 +1,6 @@
+name: remove-files
+shortdesc: The `remove-files` module can be used to remove the specified files from the image.
+example: |
+  type: remove-files
+  files:
+    - /etc/dnf/protected.d/sudo.conf
