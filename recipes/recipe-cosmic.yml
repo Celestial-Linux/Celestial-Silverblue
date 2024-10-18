@@ -2,7 +2,7 @@ name: celestial-cosmic
 description: A custom image of Fedora and COSMIC Desktop with personal modifications.
 
 base-image: ghcr.io/secureblue/cosmic-nvidia-userns-hardened
-image-version: br-next-41
+image-version: latest
 
 modules:
   - from-file: common/common-remove-files.yml
