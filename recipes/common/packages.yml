@@ -8,6 +8,7 @@ install:
   - fastfetch
   - flatpak-builder
   - nu
+  - podman-compose
 remove:
   - toolbox
   - sudo
