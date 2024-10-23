@@ -7,9 +7,6 @@ install:
   - file-roller
   - fastfetch
   - flatpak-builder
-  - nu
-  - podman-compose
-  - git-lfs
 remove:
   - toolbox
   - sudo
