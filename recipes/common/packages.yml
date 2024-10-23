@@ -9,6 +9,7 @@ install:
   - flatpak-builder
   - nu
   - podman-compose
+  - git-lfs
 remove:
   - toolbox
   - sudo
