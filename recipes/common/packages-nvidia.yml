@@ -1,3 +1,6 @@
 type: rpm-ostree
+repos:
+  - https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo
 install:
   - libva-nvidia-driver
+  - nvidia-container-toolkit
