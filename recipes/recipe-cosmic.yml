@@ -7,7 +7,7 @@ image-version: 41
 modules:
   - from-file: common/remove-files.yml
   - from-file: cosmic/packages.yml
-  - from-file: cosmic/packages-extra.yml
+  - from-file: common/packages-extra.yml
   - from-file: common/fonts.yml
   - from-file: common/packages.yml
   - from-file: common/packages-nvidia.yml
