@@ -1,3 +1,0 @@
-type: remove-files
-files:
-  - /etc/dnf/protected.d/sudo.conf

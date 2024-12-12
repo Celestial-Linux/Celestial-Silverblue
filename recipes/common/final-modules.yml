@@ -1,4 +1,4 @@
-modules:
-    - type: script
-      scripts:
-        - regenerateinitramfs.sh
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+type: script
+scripts:
+  - regenerateinitramfs.sh

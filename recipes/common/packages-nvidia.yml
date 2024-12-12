@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 type: rpm-ostree
 repos:
   - https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo
