@@ -12,3 +12,5 @@ install:
   - flatpak-builder
   - coolercontrol
   - openrazer-meta
+  - waydroid
+  - https://github.com/SpacingBat3/WebCord/releases/download/v4.10.2/webcord-4.10.2-1.arm64.rpm
