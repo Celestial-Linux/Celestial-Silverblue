@@ -13,5 +13,6 @@ install:
   - coolercontrol
   - openrazer-meta
   - waydroid
-  - https://github.com/SpacingBat3/WebCord/releases/download/v4.10.2/webcord-4.10.2-1.x86_64.rpm
+  - https://github.com/SpacingBat3/WebCord/releases/download/v4.10.3/webcord-4.10.3-1.x86_64.rpm
   - python-pyclip
+  - gamemode

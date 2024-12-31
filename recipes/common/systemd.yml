@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+type: systemd
+user:
+  enabled:
+    - gamemoded.service
