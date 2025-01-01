@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-name: celestial-cosmic
+name: celestial-hyprland
 description: A custom image of Fedora and Hyprland with personal modifications.
 
 base-image: ghcr.io/wayblueorg/hyprland-nvidia-open
