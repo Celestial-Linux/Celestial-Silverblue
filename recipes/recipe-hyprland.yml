@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+name: celestial-cosmic
+description: A custom image of Fedora and Hyprland with personal modifications.
+
+base-image: ghcr.io/wayblueorg/hyprland-nvidia-open
+image-version: 41
+
+modules:
+  - from-file: hyprland/packages.yml
+  - from-file: common/packages-extra.yml
+  - from-file: common/fonts.yml
+  - from-file: common/packages.yml
+  - from-file: common/packages-nvidia.yml
+  - from-file: common/files.yml
+  - from-file: common/chezmoi.yml
+  - from-file: common/openrazer-modules.yml
+  - from-file: common/final-modules.yml
+  - type: signing
