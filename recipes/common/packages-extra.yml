@@ -4,6 +4,7 @@ repos:
   - https://copr.fedorainfracloud.org/coprs/atim/ubuntu-fonts/repo/fedora-%OS_VERSION%/atim-ubuntu-fonts-fedora-%OS_VERSION%.repo
   - https://copr.fedorainfracloud.org/coprs/codifryed/CoolerControl/repo/fedora-%OS_VERSION%/codifryed-CoolerControl-fedora-%OS_VERSION%.repo
   - https://openrazer.github.io/hardware:razer.repo
+  - https://copr.fedorainfracloud.org/coprs/ublue-os/akmods/repo/fedora-%OS_VERSION%/ublue-os-akmods-fedora-%OS_VERSION%.repo
 install:
   - ubuntu-family-fonts
   - openssh-askpass
@@ -11,7 +12,9 @@ install:
   - fastfetch
   - flatpak-builder
   - coolercontrol
-  - openrazer-meta
+  - openrazer-daemon
+  - python3-openrazer
+  - openrazer-kmod-common
   - waydroid
   - https://github.com/SpacingBat3/WebCord/releases/download/v4.10.3/webcord-4.10.3-1.x86_64.rpm
   - python-pyclip
