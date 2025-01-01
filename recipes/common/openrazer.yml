@@ -3,7 +3,7 @@ modules:
       snippets:
       - COPY --from=ghcr.io/ublue-os/akmods:coreos-testing-41 /rpms /tmp/rpms
       - RUN find /tmp/rpms
-      - RUN rpm-ostree install pv /tmp/rpms/kmods/kmod-openrazer-*.rpm
+      - RUN rpm-ostree install /tmp/rpms/kmods/kmod-openrazer-*.rpm
     - type: script
       scripts:
         - openrazerpostinstall.sh
