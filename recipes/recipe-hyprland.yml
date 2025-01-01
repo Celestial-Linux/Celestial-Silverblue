@@ -6,6 +6,7 @@ base-image: ghcr.io/secureblue/wayblue-hyprland-nvidia-open-hardened
 image-version: 41
 
 modules:
+  - from-file: hyprland/packages-replace.yml
   - from-file: hyprland/packages.yml
   - from-file: common/packages-extra.yml
   - from-file: common/fonts.yml
