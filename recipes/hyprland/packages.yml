@@ -11,3 +11,4 @@ install:
   - alacritty
   - pop-launcher
   - hyprshot
+  - hyprland-autoname-workspaces
