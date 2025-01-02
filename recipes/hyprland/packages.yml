@@ -9,3 +9,4 @@ install:
   - hyprpolkitagent
   - wezterm
   - alacritty
+  - pop-launcher
