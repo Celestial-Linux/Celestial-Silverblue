@@ -20,6 +20,7 @@ jobs:
       matrix:
         recipe:
           - recipe-silverblue.yml
+          - recipe-kinoite.yml
           - recipe-cosmic.yml
           - recipe-hyprland.yml
     steps:
