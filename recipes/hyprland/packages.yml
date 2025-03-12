@@ -10,6 +10,7 @@ install:
   - wezterm
   - alacritty
   - pop-launcher
+  - gnome-keyring
   - qalculate
   - hyprshot
   - hyprland-autoname-workspaces
