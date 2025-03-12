@@ -16,3 +16,4 @@ install:
   - xorg-x11-server-Xwayland
   - wayland-protocols-devel
   - nwg-look
+  - uwsm
