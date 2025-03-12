@@ -12,3 +12,5 @@ install:
   - pop-launcher
   - hyprshot
   - hyprland-autoname-workspaces
+  - xorg-x11-server-Xwayland
+  - wayland-protocols-devel
