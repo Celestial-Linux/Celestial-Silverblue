@@ -17,3 +17,6 @@ install:
   - wayland-protocols-devel
   - nwg-look
   - uwsm
+  - nautilus
+remove:
+  - thunar
