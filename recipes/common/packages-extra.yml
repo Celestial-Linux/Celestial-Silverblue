@@ -15,6 +15,6 @@ install:
   - openrazer-daemon
   - python3-openrazer
   - openrazer-kmod-common
-  - https://github.com/SpacingBat3/WebCord/releases/download/v4.10.3/webcord-4.10.3-1.x86_64.rpm
+  - https://github.com/SpacingBat3/WebCord/releases/download/v4.10.4/webcord-4.10.4-1.x86_64.rpm
   - python-pyclip
   - gamemode
