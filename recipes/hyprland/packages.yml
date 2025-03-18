@@ -12,7 +12,6 @@ install:
   - gnome-keyring
   - qalculate
   - hyprshot
-  - hyprland-autoname-workspaces
   - xorg-x11-server-Xwayland
   - wayland-protocols-devel
   - nwg-look
