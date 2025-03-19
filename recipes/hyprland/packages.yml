@@ -9,7 +9,7 @@ install:
   - hyprpolkitagent
   - wezterm
   - pop-launcher
-  - gnome-keyring
+  - kwallet
   - qalculate
   - hyprshot
   - xorg-x11-server-Xwayland
@@ -17,8 +17,9 @@ install:
   - nwg-look
   - uwsm
   - nautilus
-  - cmake
-  - meson
-  - gcc-c++
-  - hyprland-devel
+  # - cmake
+  # - meson
+  # - gcc-c++
+  # - mesa-libGLES-devel
+  # - hyprland-devel
   - hyprland-uwsm
