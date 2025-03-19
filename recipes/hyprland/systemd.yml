@@ -1,3 +1,5 @@
 system:
   enabled:
     - gdm.service
+  disabled:
+    - sddm.service

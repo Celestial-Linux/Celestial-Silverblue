@@ -20,5 +20,3 @@ install:
   - cmake
   - meson
   - gdm
-remove:
-  - sddm
