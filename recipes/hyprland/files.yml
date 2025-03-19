@@ -1,7 +1,0 @@
-# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
-type: files
-files:
-  - source: hyprland/usr
-    destination: /usr
-  - source: hyprland/etc
-    destination: /etc

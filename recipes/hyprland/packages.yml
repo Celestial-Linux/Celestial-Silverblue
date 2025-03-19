@@ -19,3 +19,7 @@ install:
   - nautilus
   - cmake
   - meson
+  - gcc-c++
+  - mesa-libGLES-devel
+  - hyprland-devel
+  - hyprland-uwsm
