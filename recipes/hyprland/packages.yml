@@ -17,3 +17,8 @@ install:
   - nwg-look
   - uwsm
   - nautilus
+  - cmake
+  - meson
+  - gdm
+remove:
+  - sddm
