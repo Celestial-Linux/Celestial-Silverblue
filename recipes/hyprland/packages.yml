@@ -17,10 +17,10 @@ install:
   - nwg-look
   - uwsm
   - nautilus
-  # - cmake
-  # - meson
-  # - gcc-c++
-  # - mesa-libGLES-devel
-  # - hyprland-devel
+  - cmake
+  - meson
+  - gcc-c++
+  - mesa-libGLES-devel
+  - hyprland-devel
   - hyprland-uwsm
   - chromium
