@@ -9,7 +9,9 @@ install:
   - hyprpolkitagent
   - wezterm
   - pop-launcher
-  - kwallet
+  - git-credential-libsecret
+  - libsecret
+  - gnome-keyring
   - qalculate
   - hyprshot
   - xorg-x11-server-Xwayland
