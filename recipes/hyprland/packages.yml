@@ -23,6 +23,6 @@ install:
   # - meson
   # - gcc-c++
   # - mesa-libGLES-devel
-  - hyprland-devel
+  # - hyprland-devel
   - hyprland-uwsm
   - chromium
