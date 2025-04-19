@@ -20,6 +20,8 @@ install:
   - uwsm
   - nautilus
   - aylurs-gtk-shell2
+  - nu
+  - starship
   # - cmake
   # - meson
   # - gcc-c++
