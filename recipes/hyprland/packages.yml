@@ -19,10 +19,10 @@ install:
   - nwg-look
   - uwsm
   - nautilus
+  - aylurs-gtk-shell2
   # - cmake
   # - meson
   # - gcc-c++
   # - mesa-libGLES-devel
   # - hyprland-devel
   - hyprland-uwsm
-  - chromium
