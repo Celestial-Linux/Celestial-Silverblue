@@ -28,4 +28,10 @@ install:
   # - gcc-c++
   # - mesa-libGLES-devel
   # - hyprland-devel
+  - libgtop2
+  - grimblast
+  - btop
+  - swww
+  - gnome-bluetooth
+  - nodejs
   - hyprland-uwsm
