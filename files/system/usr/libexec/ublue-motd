@@ -1,0 +1,116 @@
+#!/usr/bin/env nu
+# Original Bash script: https://github.com/ublue-os/bazzite/blob/main/system_files/desktop/shared/usr/libexec/ublue-motd
+
+# --- Configuration ---
+let deprecated_images_json_path = '/usr/libexec/deprecated-images.json'
+let motd_template_path = '/usr/share/ublue-os/motd/secureblue.md'
+let tips_path = '/usr/share/ublue-os/motd/tips.md'
+
+# --- Get rpm-ostree Status ---
+let rpm_ostree_status = (
+    try {
+        rpm-ostree status --json --booted | from json
+    } catch {
+        # Error out if rpm-ostree status fails, as the rest depends on it
+        error make { msg: "Failed to get rpm-ostree status or parse JSON", cause: $in }
+    }
+)
+
+# --- Extract Image Details ---
+let image_ref = ($rpm_ostree_status | get deployments.0."container-image-reference" | default '')
+let image_ref_name = ($image_ref | split row '/' | last)
+
+# Determine the image tag, handling cases where the reference is missing or has no tag part
+let image_tag = if $image_ref == '' or not ($image_ref | str contains ':') {
+    'ERROR-IMAGE-TAG-MISSING'
+} else {
+    $image_ref | split row ':' | last
+}
+
+# --- Calculate Image Age ---
+let image_date_ts = ($rpm_ostree_status | get deployments.0.timestamp | default 0) # Unix timestamp
+
+# Check if timestamp is valid (not 0) before converting
+let image_age_check_possible = $image_date_ts != 0
+let image_is_old = if $image_age_check_possible {
+    let image_date = ($image_date_ts | into datetime -f '%s' -z UTC) # Assume timestamp is UTC
+    let now = (date now)
+    let difference_duration = $now - $image_date
+    let week_duration = 1wk
+    $difference_duration >= $week_duration
+} else {
+    false # Cannot determine age if timestamp is missing/invalid
+}
+
+# --- Check for Deprecated Image ---
+let is_deprecated = if ($deprecated_images_json_path | path exists) {
+    try {
+        let deprecated_types = (open $deprecated_images_json_path | get imageTypes)
+        # Check if any deprecated type is part of the image reference name
+        $deprecated_types | any { |image_type| $image_ref_name | str contains $image_type }
+    } catch {
+        # Warn if the JSON exists but is invalid, but continue assuming not deprecated
+        print $"Warning: Could not parse deprecated images file: ($deprecated_images_json_path)" --stderr
+        false
+    }
+} else {
+    # If the file doesn't exist, assume not deprecated
+    false
+}
+
+# --- Check Secure Boot Key Enrollment ---
+let needs_key_enrollment = (
+    try {
+        # Check if mokutil runs successfully AND the key string is NOT found
+        let mokutil_output = (mokutil --list-enrolled)
+        # Check command success implicitly (didn't throw) and inspect output
+        not ($mokutil_output | str contains "secureblue secureboot key")
+    } catch {
+        # mokutil command failed (not installed, permission error, etc.)
+        # In this case, we can't determine the key status, assume it doesn't *need* enrollment based on this check
+        false
+    }
+)
+
+# --- Determine the Tip Message ---
+let tip = if $is_deprecated {
+    '**You are on a deprecated image,** [rebase:](https://github.com/secureblue/secureblue/blob/live/files/system/usr/libexec/deprecated-images.json.md)'
+} else if $needs_key_enrollment {
+    '**Secureboot key is not enrolled! Run `ujust enroll-secureblue-secure-boot-key` to resolve this issue.** [More information](https://secureblue.dev/faq#new-key)'
+} else if $image_tag == 'ERROR-IMAGE-TAG-MISSING' {
+    '**You are missing an image tag, which is unsupported by secureblue. Rebase to the `latest` tag to ensure you continue to receive updates.**'
+} else if $image_tag != "latest" {
+    '**You are on a specific tag, which is unsupported by secureblue. Rebase to the `latest` tag to ensure you continue to receive updates.**'
+} else if $image_is_old {
+    '**Your current image is over 1 week old, run `rpm-ostree upgrade`.**'
+} else {
+    try {
+        let tips = open $tips_path | lines
+        $tips | get (random int 0..(($tips | length) - 1))
+    } catch {
+        '**For secureblue release notifications,** [subscribe:](https://secureblue.dev/faq#releases)'
+    }
+}
+
+# --- Format and Display MOTD ---
+if not ($motd_template_path | path exists) {
+    error make { msg: $"MOTD template file not found: ($motd_template_path)" }
+}
+
+# Read the template, perform substitutions, and replace '~' with newlines
+let motd_content = (
+    open $motd_template_path
+    | str replace --all '%IMAGE_REF_NAME%' $image_ref_name
+    | str replace --all '%TIP%' $tip
+    | str replace --all '~' "\n" # Use Nu's standard newline representation
+)
+
+# Check if 'glow' command exists
+let has_glow = not (which 'glow' | is-empty)
+
+# Display the MOTD, using glow if available, otherwise cat (print)
+if $has_glow {
+    $motd_content | glow -s auto -w 78
+} else {
+    print $motd_content
+}
