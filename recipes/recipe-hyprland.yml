@@ -2,11 +2,10 @@
 name: celestial-hyprland
 description: A custom image of Fedora and Hyprland with personal modifications.
 
-base-image: ghcr.io/secureblue/wayblue-hyprland-nvidia-open-hardened
+base-image: ghcr.io/secureblue/sericea-nvidia-open-hardened
 image-version: 42
 
 modules:
-  - from-file: hyprland/packages-replace.yml
   - from-file: hyprland/packages.yml
   - from-file: common/packages-extra.yml
   - from-file: common/fonts.yml

@@ -7,9 +7,21 @@ repos:
 remove:
   - dunst
 install:
+  # Hyprland
+  - hyprutils
+  - hyprland
+  - xdg-desktop-portal-hyprland
+  - hyprpaper
+  - hyprlock
+  - hypridle
+  - hyprgraphics
+  - hyprlang
+  - aquamarine
+  - hyprpicker
   - hyprland-qt-support
   - hyprpicker
   - hyprpolkitagent
+
   - wezterm
   - pop-launcher
   - git-credential-libsecret
@@ -31,7 +43,6 @@ install:
   - cmake
   - meson
   - gcc-c++
-  # - hyprland-devel
 
   # Dependencies for Aylurs GTK Shell:
   - libgtop2
