@@ -21,30 +21,40 @@ install:
   - hyprland-qt-support
   - hyprpicker
   - hyprpolkitagent
-
-  - wezterm
-  - pop-launcher
-  - git-credential-libsecret
-  - libsecret
-  - gnome-keyring
   - qalculate
   - hyprshot
+
+  # XWayland
   - xorg-x11-server-Xwayland
   - wayland-protocols-devel
-  - nwg-look
+
+  # Session launcher
   - uwsm
-  - nautilus
-  - aylurs-gtk-shell2
+  - hyprland-uwsm
+
+  # Terminal
+  - wezterm
   - nu
   - starship
-  - hyprland-uwsm
+
+  # Gnome keyring
+  - libsecret
+  - gnome-keyring
+  - git-credential-libsecret
+
+  # General utilities and file explorer
+  - pop-launcher
+  - nwg-look
+  - nautilus
 
   # Dependencies for Hyprland plugin manager:
   - cmake
   - meson
   - gcc-c++
+  - mesa-libGLES-devel
 
   # Dependencies for Aylurs GTK Shell:
+  - aylurs-gtk-shell2
   - libgtop2
   - grimblast
   - btop
