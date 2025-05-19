@@ -10,6 +10,7 @@ install:
   # Hyprland
   - hyprutils
   - hyprland
+  - hyprland-devel
   - xdg-desktop-portal-hyprland
   - hyprpaper
   - hyprlock
