@@ -51,7 +51,7 @@ install:
   # Dependencies for Hyprland plugin manager:
   - cmake
   - meson
-  - gcc-c++
+  # - gcc-c++
   - mesa-libGLES-devel
 
   # Dependencies for Aylurs GTK Shell:
