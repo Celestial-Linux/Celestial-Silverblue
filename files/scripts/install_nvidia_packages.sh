@@ -22,14 +22,17 @@ sed -i "s@gpgcheck=0@gpgcheck=1@" /etc/yum.repos.d/nvidia-container-toolkit.repo
 
 curl -L https://negativo17.org/repos/fedora-nvidia.repo -o /etc/yum.repos.d/negativo17-fedora-nvidia.repo
 
+echo "Installing NVIDIA packages"
 sed -i '0,/enabled=0/{s/enabled=0/enabled=1/}' /etc/yum.repos.d/nvidia-container-toolkit.repo
 sed -i '0,/enabled=0/{s/enabled=0/enabled=1\npriority=90/}' /etc/yum.repos.d/negativo17-fedora-nvidia.repo
 # required for rpm-ostree to function properly
 # shellcheck disable=SC2068
 rpm-ostree install ${nvidia_packages_list[@]}
 
+echo "Downloading SELinux Policy"
 curl -L https://raw.githubusercontent.com/NVIDIA/dgx-selinux/master/bin/RHEL9/nvidia-container.pp \
     -o nvidia-container.pp
+echo "Installing SELinux Policy"
 semodule -i nvidia-container.pp
 
 rm -f nvidia-container.pp
