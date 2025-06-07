@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+type: rpm-ostree
+repos:
+  - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-addons-fedora-%OS_VERSION%.repo
+install:
+  - cachyos-settings
+  - scx-scheds
+  - scx-manager
