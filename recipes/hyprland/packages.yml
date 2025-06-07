@@ -63,3 +63,4 @@ install:
   - gnome-bluetooth
   - nodejs
   - gtksourceview3
+  - libsoup3
