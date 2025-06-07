@@ -20,7 +20,7 @@ jobs:
       fail-fast: false # stop GH from cancelling all matrix builds if one fails
       matrix:
         recipe:
-          # - recipe-silverblue.yml
+          - recipe-silverblue.yml
           # - recipe-kinoite.yml
           # - recipe-cosmic.yml
           - recipe-hyprland.yml
