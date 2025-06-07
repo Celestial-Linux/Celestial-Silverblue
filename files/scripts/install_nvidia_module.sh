@@ -15,4 +15,4 @@
 
 set -oue pipefail
 
-./signmodules.sh "nvidia"
+./sign_modules.sh "nvidia"
