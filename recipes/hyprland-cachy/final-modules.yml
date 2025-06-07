@@ -2,3 +2,4 @@
 type: script
 scripts:
   - regenerate_initramfs_cachy.sh
+  - sign_kernel.sh

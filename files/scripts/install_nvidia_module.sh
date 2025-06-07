@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Copyright 2025 Universal Blue
 # Copyright 2025 The Secureblue Authors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,4 +15,4 @@
 
 set -oue pipefail
 
-rm -f /etc/dnf/protected.d/sudo.conf
+./signmodules.sh "nvidia"

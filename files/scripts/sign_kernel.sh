@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Copyright 2025 Universal Blue
 # Copyright 2025 The Secureblue Authors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,4 +15,12 @@
 
 set -oue pipefail
 
-mkdir -p /etc/xdg/autostart
+KERNEL_VERSION="$(rpm -q "kernel-cachyos-lto" --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}')"
+
+PUBLIC_KEY_DER_PATH="../system/etc/pki/akmods/certs/akmods-celestial-linux.der"
+PUBLIC_KEY_CRT_PATH="./certs/public_key.crt"
+PRIVATE_KEY_PATH="./certs/private_key.priv"
+
+openssl x509 -in "$PUBLIC_KEY_DER_PATH" -out "$PUBLIC_KEY_CRT_PATH"
+sbsign --cert "$PUBLIC_KEY_CRT_PATH" --key "$PRIVATE_KEY_PATH" /usr/lib/modules/"${KERNEL_VERSION}"/vmlinuz --output /usr/lib/modules/"${KERNEL_VERSION}"/vmlinuz
+sbverify --list /usr/lib/modules/"${KERNEL_VERSION}"/vmlinuz

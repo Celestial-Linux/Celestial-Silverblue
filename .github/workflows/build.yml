@@ -26,7 +26,10 @@ jobs:
           # - recipe-hyprland.yml
           - recipe-hyprland-cachy.yml
     steps:
-      # the build is fully handled by the reusable github action
+      - name: Retrieve Signing Key
+        shell: bash
+        run: |
+          echo "${{ secrets.KERNEL_PRIVKEY }}" > ./files/scripts/certs/private_key.priv
       - name: Build Custom Image
         uses: blue-build/github-action@v1.8
         with:

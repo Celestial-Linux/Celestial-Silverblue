@@ -13,7 +13,6 @@
 modules:
   - type: script
     scripts:
-      - install_nvidia_akmods.sh
       - install_nvidia_packages.sh
       - remove_unused_repos.sh
       - set_early_loading.sh
