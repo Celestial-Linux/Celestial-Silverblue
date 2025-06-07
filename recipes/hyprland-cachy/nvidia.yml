@@ -13,6 +13,7 @@
 modules:
   - type: script
     scripts:
+      - install_nvidia_module.sh
       - install_nvidia_packages.sh
       - remove_unused_repos.sh
       - set_early_loading.sh
