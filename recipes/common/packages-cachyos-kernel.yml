@@ -6,7 +6,7 @@ install:
   - kernel-cachyos-lto
   - kernel-cachyos-lto-devel-matched
   - kernel-cachyos-lto-nvidia-open
-  - akmods
+  - akmod-nvidia
 remove:
   - kernel
   - kernel-core
