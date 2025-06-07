@@ -14,6 +14,7 @@
 
 set -oue pipefail
 
+echo "Cleaning up unused repositories"
 rm -f /etc/yum.repos.d/negativo17-fedora-nvidia.repo
 rm -f /etc/yum.repos.d/eyecantcu-supergfxctl.repo
 rm -f /etc/yum.repos.d/_copr_ublue-os-akmods.repo

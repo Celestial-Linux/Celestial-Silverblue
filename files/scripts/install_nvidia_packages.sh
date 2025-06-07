@@ -35,6 +35,7 @@ curl -L https://raw.githubusercontent.com/NVIDIA/dgx-selinux/master/bin/RHEL9/nv
 echo "Installing SELinux Policy"
 semodule -i nvidia-container.pp
 
+echo "Cleaning up"
 rm -f nvidia-container.pp
 rm -f /etc/yum.repos.d/negativo17-fedora-nvidia.repo
 rm -f /etc/yum.repos.d/nvidia-container-toolkit.repo

@@ -14,6 +14,7 @@
 
 set -oue pipefail
 
+echo "Configuring Nvidia modesetting support"
 echo '
 
 # Nvidia modesetting support. Set to 0 or comment to disable kernel modesetting
