@@ -9,7 +9,7 @@ on:
   workflow_dispatch: # allow manually triggering builds
 jobs:
   bluebuild:
-    runs-on: ubuntu-24.04
+    runs-on: self-hosted
     name: Build Custom Image
     permissions:
       contents: read
@@ -19,9 +19,9 @@ jobs:
       fail-fast: false # stop GH from cancelling all matrix builds if one fails
       matrix:
         recipe:
-          - recipe-silverblue.yml
-          - recipe-kinoite.yml
-          - recipe-cosmic.yml
+#          - recipe-silverblue.yml
+#          - recipe-kinoite.yml
+#          - recipe-cosmic.yml
           - recipe-hyprland.yml
     steps:
        # the build is fully handled by the reusable github action
