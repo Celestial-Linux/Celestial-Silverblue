@@ -16,4 +16,5 @@ modules:
   - from-file: common/packages-nvidia.yml
   - from-file: common/files.yml
   - from-file: common/chezmoi.yml
+  - from-file: common/final-modules.yml
   - type: signing
