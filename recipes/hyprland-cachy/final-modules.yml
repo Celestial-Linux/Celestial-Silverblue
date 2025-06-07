@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+type: script
+scripts:
+  - regenerate_initramfs_cachy.sh
