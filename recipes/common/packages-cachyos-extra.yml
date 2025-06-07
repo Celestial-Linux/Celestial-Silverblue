@@ -6,3 +6,5 @@ install:
   - cachyos-settings
   - scx-scheds
   - scx-manager
+remove:
+  - zram-generator-defaults
