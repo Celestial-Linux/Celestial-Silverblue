@@ -1,10 +1,12 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 type: rpm-ostree
 repos:
-  - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-%OS_VERSION%.repo
+  - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-lto/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-lto-%OS_VERSION%.repo
 install:
-  - kernel-cachyos
-  - kernel-cachyos-devel-matched
+  - kernel-cachyos-lto
+  - kernel-cachyos-lto-devel-matched
+  - kernel-cachyos-lto-nvidia-open
+  - akmods
 remove:
   - kernel
   - kernel-core
