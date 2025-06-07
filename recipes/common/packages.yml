@@ -15,6 +15,7 @@ repos:
   - https://copr.fedorainfracloud.org/coprs/secureblue/hardened_malloc/repo/fedora-%OS_VERSION%/secureblue-hardened_malloc-fedora-%OS_VERSION%.repo
 remove:
   - sudo
+  - sudo-python-plugin
 install:
   - hardened_malloc
 
