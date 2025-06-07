@@ -1,5 +1,0 @@
-# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
-type: rpm-ostree
-install:
-  - libcap-ng-devel
-  - procps-ng-devel
