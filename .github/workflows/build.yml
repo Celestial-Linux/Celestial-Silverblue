@@ -10,7 +10,7 @@ on:
   workflow_dispatch: # allow manually triggering builds
 jobs:
   bluebuild:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     name: Build Custom Image
     permissions:
       contents: read
@@ -40,5 +40,5 @@ jobs:
           registry_token: ${{ github.token }}
           pr_event_number: ${{ github.event.number }}
           maximize_build_space: true
-          build_opts: --build-driver docker
+          squash: true
           skip_checkout: true

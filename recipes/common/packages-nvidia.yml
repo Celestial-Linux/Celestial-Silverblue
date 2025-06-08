@@ -1,7 +1,9 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
-type: rpm-ostree
+type: dnf
 repos:
-  - https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo
+  files:
+    - https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo
 install:
-  - libva-nvidia-driver
-  - nvidia-container-toolkit
+  packages:
+    - libva-nvidia-driver
+    - nvidia-container-toolkit

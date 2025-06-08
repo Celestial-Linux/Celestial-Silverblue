@@ -1,66 +1,69 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
-type: rpm-ostree
+type: dnf
 repos:
-  - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-%OS_VERSION%/solopasha-hyprland-fedora-%OS_VERSION%.repo
-  - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
-  - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+  copr:
+    - solopasha/hyprland
+    - wezfurlong/wezterm-nightly
+    - atim/starship
 remove:
-  - dunst
+  packages:
+    - dunst
 install:
-  # Hyprland
-  - hyprutils
-  - hyprland
-  - hyprland-devel
-  - xdg-desktop-portal-hyprland
-  - hyprpaper
-  - hyprlock
-  - hypridle
-  - hyprgraphics
-  - hyprlang
-  - aquamarine
-  - hyprpicker
-  - hyprland-qt-support
-  - hyprpicker
-  - hyprpolkitagent
-  - qalculate
-  - hyprshot
+  packages:
+    # Hyprland
+    - hyprutils
+    - hyprland
+    - hyprland-devel
+    - xdg-desktop-portal-hyprland
+    - hyprpaper
+    - hyprlock
+    - hypridle
+    - hyprgraphics
+    - hyprlang
+    - aquamarine
+    - hyprpicker
+    - hyprland-qt-support
+    - hyprpicker
+    - hyprpolkitagent
+    - qalculate
+    - hyprshot
 
-  # XWayland
-  - xorg-x11-server-Xwayland
-  - wayland-protocols-devel
+    # XWayland
+    - xorg-x11-server-Xwayland
+    - wayland-protocols-devel
 
-  # Session launcher
-  - uwsm
-  - hyprland-uwsm
+    # Session launcher
+    - uwsm
+    - hyprland-uwsm
 
-  # Terminal
-  - wezterm
-  - nu
-  - starship
+    # Terminal
+    - wezterm
+    - nu
+    - starship
 
-  # Gnome keyring
-  - libsecret
-  - gnome-keyring
-  - git-credential-libsecret
+    # Gnome keyring
+    - libsecret
+    - gnome-keyring
+    - git-credential-libsecret
 
-  # General utilities and file explorer
-  - pop-launcher
-  - nwg-look
-  - nautilus
+    # General utilities and file explorer
+    - pop-launcher
+    - nwg-look
+    - nautilus
 
-  # Dependencies for Hyprland plugin manager:
-  - cmake
-  - meson
-  - gcc-c++
-  - mesa-libGLES-devel
+    # Dependencies for Hyprland plugin manager:
+    - cmake
+    - meson
+    - gcc-c++
+    - mesa-libGLES-devel
 
-  # Dependencies for Aylurs GTK Shell:
-  - aylurs-gtk-shell2
-  - libgtop2
-  - grimblast
-  - btop
-  - swww
-  - gnome-bluetooth
-  - nodejs
-  - gtksourceview3
-  - libsoup3
+    # Dependencies for Aylurs GTK Shell:
+    - aylurs-gtk-shell2
+    - libgtop2
+    - grimblast
+    - btop
+    - swww
+    - gnome-bluetooth
+    - nodejs
+    - gtksourceview3
+    - libsoup3
