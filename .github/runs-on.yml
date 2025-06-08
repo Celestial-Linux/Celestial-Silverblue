@@ -11,7 +11,5 @@ images:
       # Remove Docker and related packages
       sudo apt-get purge -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-      sudo apt-get install -y podman buildah
-
       sudo apt-get autoremove -y
       sudo apt-get clean

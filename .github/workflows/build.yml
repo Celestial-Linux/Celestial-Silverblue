@@ -42,6 +42,35 @@ jobs:
           install-dir: /usr/bin
           use-sudo: true
 
+      - name: Install Podman
+        shell: bash
+        env:
+          CLI_VERSION_TAG: "v0.9"
+        run: |
+          sudo apt-get update
+          sudo apt-get install make git gcc build-essential pkgconf libtool \
+            libsystemd-dev libprotobuf-c-dev libcap-dev libseccomp-dev \
+            libyajl-dev go-md2man autoconf python3 automake golang libgpgme-dev \
+            man conmon passt uidmap netavark
+
+          git clone https://github.com/containers/podman.git
+          cd podman
+          git checkout v5.3.1
+          make
+          sudo make install
+
+          podman -v
+
+          sudo bash -c 'cat > /etc/containers/policy.json << EOF
+          {
+            "default": [
+              {
+                "type": "insecureAcceptAnything"
+              }
+            ]
+          }
+          EOF'
+
       - name: Install BlueBuild
         shell: bash
         env:
