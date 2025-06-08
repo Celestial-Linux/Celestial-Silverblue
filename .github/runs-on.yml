@@ -5,7 +5,15 @@ images:
     owner: "135269210855"
     name: "runs-on-v2.2-ubuntu24-full-x64-*"
     preinstall: |
+      sudo systemctl stop docker.socket
+      sudo systemctl stop docker
+
+      # Remove Docker and related packages
+      sudo apt-get purge -y moby-cli moby-buildx moby-compose moby-engine
+      sudo apt-get purge -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
       sudo apt-get update
-      sudo apt-get install -y podman buildah docker.io
-      sudo systemctl enable --now docker
-      sudo usermod -aG docker ubuntu
+      sudo apt-get install -y podman buildah
+
+      sudo apt-get autoremove -y
+      sudo apt-get clean
