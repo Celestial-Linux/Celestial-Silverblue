@@ -71,6 +71,19 @@ jobs:
           }
           EOF'
 
+      - name: Install Buildah
+        shell: bash
+        run: |
+          sudo apt-get install -y bats btrfs-progs git go-md2man golang \
+            libapparmor-dev libglib2.0-dev libgpgme11-dev libseccomp-dev \
+            libselinux1-dev make runc skopeo libbtrfs-dev
+
+          git clone https://github.com/containers/buildah
+          cd buildah
+          make
+          sudo make install
+
+          buildah --version
       - name: Install BlueBuild
         shell: bash
         env:
@@ -95,6 +108,5 @@ jobs:
           RECIPE_PATH: "./recipes/${RECIPE}"
           RUST_LOG_STYLE: always
           CLICOLOR_FORCE: "1"
-          BUILD_OPTS: "--build-driver podman"
         run: |
-          bluebuild build -v --push ${BUILD_OPTS} ${RECIPE_PATH}
+          bluebuild build -v --push --build-driver podman ${RECIPE_PATH}
