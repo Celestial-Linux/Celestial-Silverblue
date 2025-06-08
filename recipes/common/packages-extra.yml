@@ -22,3 +22,4 @@ install:
     - gamemode
     - mullvad-vpn
     - lm_sensors
+    - layer-shell-qt

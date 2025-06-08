@@ -8,6 +8,8 @@ repos:
 remove:
   packages:
     - dunst
+    - sway
+    - swaylock
 install:
   packages:
     # Hyprland
