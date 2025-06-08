@@ -43,5 +43,6 @@ jobs:
           cosign_private_key: ${{ secrets.SIGNING_SECRET }}
           registry_token: ${{ github.token }}
           pr_event_number: ${{ github.event.number }}
+          squash: false
           build_opts: --build-driver buildah
           skip_checkout: true
