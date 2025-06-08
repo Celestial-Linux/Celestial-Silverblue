@@ -1,5 +1,5 @@
 images:
-  ubuntu_custom_x64_image:
+  ubuntu_custom_x64:
     platform: "linux"
     arch: "x64"
     ami: "ami-0d46136b13e1f64f9"
