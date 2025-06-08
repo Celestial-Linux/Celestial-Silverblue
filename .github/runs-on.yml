@@ -1,10 +1,11 @@
-ubuntu_custom_x64:
-  platform: "linux"
-  arch: "x64"
-  owner: "135269210855"
-  name: "runs-on-v2.2-ubuntu24-full-x64-*"
-  preinstall: |
-    sudo apt-get update
-    sudo apt-get install -y podman buildah docker
-    sudo systemctl enable --now docker
-    sudo usermod -aG docker ubuntu
+images:
+  ubuntu_custom_x64:
+    platform: "linux"
+    arch: "x64"
+    owner: "135269210855"
+    name: "runs-on-v2.2-ubuntu24-full-x64-*"
+    preinstall: |
+      sudo apt-get update
+      sudo apt-get install -y podman buildah docker
+      sudo systemctl enable --now docker
+      sudo usermod -aG docker ubuntu
