@@ -34,33 +34,76 @@ fi
 
 cat "$PRIVATE_KEY_PATH" <(echo) "$PUBLIC_KEY_CRT_PATH" >> "$SIGNING_KEY"
 
+# Function to sign a module
+sign_module() {
+    local module_path="$1"
+    local module_basename="${module_path%.*}"
+    local module_name=$(basename -- "${module_basename%.ko}")
+
+    # Remove old signature if present
+    if grep -Eq "^signature:" < <(modinfo "${module_name}"); then
+        echo "Removing old sig"
+        strip "${module_basename}"
+    fi
+
+    # Sign the module
+    openssl cms -sign -signer "${SIGNING_KEY}" -binary -in "$module_basename" -outform DER -out "${module_basename}.cms" -nocerts -noattr -nosmimecap
+    /usr/src/kernels/"${KERNEL_VERSION}"/scripts/sign-file -s "${module_basename}.cms" sha256 "${PUBLIC_KEY_CRT_PATH}" "${module_basename}"
+    /bin/bash ./sign_check.sh "${KERNEL_VERSION}" "${module_basename}" "${PUBLIC_KEY_CRT_PATH}"
+}
+
+# Function to decompress a module based on extension
+decompress_module() {
+    local module="$1"
+    local extension="$2"
+
+    case "$extension" in
+        "xz")
+            xz --decompress "$module"
+            ;;
+        "gz")
+            gzip -d "$module"
+            ;;
+        "zst")
+            zstd -d "$module"
+            ;;
+    esac
+}
+
+# Function to compress a module based on extension
+compress_module() {
+    local module_basename="$1"
+    local extension="$2"
+
+    case "$extension" in
+        "xz")
+            xz -C crc32 -f "${module_basename}"
+            ;;
+        "gz")
+            gzip -9f "${module_basename}"
+            ;;
+        "zst")
+            zstd -19f "${module_basename}"
+            ;;
+    esac
+}
+
 for module in /usr/lib/modules/"${KERNEL_VERSION}"/"${MODULE_NAME}"/*.ko*; do
     module_basename="${module%.*}"
     module_extension="${module##*.}"
+    module_name=$(basename -- "${module_basename%.ko}")
 
-    if [[ "$module_extension" == "xz" ]]; then
-        xz --decompress "$module"
-        openssl cms -sign -signer "${SIGNING_KEY}" -binary -in "$module_basename" -outform DER -out "${module_basename}.cms" -nocerts -noattr -nosmimecap
-        /usr/src/kernels/"${KERNEL_VERSION}"/scripts/sign-file -s "${module_basename}.cms" sha256 "${PUBLIC_KEY_CRT_PATH}" "${module_basename}"
-        /bin/bash ./sign_check.sh "${KERNEL_VERSION}" "${module_basename}" "${PUBLIC_KEY_CRT_PATH}"
-        xz -C crc32 -f "${module_basename}"
-    elif [[ "$module_extension" == "gz" ]]; then
-        gzip -d "$module"
-        openssl cms -sign -signer "${SIGNING_KEY}" -binary -in "$module_basename" -outform DER -out "${module_basename}.cms" -nocerts -noattr -nosmimecap
-        /usr/src/kernels/"${KERNEL_VERSION}"/scripts/sign-file -s "${module_basename}.cms" sha256 "${PUBLIC_KEY_CRT_PATH}" "${module_basename}"
-        /bin/bash ./sign_check.sh "${KERNEL_VERSION}" "${module_basename}" "${PUBLIC_KEY_CRT_PATH}"
-        gzip -9f "${module_basename}"
-    elif [[ "$module_extension" == "zst" ]]; then
-        zstd -d "$module"
-        openssl cms -sign -signer "${SIGNING_KEY}" -binary -in "$module_basename" -outform DER -out "${module_basename}.cms" -nocerts -noattr -nosmimecap
-        /usr/src/kernels/"${KERNEL_VERSION}"/scripts/sign-file -s "${module_basename}.cms" sha256 "${PUBLIC_KEY_CRT_PATH}" "${module_basename}"
-        /bin/bash ./sign_check.sh "${KERNEL_VERSION}" "${module_basename}" "${PUBLIC_KEY_CRT_PATH}"
-        zstd -19f "${module_basename}"
-    elif [[ "$module_basename" == *.cms ]]; then
+    # Skip .cms files
+    if [[ "$module_basename" == *.cms ]]; then
         continue
+    fi
+
+    # Handle compressed modules
+    if [[ "$module_extension" == "xz" || "$module_extension" == "gz" || "$module_extension" == "zst" ]]; then
+        decompress_module "$module" "$module_extension"
+        sign_module "$module"
+        compress_module "$module_basename" "$module_extension"
     else
-        openssl cms -sign -signer "${SIGNING_KEY}" -binary -in "$module" -outform DER -out "${module}.cms" -nocerts -noattr -nosmimecap
-        /usr/src/kernels/"${KERNEL_VERSION}"/scripts/sign-file -s "${module}.cms" sha256 "${PUBLIC_KEY_CRT_PATH}" "${module}"
-        /bin/bash ./sign_check.sh "${KERNEL_VERSION}" "${module}" "${PUBLIC_KEY_CRT_PATH}"
+        sign_module "$module"
     fi
 done
