@@ -10,7 +10,7 @@ on:
   workflow_dispatch: # allow manually triggering builds
 jobs:
   bluebuild:
-    runs-on: runs-on=${{ github.run_id }}/runner=8cpu-linux-x64/image=ubuntu-custom-x64/spot=true
+    runs-on: runs-on=${{ github.run_id }}/runner=8cpu-linux-x64/image=ubuntu-custom-x64
     name: Build Custom Image
     permissions:
       contents: read
