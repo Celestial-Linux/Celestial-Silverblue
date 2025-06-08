@@ -33,7 +33,7 @@ if [ ! -f "$PUBLIC_KEY_CRT_PATH" ]; then
 fi
 
 cat "$PRIVATE_KEY_PATH" <(echo) "$PUBLIC_KEY_CRT_PATH" >> "$SIGNING_KEY"
-ls /usr/lib/modules/
+ls /usr/lib/modules/"${KERNEL_VERSION}"/extra/"
 
 for module in /usr/lib/modules/"${KERNEL_VERSION}"/extra/"${MODULE_NAME}"/*.ko*; do
     module_basename="${module:0:-3}"
