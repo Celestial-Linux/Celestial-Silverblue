@@ -47,7 +47,6 @@ jobs:
         env:
           CLI_VERSION_TAG: "v0.9"
         run: |
-          sudo apt-get purge -y podman buildah
           sudo docker create \
             --name blue-build-installer \
             ghcr.io/blue-build/cli:${{ env.CLI_VERSION_TAG }}-installer
