@@ -35,7 +35,7 @@ fi
 cat "$PRIVATE_KEY_PATH" <(echo) "$PUBLIC_KEY_CRT_PATH" >> "$SIGNING_KEY"
 ls /usr/lib/modules/"${KERNEL_VERSION}"/
 
-for module in /usr/lib/modules/"${KERNEL_VERSION}"/extra/"${MODULE_NAME}"/*.ko*; do
+for module in /usr/lib/modules/"${KERNEL_VERSION}"/"${MODULE_NAME}"/*.ko*; do
     module_basename="${module:0:-3}"
     module_suffix="${module: -3}"
     if [[ "$module_suffix" == ".xz" ]]; then
