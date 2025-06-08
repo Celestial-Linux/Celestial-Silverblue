@@ -40,9 +40,6 @@ sign_module() {
     local module_basename="${module_path%.*}"
     local module_name=$(basename -- "${module_basename%.ko}")
 
-    # Remove old signature if present
-    strip "${module_basename}"
-
     # Sign the module
     openssl cms -sign -signer "${SIGNING_KEY}" -binary -in "$module_basename" -outform DER -out "${module_basename}.cms" -nocerts -noattr -nosmimecap
     /usr/src/kernels/"${KERNEL_VERSION}"/scripts/sign-file -s "${module_basename}.cms" sha512 "${PUBLIC_KEY_CRT_PATH}" "${module_basename}"
