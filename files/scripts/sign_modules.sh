@@ -26,13 +26,10 @@ KERNEL_VERSION="$(rpm -q "kernel-cachyos-lto" --queryformat '%{VERSION}-%{RELEAS
 PUBLIC_KEY_DER_PATH="../system/etc/pki/akmods/certs/akmods-celestial-linux.der"
 PUBLIC_KEY_CRT_PATH="./certs/public_key.crt"
 PRIVATE_KEY_PATH="./certs/private_key.priv"
-SIGNING_KEY="./certs/signing_key.pem"
 
 if [ ! -f "$PUBLIC_KEY_CRT_PATH" ]; then
     openssl x509 -in "$PUBLIC_KEY_DER_PATH" -out "$PUBLIC_KEY_CRT_PATH"
 fi
-
-cat "$PRIVATE_KEY_PATH" <(echo) "$PUBLIC_KEY_CRT_PATH" >> "$SIGNING_KEY"
 
 # Function to sign a module
 sign_module() {
@@ -41,8 +38,7 @@ sign_module() {
     local module_name=$(basename -- "${module_basename%.ko}")
 
     # Sign the module
-    openssl cms -sign -signer "${SIGNING_KEY}" -binary -in "$module_basename" -outform DER -out "${module_basename}.cms" -nocerts -noattr -nosmimecap
-    /usr/src/kernels/"${KERNEL_VERSION}"/scripts/sign-file -s "${module_basename}.cms" sha512 "${PUBLIC_KEY_CRT_PATH}" "${module_basename}"
+    /usr/src/kernels/"${KERNEL_VERSION}"/scripts/sign-file sha512 "${PRIVATE_KEY_PATH}" "${PUBLIC_KEY_CRT_PATH}" "${module_basename}"
     /bin/bash ./sign_check.sh "${KERNEL_VERSION}" "${module_basename}" "${PUBLIC_KEY_CRT_PATH}"
 }
 
@@ -97,6 +93,7 @@ for module in /usr/lib/modules/"${KERNEL_VERSION}"/"${MODULE_NAME}"/*.ko*; do
         decompress_module "$module" "$module_extension"
         sign_module "$module"
         compress_module "$module_basename" "$module_extension"
+        rm "$module_basename" # Remove the decompressed module
     else
         sign_module "$module"
     fi
