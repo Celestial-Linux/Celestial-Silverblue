@@ -66,4 +66,4 @@ echo "[✓] Build and installation complete!"
 cd ..
 rm -rf nct6687d
 
-./sign_modules.sh "nct6687"
+# ./sign_modules.sh "nct6687"
