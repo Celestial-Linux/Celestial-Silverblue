@@ -69,3 +69,8 @@ install:
     - nodejs
     - gtksourceview3
     - libsoup3
+
+    - kwin-wayland
+    - sddm-breeze
+    - layer-shell-qt
+    - sddm

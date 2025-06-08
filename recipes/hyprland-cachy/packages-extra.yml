@@ -8,8 +8,6 @@ install:
     - cachyos-settings
     - scx-scheds
     - scx-manager
-    - kwin-wayland
-    - sddm-breeze
 remove:
   packages:
     - zram-generator-defaults
