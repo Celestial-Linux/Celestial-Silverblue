@@ -3,3 +3,9 @@ images:
     platform: "linux"
     arch: "x64"
     ami: "ami-0d46136b13e1f64f9"
+runners:
+  runner_custom:
+    cpu: 8
+    family: ["t3"]
+    spot: true
+    image: ubuntu_custom_x64
