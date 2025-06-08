@@ -33,7 +33,6 @@ if [ ! -f "$PUBLIC_KEY_CRT_PATH" ]; then
 fi
 
 cat "$PRIVATE_KEY_PATH" <(echo) "$PUBLIC_KEY_CRT_PATH" >> "$SIGNING_KEY"
-ls /usr/lib/modules/"${KERNEL_VERSION}"/
 
 for module in /usr/lib/modules/"${KERNEL_VERSION}"/"${MODULE_NAME}"/*.ko*; do
     module_basename="${module:0:-3}"
@@ -42,17 +41,17 @@ for module in /usr/lib/modules/"${KERNEL_VERSION}"/"${MODULE_NAME}"/*.ko*; do
         xz --decompress "$module"
         openssl cms -sign -signer "${SIGNING_KEY}" -binary -in "$module_basename" -outform DER -out "${module_basename}.cms" -nocerts -noattr -nosmimecap
         /usr/src/kernels/"${KERNEL_VERSION}"/scripts/sign-file -s "${module_basename}.cms" sha256 "${PUBLIC_KEY_CRT_PATH}" "${module_basename}"
-        /bin/bash ./sign-check.sh "${KERNEL_VERSION}" "${module_basename}" "${PUBLIC_KEY_CRT_PATH}"
+        /bin/bash ./sign_check.sh "${KERNEL_VERSION}" "${module_basename}" "${PUBLIC_KEY_CRT_PATH}"
         xz -C crc32 -f "${module_basename}"
     elif [[ "$module_suffix" == ".gz" ]]; then
         gzip -d "$module"
         openssl cms -sign -signer "${SIGNING_KEY}" -binary -in "$module_basename" -outform DER -out "${module_basename}.cms" -nocerts -noattr -nosmimecap
         /usr/src/kernels/"${KERNEL_VERSION}"/scripts/sign-file -s "${module_basename}.cms" sha256 "${PUBLIC_KEY_CRT_PATH}" "${module_basename}"
-        /bin/bash ./sign-check.sh "${KERNEL_VERSION}" "${module_basename}" "${PUBLIC_KEY_CRT_PATH}"
+        /bin/bash ./sign_check.sh "${KERNEL_VERSION}" "${module_basename}" "${PUBLIC_KEY_CRT_PATH}"
         gzip -9f "${module_basename}"
     else
         openssl cms -sign -signer "${SIGNING_KEY}" -binary -in "$module" -outform DER -out "${module}.cms" -nocerts -noattr -nosmimecap
         /usr/src/kernels/"${KERNEL_VERSION}"/scripts/sign-file -s "${module}.cms" sha256 "${PUBLIC_KEY_CRT_PATH}" "${module}"
-        /bin/bash ./sign-check.sh "${KERNEL_VERSION}" "${module}" "${PUBLIC_KEY_CRT_PATH}"
+        /bin/bash ./sign_check.sh "${KERNEL_VERSION}" "${module}" "${PUBLIC_KEY_CRT_PATH}"
     fi
 done
