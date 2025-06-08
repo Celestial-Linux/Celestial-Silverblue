@@ -33,7 +33,7 @@ echo "Downloading SELinux Policy"
 curl -L https://raw.githubusercontent.com/NVIDIA/dgx-selinux/master/bin/RHEL9/nvidia-container.pp \
     -o nvidia-container.pp
 echo "Installing SELinux Policy"
-# semodule -i nvidia-container.pp
+semodule -i nvidia-container.pp
 
 echo "Cleaning up"
 rm -f nvidia-container.pp
