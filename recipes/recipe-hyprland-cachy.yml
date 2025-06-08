@@ -11,6 +11,7 @@ modules:
   - from-file: hyprland-cachy/packages-extra.yml
   - from-file: hyprland-cachy/nvidia.yml
   - from-file: hyprland/packages.yml
+  - from-file: common/install-nct6687d.yml
   - from-file: common/packages-extra.yml
   - from-file: common/fonts.yml
   - from-file: common/files.yml
