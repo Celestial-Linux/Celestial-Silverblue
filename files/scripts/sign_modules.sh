@@ -41,10 +41,7 @@ sign_module() {
     local module_name=$(basename -- "${module_basename%.ko}")
 
     # Remove old signature if present
-    if grep -Eq "^signature:" < <(modinfo "${module_name}"); then
-        echo "Removing old sig"
-        strip "${module_basename}"
-    fi
+    strip "${module_basename}"
 
     # Sign the module
     openssl cms -sign -signer "${SIGNING_KEY}" -binary -in "$module_basename" -outform DER -out "${module_basename}.cms" -nocerts -noattr -nosmimecap
