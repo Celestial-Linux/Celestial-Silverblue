@@ -35,26 +35,29 @@ fi
 cat "$PRIVATE_KEY_PATH" <(echo) "$PUBLIC_KEY_CRT_PATH" >> "$SIGNING_KEY"
 
 for module in /usr/lib/modules/"${KERNEL_VERSION}"/"${MODULE_NAME}"/*.ko*; do
-    module_basename="${module:0:-3}"
-    module_suffix="${module: -3}"
-    if [[ "$module_suffix" == ".xz" ]]; then
+    module_basename="${module%.*}"
+    module_extension="${module##*.}"
+
+    if [[ "$module_extension" == "xz" ]]; then
         xz --decompress "$module"
         openssl cms -sign -signer "${SIGNING_KEY}" -binary -in "$module_basename" -outform DER -out "${module_basename}.cms" -nocerts -noattr -nosmimecap
         /usr/src/kernels/"${KERNEL_VERSION}"/scripts/sign-file -s "${module_basename}.cms" sha256 "${PUBLIC_KEY_CRT_PATH}" "${module_basename}"
         /bin/bash ./sign_check.sh "${KERNEL_VERSION}" "${module_basename}" "${PUBLIC_KEY_CRT_PATH}"
         xz -C crc32 -f "${module_basename}"
-    elif [[ "$module_suffix" == ".gz" ]]; then
+    elif [[ "$module_extension" == "gz" ]]; then
         gzip -d "$module"
         openssl cms -sign -signer "${SIGNING_KEY}" -binary -in "$module_basename" -outform DER -out "${module_basename}.cms" -nocerts -noattr -nosmimecap
         /usr/src/kernels/"${KERNEL_VERSION}"/scripts/sign-file -s "${module_basename}.cms" sha256 "${PUBLIC_KEY_CRT_PATH}" "${module_basename}"
         /bin/bash ./sign_check.sh "${KERNEL_VERSION}" "${module_basename}" "${PUBLIC_KEY_CRT_PATH}"
         gzip -9f "${module_basename}"
-    elif [[ "$module_suffix" == ".zst" ]]; then
+    elif [[ "$module_extension" == "zst" ]]; then
         zstd -d "$module"
         openssl cms -sign -signer "${SIGNING_KEY}" -binary -in "$module_basename" -outform DER -out "${module_basename}.cms" -nocerts -noattr -nosmimecap
         /usr/src/kernels/"${KERNEL_VERSION}"/scripts/sign-file -s "${module_basename}.cms" sha256 "${PUBLIC_KEY_CRT_PATH}" "${module_basename}"
         /bin/bash ./sign_check.sh "${KERNEL_VERSION}" "${module_basename}" "${PUBLIC_KEY_CRT_PATH}"
-        zstd -f "${module_basename}"
+        zstd -19f "${module_basename}"
+    elif [[ "$module_basename" == *.cms ]]; then
+        continue
     else
         openssl cms -sign -signer "${SIGNING_KEY}" -binary -in "$module" -outform DER -out "${module}.cms" -nocerts -noattr -nosmimecap
         /usr/src/kernels/"${KERNEL_VERSION}"/scripts/sign-file -s "${module}.cms" sha256 "${PUBLIC_KEY_CRT_PATH}" "${module}"
