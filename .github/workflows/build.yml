@@ -63,7 +63,7 @@ jobs:
           BB_PASSWORD: ${{ github.token }}
           GH_PR_EVENT_NUMBER: ${{ github.event.number }}
           BB_CACHE_LAYERS: true
-          RECIPE_PATH: "./recipes/${RECIPE}"
+          RECIPE_PATH: "./recipes/${{ matrix.recipe }}"
           RUST_LOG_STYLE: always
           CLICOLOR_FORCE: "1"
         run: |
