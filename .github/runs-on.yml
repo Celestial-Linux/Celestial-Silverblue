@@ -9,7 +9,7 @@ images:
       sudo systemctl stop docker
 
       # Remove Docker and related packages
-      sudo apt-get purge -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin podman buildah
+      sudo apt-get purge -y podman buildah
 
       sudo apt-get autoremove -y
       sudo apt-get clean
