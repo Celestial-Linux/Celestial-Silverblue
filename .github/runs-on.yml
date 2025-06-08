@@ -2,4 +2,4 @@ images:
   ubuntu-custom-x64:
     platform: "linux"
     arch: "x64"
-    ami: "270277432547-runs-on-2025-06-08-142336"
+    ami: "ami-0d46136b13e1f64f9"
