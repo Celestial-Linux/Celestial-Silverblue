@@ -2,5 +2,4 @@ images:
   ubuntu-custom-x64:
     platform: "linux"
     arch: "x64"
-    owner: "270277432547"
-    name: "270277432547-runs-on-2025-06-08-142336"
+    ami: "270277432547-runs-on-2025-06-08-142336"
