@@ -47,7 +47,11 @@ jobs:
         env:
           CLI_VERSION_TAG: "v0.9"
         run: |
-          podman run --pull always --rm ghcr.io/blue-build/cli:latest-installer | bash
+          sudo podman create \
+            --name blue-build-installer \
+            ghcr.io/blue-build/cli:${{ env.CLI_VERSION_TAG }}-installer
+          sudo podman cp blue-build-installer:/out/bluebuild /usr/bin/bluebuild
+          sudo podman rm blue-build-installer
           bluebuild --version
 
       # blue-build/cli does the heavy lifting
