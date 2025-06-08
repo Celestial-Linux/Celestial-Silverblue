@@ -6,6 +6,6 @@ images:
     name: "runs-on-v2.2-ubuntu24-full-x64-*"
     preinstall: |
       sudo apt-get update
-      sudo apt-get install -y podman buildah docker
+      sudo apt-get install -y podman buildah docker.io
       sudo systemctl enable --now docker
       sudo usermod -aG docker ubuntu
