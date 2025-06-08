@@ -109,4 +109,4 @@ jobs:
           RUST_LOG_STYLE: always
           CLICOLOR_FORCE: "1"
         run: |
-          sudo bluebuild build -v --push --build-driver podman ${RECIPE_PATH}
+          sudo bluebuild build -v --push ${RECIPE_PATH}
