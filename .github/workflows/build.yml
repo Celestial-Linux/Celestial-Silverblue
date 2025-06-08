@@ -32,12 +32,40 @@ jobs:
         shell: bash
         run: |
           echo "${{ secrets.KERNEL_PRIVKEY }}" > ./files/scripts/certs/private_key.priv
-      - name: Build Custom Image
-        uses: blue-build/github-action@v1.8
+      # building custom images might take a lot of space,
+      # so it's best to remove unneeded softawre
+      # - name: Maximize build space
+      #   uses: jlumbroso/free-disk-space@v1.3.1
+
+      - uses: sigstore/cosign-installer@v3.8.2
         with:
-          recipe: ${{ matrix.recipe }}
-          cosign_private_key: ${{ secrets.SIGNING_SECRET }}
-          registry_token: ${{ github.token }}
-          pr_event_number: ${{ github.event.number }}
-          build_opts: --build-driver podman
-          skip_checkout: true
+          install-dir: /usr/bin
+          use-sudo: true
+
+      - name: Install BlueBuild
+        shell: bash
+        env:
+          CLI_VERSION_TAG: "v0.9"
+        run: |
+          sudo docker create \
+            --name blue-build-installer \
+            ghcr.io/blue-build/cli:${{ env.CLI_VERSION_TAG }}-installer
+          sudo docker cp blue-build-installer:/out/bluebuild /usr/bin/bluebuild
+          sudo docker rm blue-build-installer
+          bluebuild --version
+
+      # blue-build/cli does the heavy lifting
+      - name: Build Image
+        shell: bash
+        env:
+          COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
+          GH_TOKEN: ${{ github.token }}
+          BB_PASSWORD: ${{ github.token }}
+          GH_PR_EVENT_NUMBER: ${{ github.event.number }}
+          BB_CACHE_LAYERS: true
+          RECIPE_PATH: "./recipes/${RECIPE}"
+          RUST_LOG_STYLE: always
+          CLICOLOR_FORCE: "1"
+          BUILD_OPTS: "--build-driver podman"
+        run: |
+          bluebuild build -v --push ${BUILD_OPTS} ${RECIPE_PATH}
