@@ -3,11 +3,15 @@
 set -oue pipefail
 
 # Dependencies
-echo "[*] Installing dependencies..."
+echo "[*] Installing runtime dependencies..."
+dnf install -y gtk4 gtk4-layer-shell dbus sqlite librsvg2 gdk-pixbuf2
+
+echo "[*] Installing build dependencies..."
+
 # Capture currently installed packages to avoid removing pre-existing ones during cleanup
 installed_before=$(rpm -qa --queryformat '%{NAME}\n' | sort)
 
-dnf install -y dnf install rust cargo git gtk4-devel gtk4-layer-shell-devel dbus-devel sqlite-devel librsvg2-devel gdk-pixbuf2-devel
+dnf install -y rust cargo git gtk4-devel gtk4-layer-shell-devel dbus-devel sqlite-devel librsvg2-devel gdk-pixbuf2-devel
 
 # Capture newly installed packages
 installed_after=$(rpm -qa --queryformat '%{NAME}\n' | sort)
