@@ -110,7 +110,7 @@ let has_glow = not (which 'glow' | is-empty)
 
 # Display the MOTD, using glow if available, otherwise cat (print)
 if $has_glow {
-    $motd_content | glow -s auto -w 78
+    $motd_content | glow --config /usr/etc/glow/config.toml -w 78
 } else {
     print $motd_content
 }
