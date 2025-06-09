@@ -5,6 +5,7 @@ repos:
     - solopasha/hyprland
     - wezfurlong/wezterm-nightly
     - atim/starship
+    - celestelove/gtk4-layer-shell
 remove:
   packages:
     - dunst
@@ -74,3 +75,5 @@ install:
     - sddm-breeze
     - layer-shell-qt
     - sddm
+
+    - gtk4-layer-shell
