@@ -83,11 +83,6 @@ for module in /usr/lib/modules/"${KERNEL_VERSION}"/"${MODULE_NAME}"/*.ko*; do
     module_extension="${module##*.}"
     module_name=$(basename -- "${module_basename%.ko}")
 
-    # Skip .cms files
-    if [[ "$module_basename" == *.cms ]]; then
-        continue
-    fi
-
     # Handle compressed modules
     if [[ "$module_extension" == "xz" || "$module_extension" == "gz" || "$module_extension" == "zst" ]]; then
         decompress_module "$module" "$module_extension"
