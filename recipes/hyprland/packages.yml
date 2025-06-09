@@ -5,7 +5,7 @@ repos:
     - solopasha/hyprland
     - wezfurlong/wezterm-nightly
     - atim/starship
-    - celestelove/gtk4-layer-shell
+    - celestelove/celestial-linux-extras
 remove:
   packages:
     - dunst
