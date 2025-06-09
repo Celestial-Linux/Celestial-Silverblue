@@ -77,3 +77,4 @@ install:
     - sddm
 
     - gtk4-layer-shell
+    - gtk4-layer-shell-devel
