@@ -7,6 +7,7 @@ repos:
     - ublue-os/akmods
   files:
     - charm.repo
+    - google-chrome.repo
 install:
   packages:
     - ubuntu-family-fonts
@@ -16,4 +17,4 @@ install:
     - https://github.com/SpacingBat3/WebCord/releases/download/v4.10.4/webcord-4.10.4-1.x86_64.rpm
     - gamemode
     - glow
-    - chromium
+    - google-chrome-stable
