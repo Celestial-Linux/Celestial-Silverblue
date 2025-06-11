@@ -8,6 +8,7 @@ repos:
   files:
     - charm.repo
     - google-chrome.repo
+    - https://repository.mullvad.net/rpm/stable/mullvad.repo
 install:
   packages:
     - ubuntu-family-fonts
@@ -18,5 +19,14 @@ install:
     - gamemode
     - glow
     - google-chrome-stable
+
+    - lm_sensors
+    - liquidctl
+    - coolercontrol
+    - coolercontrold
+    - coolercontrol-liqctld
+    - mullvad
+
 optfix:
   - google
+  - mullvad
