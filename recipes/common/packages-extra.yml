@@ -26,6 +26,8 @@ install:
     - coolercontrold
     - coolercontrol-liqctld
     - mullvad
+    - openrgb-udev-rules
+    - openrgb
 
 optfix:
   - google
