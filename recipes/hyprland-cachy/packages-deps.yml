@@ -4,3 +4,4 @@ install:
   packages:
     - libcap-ng-devel
     - procps-ng-devel
+    - sbsigntools
