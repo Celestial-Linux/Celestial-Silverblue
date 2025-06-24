@@ -1,69 +1,69 @@
 name: bluebuild
 on:
-  schedule:
-    - cron:
-        "00 06 * * *" # build at 06:00 UTC every day
-        # (20 minutes after last ublue images start building)
-  push:
-    paths-ignore: # don't rebuild if only documentation has changed
-      - "**.md"
-  workflow_dispatch: # allow manually triggering builds
+    schedule:
+        - cron:
+              "00 06 * * *" # build at 06:00 UTC every day
+              # (20 minutes after last ublue images start building)
+    push:
+        paths-ignore: # don't rebuild if only documentation has changed
+            - "**.md"
+    workflow_dispatch: # allow manually triggering builds
 jobs:
-  bluebuild:
-    runs-on: runs-on=${{ github.run_id }}/runner=8cpu-linux-x64/spot=true
-    name: Build Custom Image
-    permissions:
-      contents: read
-      packages: write
-      id-token: write
-    strategy:
-      fail-fast: false # stop GH from cancelling all matrix builds if one fails
-      matrix:
-        recipe:
-          # - recipe-silverblue.yml
-          # - recipe-kinoite.yml
-          # - recipe-cosmic.yml
-          # - recipe-hyprland.yml
-          - recipe-hyprland-cachy.yml
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - name: Retrieve Signing Key
-        shell: bash
-        run: |
-          echo "${{ secrets.KERNEL_PRIVKEY }}" > ./files/scripts/certs/private_key.priv
-      # building custom images might take a lot of space,
-      # so it's best to remove unneeded softawre
-      # - name: Maximize build space
-      #   uses: jlumbroso/free-disk-space@v1.3.1
+    bluebuild:
+        runs-on: runs-on=${{ github.run_id }}/runner=8cpu-linux-x64/spot=true
+        name: Build Custom Image
+        permissions:
+            contents: read
+            packages: write
+            id-token: write
+        strategy:
+            fail-fast: false # stop GH from cancelling all matrix builds if one fails
+            matrix:
+                recipe:
+                    # - recipe-silverblue.yml
+                    # - recipe-kinoite.yml
+                    # - recipe-cosmic.yml
+                    - recipe-hyprland.yml
+                    - recipe-hyprland-cachy.yml
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+            - name: Retrieve Signing Key
+              shell: bash
+              run: |
+                  echo "${{ secrets.KERNEL_PRIVKEY }}" > ./files/scripts/certs/private_key.priv
+            # building custom images might take a lot of space,
+            # so it's best to remove unneeded softawre
+            # - name: Maximize build space
+            #   uses: jlumbroso/free-disk-space@v1.3.1
 
-      - uses: sigstore/cosign-installer@v3.9.0
-        with:
-          install-dir: /usr/bin
-          use-sudo: true
+            - uses: sigstore/cosign-installer@v3.9.0
+              with:
+                  install-dir: /usr/bin
+                  use-sudo: true
 
-      - name: Install BlueBuild
-        shell: bash
-        env:
-          CLI_VERSION_TAG: "v0.9"
-        run: |
-          sudo docker create \
-            --name blue-build-installer \
-            ghcr.io/blue-build/cli:${{ env.CLI_VERSION_TAG }}-installer
-          sudo docker cp blue-build-installer:/out/bluebuild /usr/bin/bluebuild
-          sudo docker rm blue-build-installer
-          bluebuild --version
-      # blue-build/cli does the heavy lifting
-      - name: Build Image
-        shell: bash
-        env:
-          COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
-          GH_TOKEN: ${{ github.token }}
-          BB_PASSWORD: ${{ github.token }}
-          GH_PR_EVENT_NUMBER: ${{ github.event.number }}
-          BB_CACHE_LAYERS: true
-          RECIPE_PATH: "./recipes/${{ matrix.recipe }}"
-          RUST_LOG_STYLE: always
-          CLICOLOR_FORCE: "1"
-        run: |
-          bluebuild build -v --push ${RECIPE_PATH}
+            - name: Install BlueBuild
+              shell: bash
+              env:
+                  CLI_VERSION_TAG: "v0.9"
+              run: |
+                  sudo docker create \
+                    --name blue-build-installer \
+                    ghcr.io/blue-build/cli:${{ env.CLI_VERSION_TAG }}-installer
+                  sudo docker cp blue-build-installer:/out/bluebuild /usr/bin/bluebuild
+                  sudo docker rm blue-build-installer
+                  bluebuild --version
+            # blue-build/cli does the heavy lifting
+            - name: Build Image
+              shell: bash
+              env:
+                  COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
+                  GH_TOKEN: ${{ github.token }}
+                  BB_PASSWORD: ${{ github.token }}
+                  GH_PR_EVENT_NUMBER: ${{ github.event.number }}
+                  BB_CACHE_LAYERS: true
+                  RECIPE_PATH: "./recipes/${{ matrix.recipe }}"
+                  RUST_LOG_STYLE: always
+                  CLICOLOR_FORCE: "1"
+              run: |
+                  bluebuild build -v --push ${RECIPE_PATH}
