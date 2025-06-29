@@ -32,3 +32,4 @@ install:
 optfix:
   - google
   - Mullvad VPN
+  - mullvad
