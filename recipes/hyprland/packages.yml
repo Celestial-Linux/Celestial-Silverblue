@@ -2,10 +2,10 @@
 type: dnf
 repos:
   copr:
-    - solopasha/hyprland fedora-42-x86_64
-    - wezfurlong/wezterm-nightly fedora-42-x86_64
-    - atim/starship fedora-42-x86_64
-    - celestelove/celestial-linux-extras fedora-42-x86_64
+    - solopasha/hyprland
+    - wezfurlong/wezterm-nightly
+    - atim/starship
+    - celestelove/celestial-linux-extras
 remove:
   packages:
     - dunst

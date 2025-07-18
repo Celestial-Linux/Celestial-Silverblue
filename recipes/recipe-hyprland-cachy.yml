@@ -2,7 +2,7 @@
 name: celestial-hyprland-cachy
 description: A custom image of Fedora and Hyprland with personal modifications.
 
-base-image: ghcr.io/secureblue/sericea-main-hardened
+base-image: quay.io/fedora-ostree-desktops/sway-atomic
 image-version: 42
 
 modules:

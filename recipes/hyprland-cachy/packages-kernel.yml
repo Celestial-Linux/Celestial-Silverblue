@@ -2,7 +2,7 @@
 type: dnf
 repos:
   copr:
-    - bieszczaders/kernel-cachyos-dev fedora-42-x86_64
+    - bieszczaders/kernel-cachyos-dev
 install:
   packages:
     - kernel-cachyos-lto

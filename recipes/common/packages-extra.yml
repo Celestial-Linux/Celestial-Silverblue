@@ -2,9 +2,9 @@
 type: dnf
 repos:
   copr:
-    - atim/ubuntu-fonts fedora-42-x86_64
-    - codifryed/CoolerControl fedora-42-x86_64
-    - ublue-os/akmods fedora-42-x86_64
+    - atim/ubuntu-fonts
+    - codifryed/CoolerControl
+    - ublue-os/akmods
   files:
     - charm.repo
     - google-chrome.repo
