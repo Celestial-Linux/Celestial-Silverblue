@@ -2,7 +2,7 @@
 type: dnf
 repos:
   copr:
-    - bieszczaders/kernel-cachyos-addons
+    - bieszczaders/kernel-cachyos-addons fedora-42-x86_64
 install:
   packages:
     - cachyos-settings
