@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 type: dnf
 repos:
-  copr:
-    - bieszczaders/kernel-cachyos-dev
+  files:
+    - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-dev/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-dev-fedora-%OS_VERSION%.repo
 install:
   packages:
     - kernel-cachyos-lto
