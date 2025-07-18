@@ -2,7 +2,7 @@
 type: dnf
 repos:
   copr:
-    - bieszczaders/kernel-cachyos-lto
+    - bieszczaders/kernel-cachyos-dev
 install:
   packages:
     - kernel-cachyos-lto
