@@ -1,4 +1,5 @@
 type: dnf
+source: local
 repos:
     copr:
         - name: bieszczaders/kernel-cachyos-addons
