@@ -1,80 +1,84 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 type: dnf
 repos:
-  copr:
-    - solopasha/hyprland
-    - wezfurlong/wezterm-nightly
-    - atim/starship
-    - celestelove/celestial-linux-extras
+    copr:
+        - name: solopasha/hyprland
+          chroot: fedora-42-x86_64
+        - name: wezfurlong/wezterm-nightly
+          chroot: fedora-42-x86_64
+        - name: atim/starship
+          chroot: fedora-42-x86_64
+        - name: celestelove/celestial-linux-extras
+          chroot: fedora-42-x86_64
 remove:
-  packages:
-    - dunst
-    - sway
-    - swaylock
+    packages:
+        - dunst
+        - sway
+        - swaylock
 install:
-  packages:
-    # Hyprland
-    - hyprutils
-    - hyprland
-    - hyprland-devel
-    - xdg-desktop-portal-hyprland
-    - hyprpaper
-    - hyprlock
-    - hypridle
-    - hyprgraphics
-    - hyprlang
-    - aquamarine
-    - hyprpicker
-    - hyprland-qt-support
-    - hyprpicker
-    - hyprpolkitagent
-    - qalculate
-    - hyprshot
+    packages:
+        # Hyprland
+        - hyprutils
+        - hyprland
+        - hyprland-devel
+        - xdg-desktop-portal-hyprland
+        - hyprpaper
+        - hyprlock
+        - hypridle
+        - hyprgraphics
+        - hyprlang
+        - aquamarine
+        - hyprpicker
+        - hyprland-qt-support
+        - hyprpicker
+        - hyprpolkitagent
+        - qalculate
+        - hyprshot
 
-    # XWayland
-    - xorg-x11-server-Xwayland
-    - wayland-protocols-devel
+        # XWayland
+        - xorg-x11-server-Xwayland
+        - wayland-protocols-devel
 
-    # Session launcher
-    - uwsm
-    - hyprland-uwsm
+        # Session launcher
+        - uwsm
+        - hyprland-uwsm
 
-    # Terminal
-    - wezterm
-    - nu
-    - starship
+        # Terminal
+        - wezterm
+        - nu
+        - starship
 
-    # Gnome keyring
-    - libsecret
-    - gnome-keyring
-    - git-credential-libsecret
+        # Gnome keyring
+        - libsecret
+        - gnome-keyring
+        - git-credential-libsecret
 
-    # General utilities and file explorer
-    - pop-launcher
-    - nwg-look
-    - nautilus
+        # General utilities and file explorer
+        - pop-launcher
+        - nwg-look
+        - nautilus
 
-    # Dependencies for Hyprland plugin manager:
-    - cmake
-    - meson
-    - gcc-c++
-    - mesa-libGLES-devel
+        # Dependencies for Hyprland plugin manager:
+        - cmake
+        - meson
+        - gcc-c++
+        - mesa-libGLES-devel
 
-    # Dependencies for Aylurs GTK Shell:
-    - aylurs-gtk-shell2
-    - libgtop2
-    - grimblast
-    - btop
-    - swww
-    - gnome-bluetooth
-    - nodejs
-    - gtksourceview3
-    - libsoup3
+        # Dependencies for Aylurs GTK Shell:
+        - aylurs-gtk-shell2
+        - libgtop2
+        - grimblast
+        - btop
+        - swww
+        - gnome-bluetooth
+        - nodejs
+        - gtksourceview3
+        - libsoup3
 
-    - kwin-wayland
-    - sddm-breeze
-    - layer-shell-qt
-    - sddm
+        - kwin-wayland
+        - sddm-breeze
+        - layer-shell-qt
+        - sddm
 
-    - gtk4-layer-shell
-    - gtk4-layer-shell-devel
+        - gtk4-layer-shell
+        - gtk4-layer-shell-devel

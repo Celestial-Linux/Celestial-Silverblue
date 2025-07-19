@@ -1,16 +1,17 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 type: dnf
 repos:
-  copr:
-    - bieszczaders/kernel-cachyos-addons
+    copr:
+        - name: bieszczaders/kernel-cachyos-addons
+          chroot: fedora-42-x86_64
 install:
-  packages:
-    - cachyos-settings
-    - scx-scheds
-    - scx-manager
+    packages:
+        - cachyos-settings
+        - scx-scheds
+        - scx-manager
 remove:
-  packages:
-    - zram-generator-defaults
-    - sudo
-    - sudo-python-plugin
-    - kf6-kdesu
+    packages:
+        - zram-generator-defaults
+        - sudo
+        - sudo-python-plugin
+        - kf6-kdesu
