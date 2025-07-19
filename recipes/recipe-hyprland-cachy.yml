@@ -3,13 +3,10 @@ name: celestial-hyprland-cachy
 description: A custom image of Fedora and Hyprland with personal modifications.
 
 # base-image: quay.io/fedora-ostree-desktops/sway-atomic
-base-image: ghcr.io/secureblue/sericea-nvidia-open-hardened
+base-image: ghcr.io/secureblue/sericea-main-hardened
 image-version: 42
 
 modules:
-    - type: script
-      scripts:
-          - unprotect_sudo.sh
     - from-file: hyprland-cachy/packages-deps.yml
     - from-file: hyprland-cachy/packages-kernel.yml
     - from-file: hyprland-cachy/packages-extra.yml
