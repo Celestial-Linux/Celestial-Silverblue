@@ -1,4 +1,3 @@
-# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 type: dnf
 repos:
     copr:
@@ -12,6 +11,3 @@ install:
 remove:
     packages:
         - zram-generator-defaults
-        - sudo
-        - sudo-python-plugin
-        - kf6-kdesu
