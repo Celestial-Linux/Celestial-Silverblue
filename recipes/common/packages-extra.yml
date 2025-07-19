@@ -11,29 +11,19 @@ repos:
           chroot: fedora-42-x86_64
     files:
         - charm.repo
-        - google-chrome.repo
-        - https://repository.mullvad.net/rpm/stable/mullvad.repo
 install:
     packages:
         - ubuntu-family-fonts
         - openssh-askpass
         - file-roller
         - fastfetch
-        - https://github.com/SpacingBat3/WebCord/releases/download/v4.10.4/webcord-4.10.4-1.x86_64.rpm
         - gamemode
         - glow
-        - google-chrome-stable
 
         - lm_sensors
         - liquidctl
         - coolercontrol
         - coolercontrold
         - coolercontrol-liqctld
-        - mullvad
         - openrgb-udev-rules
         - openrgb
-
-optfix:
-    - google
-    - Mullvad VPN
-    - mullvad
