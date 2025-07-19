@@ -9,6 +9,7 @@ modules:
   - type: script
     scripts:
       - unprotect_sudo.sh
+      - remove_sudo.sh
   - from-file: hyprland-cachy/packages-deps.yml
   - from-file: hyprland-cachy/packages-kernel.yml
   - from-file: hyprland-cachy/packages-extra.yml

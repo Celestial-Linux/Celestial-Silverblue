@@ -11,4 +11,3 @@ install:
 remove:
   packages:
     - zram-generator-defaults
-    - sudo
