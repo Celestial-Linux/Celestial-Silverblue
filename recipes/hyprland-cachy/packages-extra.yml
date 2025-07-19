@@ -10,6 +10,11 @@ install:
         - cachyos-settings
         - scx-scheds
         - scx-manager
+        - fedora-logos
 remove:
     packages:
         - zram-generator-defaults
+        - secureblue-logos
+        - sudo
+        - kf6-kdesu
+        - sudo-python-plugin
