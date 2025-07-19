@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+type: os-release
+properties:
+    ID: celestial_linux
+    NAME: CelestialLinux
+    PRETTY_NAME: Celestial Linux
