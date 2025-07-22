@@ -14,7 +14,6 @@ install:
 remove:
     packages:
         - zram-generator-defaults
-        - secureblue-logos
         - sudo
         - kf6-kdesu
         - sudo-python-plugin

@@ -23,7 +23,7 @@ jobs:
                     # - recipe-silverblue.yml
                     # - recipe-kinoite.yml
                     # - recipe-cosmic.yml
-                    # - recipe-hyprland.yml
+                    - recipe-hyprland.yml
                     - recipe-hyprland-cachy.yml
         steps:
             - name: Checkout repo
