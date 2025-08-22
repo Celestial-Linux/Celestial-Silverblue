@@ -7,7 +7,6 @@ image-version: 42
 
 modules:
   - from-file: hyprland/packages.yml
-  - from-file: hyprland/hyprland-scripts.yml
   - from-file: common/packages-extra.yml
   - from-file: common/fonts.yml
   - from-file: common/packages-nvidia.yml

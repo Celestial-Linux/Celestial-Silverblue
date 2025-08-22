@@ -81,5 +81,5 @@ install:
         - layer-shell-qt
         - sddm
 
-        - gtk4-layer-shell
-        - gtk4-layer-shell-devel
+        # Application launcher
+        - fuzzel
