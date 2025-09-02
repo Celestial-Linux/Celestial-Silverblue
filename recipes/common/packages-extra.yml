@@ -1,6 +1,5 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 type: dnf
-source: local
 repos:
     copr:
         - name: atim/ubuntu-fonts
