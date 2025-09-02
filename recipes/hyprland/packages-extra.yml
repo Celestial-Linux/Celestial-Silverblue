@@ -1,6 +1,11 @@
-# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
-type: dnf
-remove:
-    packages:
-        - kf6-kdesu
-        - sudo-python-plugin
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+  - type: script
+    scripts:
+      - unprotect_sudo.sh
+  - type: dnf
+    remove:
+        packages:
+            - sudo
+            - kf6-kdesu
+            - sudo-python-plugin
