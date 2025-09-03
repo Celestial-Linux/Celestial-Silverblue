@@ -59,6 +59,7 @@ install:
         - yazi
         - nwg-look
         - mpv
+        - neovim
 
         # Dependencies for Hyprland plugin manager:
         - cmake
