@@ -58,6 +58,7 @@ install:
         # General utilities and file explorer
         - yazi
         - nwg-look
+        - mpv
 
         # Dependencies for Hyprland plugin manager:
         - cmake
