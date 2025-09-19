@@ -57,6 +57,7 @@ install:
 
         # General utilities and file explorer
         - yazi
+        - podman-compose
         - nwg-look
         - mpv
         - neovim
