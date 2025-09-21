@@ -26,3 +26,6 @@ install:
         - coolercontrol-liqctld
         - openrgb-udev-rules
         - openrgb
+
+        # AppImage Support
+        - funionfs
