@@ -27,5 +27,6 @@ install:
         - openrgb-udev-rules
         - openrgb
 
-        # AppImage Support
-        - funionfs
+        # MusicPresence
+        - https://github.com/ungive/discord-music-presence/releases/download/v2.3.4/musicpresence-2.3.4-linux-x86_64.rpm
+
