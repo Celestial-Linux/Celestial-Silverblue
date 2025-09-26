@@ -36,6 +36,7 @@ install:
         - hyprpolkitagent
         - qalculate
         - hyprshot
+        - hyprsunset
 
         # XWayland
         - xorg-x11-server-Xwayland
