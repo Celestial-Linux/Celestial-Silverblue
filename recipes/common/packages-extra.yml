@@ -10,6 +10,7 @@ repos:
           chroot: fedora-42-x86_64
     files:
         - charm.repo
+        - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 install:
     packages:
         - ubuntu-family-fonts
@@ -18,6 +19,7 @@ install:
         - fastfetch
         - gamemode
         - glow
+        - tailscale
 
         - lm_sensors
         - liquidctl
@@ -29,4 +31,3 @@ install:
 
         # MusicPresence
         - https://github.com/ungive/discord-music-presence/releases/download/v2.3.4/musicpresence-2.3.4-linux-x86_64.rpm
-
