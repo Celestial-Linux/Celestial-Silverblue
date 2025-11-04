@@ -9,8 +9,6 @@ image-version: 42
 modules:
     - from-file: hyprland-cachy/packages-deps.yml
     - from-file: hyprland-cachy/packages-kernel.yml
-    - from-file: hyprland-cachy/packages-extra.yml
-    - from-file: hyprland-cachy/nvidia.yml
     - from-file: hyprland/packages.yml
     - from-file: common/packages-extra.yml
     - from-file: common/fonts.yml

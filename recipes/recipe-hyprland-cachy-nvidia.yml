@@ -1,17 +1,21 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-name: celestial-hyprland
+name: celestial-hyprland-cachy-nvidia
 description: A custom image of Fedora and Hyprland with personal modifications.
 
+# base-image: quay.io/fedora-ostree-desktops/sway-atomic
 base-image: ghcr.io/secureblue/sericea-main-hardened
 image-version: 42
 
 modules:
+    - from-file: hyprland-cachy/packages-deps.yml
+    - from-file: hyprland-cachy/packages-kernel.yml
+    - from-file: hyprland-cachy/packages-extra.yml
+    - from-file: hyprland-cachy/nvidia.yml
     - from-file: hyprland/packages.yml
-    - from-file: hyprland/packages-extra.yml
     - from-file: common/packages-extra.yml
     - from-file: common/fonts.yml
     - from-file: common/files.yml
-    - from-file: common/systemd.yml
     - from-file: common/chezmoi.yml
-    - from-file: common/final-modules.yml
+    - from-file: common/os-release.yml
+    - from-file: hyprland-cachy/final-modules.yml
     - type: signing
