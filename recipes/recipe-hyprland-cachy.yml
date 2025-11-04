@@ -7,9 +7,10 @@ base-image: ghcr.io/secureblue/sericea-main-hardened
 image-version: 42
 
 modules:
-    - from-file: hyprland-cachy/packages-deps.yml
-    - from-file: hyprland-cachy/packages-kernel.yml
+    - from-file: cachy/packages-deps.yml
+    - from-file: cachy/packages-kernel.yml
     - from-file: hyprland/packages.yml
+    - from-file: hyprland-cachy/packages-extra.yml
     - from-file: common/packages-extra.yml
     - from-file: common/fonts.yml
     - from-file: common/files.yml

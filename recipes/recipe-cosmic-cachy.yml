@@ -2,10 +2,12 @@
 name: celestial-cosmic
 description: A custom image of Fedora and COSMIC Desktop with personal modifications.
 
-base-image: ghcr.io/secureblue/cosmic-nvidia-open-hardened
+base-image: ghcr.io/secureblue/cosmic-main-hardened
 image-version: 42
 
 modules:
+    - from-file: cachy/packages-deps.yml
+    - from-file: cachy/packages-kernel.yml
     - from-file: cosmic/packages.yml
     - from-file: common/packages-extra.yml
     - from-file: common/fonts.yml

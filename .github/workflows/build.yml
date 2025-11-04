@@ -22,7 +22,9 @@ jobs:
                 recipe:
                     # - recipe-silverblue.yml
                     # - recipe-kinoite.yml
-                    # - recipe-cosmic.yml
+                    - recipe-cosmic.yml
+                    - recipe-cosmic-nvidia.yml
+                    - recipe-cosmic-cachy.yml
                     - recipe-hyprland.yml
                     - recipe-hyprland-nvidia.yml
                     - recipe-hyprland-cachy.yml
