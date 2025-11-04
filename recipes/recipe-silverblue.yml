@@ -2,7 +2,7 @@
 name: celestial-silverblue
 description: A custom image of Fedora Silverblue with personal modifications.
 
-base-image: ghcr.io/secureblue/silverblue-main-open-hardened
+base-image: ghcr.io/secureblue/silverblue-main-hardened
 image-version: 42
 
 modules:

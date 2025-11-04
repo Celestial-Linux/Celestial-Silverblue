@@ -13,6 +13,3 @@ install:
 remove:
     packages:
         - zram-generator-defaults
-        - sudo
-        - kf6-kdesu
-        - sudo-python-plugin
