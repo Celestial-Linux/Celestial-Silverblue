@@ -8,6 +8,8 @@ repos:
           chroot: fedora-42-x86_64
         - name: ublue-os/akmods
           chroot: fedora-42-x86_64
+        - name: atim/starship
+          chroot: fedora-42-x86_64
     files:
         - charm.repo
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
@@ -21,6 +23,8 @@ install:
         - gamemode
         - glow
         - tailscale
+        - nu
+        - starship
 
         - lm_sensors
         - liquidctl

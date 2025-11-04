@@ -1,16 +1,16 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-name: celestial-cosmic
+name: celestial-cosmic-nvidia
 description: A custom image of Fedora and COSMIC Desktop with personal modifications.
 
 base-image: ghcr.io/secureblue/cosmic-nvidia-open-hardened
 image-version: 42
 
 modules:
-  - from-file: cosmic/packages.yml
-  - from-file: common/packages-extra.yml
-  - from-file: common/fonts.yml
-  - from-file: common/packages-nvidia.yml
-  - from-file: common/files.yml
-  - from-file: common/chezmoi.yml
-  - from-file: common/final-modules.yml
-  - type: signing
+    - from-file: cosmic/packages.yml
+    - from-file: common/packages-extra.yml
+    - from-file: common/fonts.yml
+    - from-file: common/packages-nvidia.yml
+    - from-file: common/files.yml
+    - from-file: common/chezmoi.yml
+    - from-file: common/final-modules.yml
+    - type: signing

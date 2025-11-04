@@ -6,8 +6,6 @@ repos:
           chroot: fedora-42-x86_64
         - name: wezfurlong/wezterm-nightly
           chroot: fedora-42-x86_64
-        - name: atim/starship
-          chroot: fedora-42-x86_64
         - name: celestelove/celestial-linux-extras
           chroot: fedora-42-x86_64
         - name: lihaohong/yazi
