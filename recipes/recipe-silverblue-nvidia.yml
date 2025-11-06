@@ -3,7 +3,7 @@ name: celestial-silverblue-nvidia
 description: A custom image of Fedora Silverblue with personal modifications.
 
 base-image: ghcr.io/secureblue/silverblue-nvidia-open-hardened
-image-version: 42
+image-version: 43
 
 modules:
     - from-file: silverblue/packages.yml

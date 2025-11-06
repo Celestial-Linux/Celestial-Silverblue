@@ -3,13 +3,13 @@ type: dnf
 repos:
     copr:
         - name: atim/ubuntu-fonts
-          chroot: fedora-42-x86_64
+          chroot: fedora-43-x86_64
         - name: codifryed/CoolerControl
-          chroot: fedora-42-x86_64
+          chroot: fedora-43-x86_64
         - name: ublue-os/akmods
-          chroot: fedora-42-x86_64
+          chroot: fedora-43-x86_64
         - name: atim/starship
-          chroot: fedora-42-x86_64
+          chroot: fedora-43-x86_64
     files:
         - charm.repo
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo

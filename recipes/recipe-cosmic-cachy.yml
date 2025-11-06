@@ -3,7 +3,7 @@ name: celestial-cosmic-cachy
 description: A custom image of Fedora and COSMIC Desktop with personal modifications.
 
 base-image: ghcr.io/secureblue/cosmic-main-hardened
-image-version: 42
+image-version: 43
 
 modules:
     - from-file: cachy/packages-deps.yml
