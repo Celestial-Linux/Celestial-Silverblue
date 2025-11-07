@@ -6,8 +6,6 @@ repos:
           chroot: fedora-43-x86_64
         - name: wezfurlong/wezterm-nightly
           chroot: fedora-43-x86_64
-        - name: celestelove/celestial-linux-extras
-          chroot: fedora-43-x86_64
         - name: lihaohong/yazi
           chroot: fedora-43-x86_64
 remove:
