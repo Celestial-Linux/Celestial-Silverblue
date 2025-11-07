@@ -1,8 +1,11 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 type: fonts
 fonts:
-  nerd-fonts:
-    - Agave
-    - SourceCodePro
-    - JetBrainsMono
-
+    google-fonts:
+        - Ubuntu
+        - Roboto
+        - OpenSans
+    nerd-fonts:
+        - Agave
+        - SourceCodePro
+        - JetBrainsMono
