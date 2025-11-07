@@ -3,7 +3,6 @@ type: fonts
 fonts:
     google-fonts:
         - Ubuntu
-        - Roboto
         - OpenSans
     nerd-fonts:
         - Agave
