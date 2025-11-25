@@ -3,6 +3,6 @@ type: dnf
 repos:
     files:
         - https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo
-install:
-    packages:
-        - nvidia-container-toolkit
+# install:
+#     packages:
+#         - nvidia-container-toolkit

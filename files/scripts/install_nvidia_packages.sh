@@ -14,7 +14,8 @@
 
 set -oue pipefail
 
-nvidia_packages_list=('nvidia-container-toolkit' 'nvidia-driver-cuda' 'libnvidia-fbc' 'libva-nvidia-driver' 'nvidia-driver' 'nvidia-modprobe' 'nvidia-persistenced' 'nvidia-settings')
+NVIDIA_CONTAINER_TOOLKIT_VERSION=1.18.0-1
+nvidia_packages_list=(nvidia-container-toolkit-${NVIDIA_CONTAINER_TOOLKIT_VERSION} nvidia-container-toolkit-base-${NVIDIA_CONTAINER_TOOLKIT_VERSION} libnvidia-container-tools-${NVIDIA_CONTAINER_TOOLKIT_VERSION} libnvidia-container1-${NVIDIA_CONTAINER_TOOLKIT_VERSION} 'nvidia-driver-cuda' 'libnvidia-fbc' 'libva-nvidia-driver' 'nvidia-driver' 'nvidia-modprobe' 'nvidia-persistenced' 'nvidia-settings')
 
 curl -L https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo \
     -o /etc/yum.repos.d/nvidia-container-toolkit.repo
@@ -25,9 +26,12 @@ curl -L https://negativo17.org/repos/fedora-nvidia.repo -o /etc/yum.repos.d/nega
 echo "Installing NVIDIA packages"
 sed -i '0,/enabled=0/{s/enabled=0/enabled=1/}' /etc/yum.repos.d/nvidia-container-toolkit.repo
 sed -i '0,/enabled=0/{s/enabled=0/enabled=1\npriority=90/}' /etc/yum.repos.d/negativo17-fedora-nvidia.repo
-# required for rpm-ostree to function properly
-# shellcheck disable=SC2068
-rpm-ostree install ${nvidia_packages_list[@]}
+
+# Disable verification
+echo "%_pkgverify_level none" >/etc/rpm/macros.verify
+dnf install -y --setopt=tsflags=nocrypto ${nvidia_packages_list[@]}
+# Restore verification
+rm /etc/rpm/macros.verify
 
 echo "Downloading SELinux Policy"
 curl -L https://raw.githubusercontent.com/NVIDIA/dgx-selinux/master/bin/RHEL9/nvidia-container.pp \
