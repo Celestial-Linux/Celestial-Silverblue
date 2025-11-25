@@ -2,7 +2,7 @@
 type: dnf
 repos:
     copr:
-        - name: lionheartp/hyprland
+        - name: lionheartp/Hyprland
           chroot: fedora-43-x86_64
         - name: wezfurlong/wezterm-nightly
           chroot: fedora-43-x86_64
