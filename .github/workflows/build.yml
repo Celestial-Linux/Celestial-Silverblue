@@ -58,6 +58,8 @@ jobs:
                   sudo docker cp blue-build-installer:/out/bluebuild /usr/bin/bluebuild
                   sudo docker rm blue-build-installer
                   bluebuild --version
+            - name: Maximize build space
+              uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be # v1.3.1
             # blue-build/cli does the heavy lifting
             - name: Build Image
               shell: bash
