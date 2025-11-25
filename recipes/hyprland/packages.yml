@@ -8,6 +8,8 @@ repos:
           chroot: fedora-43-x86_64
         - name: lihaohong/yazi
           chroot: fedora-43-x86_64
+        - name: atim/starship
+          chroot: fedora-43-x86_64
 remove:
     packages:
         - dunst
