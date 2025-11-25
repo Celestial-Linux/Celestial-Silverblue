@@ -7,7 +7,6 @@ image-version: 43
 
 modules:
     - from-file: hyprland/packages.yml
-    - from-file: hyprland/packages-extra.yml
     - from-file: hyprland/packages-ags.yml
     - from-file: common/packages-extra.yml
     - from-file: common/fonts.yml
