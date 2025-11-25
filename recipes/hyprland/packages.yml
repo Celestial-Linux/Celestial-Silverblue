@@ -65,17 +65,6 @@ install:
         - gcc-c++
         - mesa-libGLES-devel
 
-        # Dependencies for Aylurs GTK Shell:
-        - aylurs-gtk-shell2
-        - libgtop2
-        - grimblast
-        - btop
-        - swww
-        - gnome-bluetooth
-        - nodejs
-        - gtksourceview3
-        - libsoup3
-
         - kwin-wayland
         - sddm-breeze
         - layer-shell-qt

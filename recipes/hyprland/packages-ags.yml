@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+type: dnf
+repos:
+    copr:
+        - name: solopasha/hyprland
+          chroot: fedora-43-x86_64
+install:
+    packages:
+        - aylurs-gtk-shell2
+        - libgtop2
+        - grimblast
+        - btop
+        - swww
+        - gnome-bluetooth
+        - nodejs
+        - gtksourceview3
+        - libsoup3
