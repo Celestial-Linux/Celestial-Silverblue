@@ -1,8 +1,5 @@
-# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
-type: dnf
-repos:
-    files:
-        - https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo
-# install:
-#     packages:
-#         - nvidia-container-toolkit
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+  - type: script
+    scripts:
+      - install_nvidia_cdi.sh
