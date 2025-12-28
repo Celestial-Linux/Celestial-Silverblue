@@ -42,7 +42,6 @@ install:
         - hyprland-uwsm
 
         # Terminal
-        - alacritty
         - nu
         - starship
 
@@ -50,6 +49,7 @@ install:
         - libsecret
         - gnome-keyring
         - git-credential-libsecret
+        - gcr
 
         # General utilities and file explorer
         - yazi
