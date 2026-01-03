@@ -33,6 +33,7 @@ install:
         - qalculate
         - hyprshot
         - hyprsunset
+        - hyprland-guiutils
 
         # XWayland
         - wayland-protocols-devel
