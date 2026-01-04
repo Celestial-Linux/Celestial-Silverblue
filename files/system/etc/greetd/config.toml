@@ -6,4 +6,4 @@ command = "cage -s -- gtkgreet"
 user = "greetd"
 
 [initial_session]
-command = "/usr/local/bin/hyprland-run"
+command = "/usr/bin/hyprland-wrapper"
