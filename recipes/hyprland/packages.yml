@@ -39,8 +39,10 @@ install:
         - hyprland-guiutils
 
         # Session manager
-        - lidm
-        - lidm-selinux
+        - greetd
+        - greetd-selinux
+        - gtkgreet
+        - cage
 
         # XWayland
         - wayland-protocols-devel
