@@ -6,6 +6,7 @@ base-image: ghcr.io/secureblue/sericea-nvidia-open-hardened
 image-version: 43
 
 modules:
+    - from-file: hyprland/remove-sudo.yml
     - from-file: hyprland/packages.yml
     - from-file: hyprland/packages-ags.yml
     - from-file: common/packages-extra.yml
