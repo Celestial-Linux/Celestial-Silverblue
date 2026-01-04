@@ -74,5 +74,3 @@ install:
         - gcc-c++
         - mesa-libGLES-devel
 
-        # Application launcher
-        - fuzzel
