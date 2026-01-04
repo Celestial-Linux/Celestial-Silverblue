@@ -40,6 +40,7 @@ install:
 
         # Session manager
         - lidm
+        - lidm-selinux
 
         # XWayland
         - wayland-protocols-devel
