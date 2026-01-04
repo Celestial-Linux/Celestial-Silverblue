@@ -20,6 +20,7 @@ install:
         - hyprland
         - hyprland-devel
         - xdg-desktop-portal-hyprland
+        - xdg-desktop-portal-gtk
         - hyprpaper
         - hyprlock
         - hypridle
