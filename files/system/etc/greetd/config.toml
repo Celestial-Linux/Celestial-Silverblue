@@ -2,6 +2,7 @@
 vt = 1
 
 [default_session]
+# command = "hyprland-run -c /etc/greetd/hyprland.conf"
 command = "cage -s -- gtkgreet"
 user = "greetd"
 

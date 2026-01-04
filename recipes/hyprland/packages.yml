@@ -37,6 +37,7 @@ install:
         - hyprshot
         - hyprsunset
         - hyprland-guiutils
+        - hyprlauncher
 
         # Session manager
         - greetd
