@@ -64,10 +64,5 @@ install:
         - gcc-c++
         - mesa-libGLES-devel
 
-        - kwin-wayland
-        - sddm-breeze
-        - layer-shell-qt
-        - sddm
-
         # Application launcher
         - fuzzel
