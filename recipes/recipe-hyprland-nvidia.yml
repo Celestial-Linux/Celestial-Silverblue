@@ -9,7 +9,6 @@ modules:
     - from-file: hyprland/remove-sudo.yml
     - from-file: hyprland/packages.yml
     - from-file: hyprland/packages-ags.yml
-    - from-file: hyprland/post-scripts.yml
     - from-file: common/packages-extra.yml
     - from-file: common/fonts.yml
     - from-file: common/packages-nvidia.yml
