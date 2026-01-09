@@ -15,6 +15,7 @@ remove:
         - dunst
         - sway
         - swaylock
+        - hardened_malloc
 install:
     packages:
         # Hyprland
