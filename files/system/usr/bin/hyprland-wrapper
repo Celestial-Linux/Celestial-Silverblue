@@ -1,2 +1,2 @@
 #!/bin/sh
-LD_PRELOAD='' /usr/bin/uwsm start -e -D Hyprland hyprland.desktop
+/usr/bin/uwsm start -e -D Hyprland hyprland.desktop
