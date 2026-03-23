@@ -2,12 +2,13 @@
 type: dnf
 repos:
     copr:
-        - name: codifryed/CoolerControl
-          chroot: fedora-43-x86_64
         - name: ublue-os/akmods
           chroot: fedora-43-x86_64
         - name: atim/starship
           chroot: fedora-43-x86_64
+        - name: imput/helium
+          chroot: fedora-43-x86_64
+
     files:
         - charm.repo
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
@@ -22,12 +23,7 @@ install:
         - tailscale
         - nu
         - starship
-
-        - lm_sensors
-        - liquidctl
-        - coolercontrol
-        - coolercontrold
-        - coolercontrol-liqctld
+        - helium-bin
 
         # MusicPresence
         - https://github.com/ungive/discord-music-presence/releases/download/v2.3.5/musicpresence-2.3.5-linux-x86_64.rpm
