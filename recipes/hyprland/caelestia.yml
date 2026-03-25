@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+type: dnf
+repos:
+    copr:
+        - name: celestelove/app2unit
+          chroot: fedora-43-x86_64
+        - name: celestelove/libcava
+          chroot: fedora-43-x86_64
+install:
+    packages:
+        - libcava-devel
+        - app2unit
+        - ddcutil
+        - brightnessctl
+        - lm_sensors
+        - fish
+        - aubio
+        - aubio-devel
+        - pipewire-libs
+        - qt6-qtdeclarative
+        - swappy
+        - libqalculate
+        - qt6-qtbase
+
