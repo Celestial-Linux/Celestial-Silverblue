@@ -37,40 +37,14 @@ jobs:
               shell: bash
               run: |
                   echo "${{ secrets.KERNEL_PRIVKEY }}" > ./files/scripts/certs/private_key.priv
-            # building custom images might take a lot of space,
-            # so it's best to remove unneeded softawre
-            # - name: Maximize build space
-            #   uses: jlumbroso/free-disk-space@v1.3.1
-
-            - uses: sigstore/cosign-installer@v4.1.0
+            # the build is fully handled by the reusable github action
+            - name: Build Custom Image
+              uses: blue-build/github-action@v1.11
               with:
-                  install-dir: /usr/bin
-                  use-sudo: true
+                  recipe: ${{ matrix.recipe }}
+                  cosign_private_key: ${{ secrets.SIGNING_SECRET }}
+                  registry_token: ${{ github.token }}
+                  pr_event_number: ${{ github.event.number }}
 
-            - name: Install BlueBuild
-              shell: bash
-              env:
-                  CLI_VERSION_TAG: "v0.9"
-              run: |
-                  sudo docker create \
-                    --name blue-build-installer \
-                    ghcr.io/blue-build/cli:${{ env.CLI_VERSION_TAG }}-installer
-                  sudo docker cp blue-build-installer:/out/bluebuild /usr/bin/bluebuild
-                  sudo docker rm blue-build-installer
-                  bluebuild --version
-            - name: Maximize build space
-              uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be # v1.3.1
-            # blue-build/cli does the heavy lifting
-            - name: Build Image
-              shell: bash
-              env:
-                  COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
-                  GH_TOKEN: ${{ github.token }}
-                  BB_PASSWORD: ${{ github.token }}
-                  GH_PR_EVENT_NUMBER: ${{ github.event.number }}
-                  BB_CACHE_LAYERS: true
-                  RECIPE_PATH: "./recipes/${{ matrix.recipe }}"
-                  RUST_LOG_STYLE: always
-                  CLICOLOR_FORCE: "1"
-              run: |
-                  bluebuild build -v --push ${RECIPE_PATH}
+                  # enabled by default, disable if your image is small and you want faster builds
+                  maximize_build_space: true
