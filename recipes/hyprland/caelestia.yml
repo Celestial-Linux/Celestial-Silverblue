@@ -6,6 +6,8 @@ repos:
           chroot: fedora-43-x86_64
         - name: celestelove/libcava
           chroot: fedora-43-x86_64
+        - name: celestelove/caelestia
+          chroot: fedora-43-x86_64
 install:
     packages:
         - libcava-devel
@@ -21,4 +23,5 @@ install:
         - swappy
         - libqalculate
         - qt6-qtbase
-
+        - caelestia-shell
+        - caelestia-cli
