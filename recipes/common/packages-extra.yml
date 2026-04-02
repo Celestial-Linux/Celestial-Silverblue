@@ -21,7 +21,6 @@ install:
         - gamemode
         - glow
         - tailscale
-        - nu
         - starship
         - helium-bin
 
