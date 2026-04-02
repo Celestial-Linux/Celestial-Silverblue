@@ -1,6 +1,8 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 type: dnf
 repos:
+    files:
+        - fury-nushell.repo
     copr:
         - name: lionheartp/Hyprland
           chroot: fedora-43-x86_64
@@ -51,7 +53,7 @@ install:
         - hyprland-uwsm
 
         # Terminal
-        - nu
+        - nushell
         - starship
 
         # Gnome keyring
