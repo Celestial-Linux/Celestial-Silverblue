@@ -99,7 +99,7 @@ if not ($motd_template_path | path exists) {
 
 # Read the template, perform substitutions, and replace '~' with newlines
 let motd_content = (
-    open $motd_template_path
+    open --raw $motd_template_path
     | str replace --all '%IMAGE_REF_NAME%' $image_ref_name
     | str replace --all '%TIP%' $tip
     | str replace --all '~' "\n" # Use Nu's standard newline representation
