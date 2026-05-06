@@ -29,3 +29,4 @@ modules:
   - type: script
     scripts:
       - patch_caelestia_gtk_theme.sh
+      - install_caelestia_nurture_scheme.sh
