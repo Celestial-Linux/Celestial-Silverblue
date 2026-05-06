@@ -11,7 +11,7 @@ Celestial Linux is a set of custom immutable desktop Linux images built on Fedor
 ```bash
 # Lint a recipe (run after every edit)
 podman run --rm --security-opt label=disable -v "$(pwd)":/workspace \
-  ghcr.io/blue-build/build:latest lint --recipe recipes/recipe-silverblue.yml
+  ghcr.io/blue-build/cli:latest lint --recipe recipes/recipe-silverblue.yml
 
 # Build an image locally
 podman run --rm --security-opt label=disable -v "$(pwd)":/workspace \
