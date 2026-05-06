@@ -1,15 +1,16 @@
-# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
-type: dnf
-repos:
-    copr:
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+  - type: dnf
+    repos:
+      copr:
         - name: celestelove/app2unit
           chroot: fedora-44-x86_64
         - name: celestelove/libcava
           chroot: fedora-44-x86_64
         - name: celestelove/caelestia
           chroot: fedora-44-x86_64
-install:
-    packages:
+    install:
+      packages:
         - libcava-devel
         - app2unit
         - ddcutil
@@ -25,3 +26,6 @@ install:
         - qt6-qtbase
         - caelestia-shell
         - caelestia-cli
+  - type: script
+    scripts:
+      - patch_caelestia_gtk_theme.sh
