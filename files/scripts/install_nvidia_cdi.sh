@@ -6,6 +6,7 @@ nvidia_packages_list=(nvidia-container-toolkit-${NVIDIA_CONTAINER_TOOLKIT_VERSIO
 
 curl -L https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo \
     -o /etc/yum.repos.d/nvidia-container-toolkit.repo
+sed -i '/^sslcacert=/d' /etc/yum.repos.d/nvidia-container-toolkit.repo
 
 # Disable verification
 echo "%_pkgverify_level none" >/etc/rpm/macros.verify

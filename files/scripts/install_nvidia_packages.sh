@@ -19,6 +19,7 @@ nvidia_packages_list=(nvidia-container-toolkit-${NVIDIA_CONTAINER_TOOLKIT_VERSIO
 
 curl -L https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo \
     -o /etc/yum.repos.d/nvidia-container-toolkit.repo
+sed -i '/^sslcacert=/d' /etc/yum.repos.d/nvidia-container-toolkit.repo
 sed -i "s@gpgcheck=0@gpgcheck=1@" /etc/yum.repos.d/nvidia-container-toolkit.repo
 
 curl -L https://negativo17.org/repos/fedora-nvidia.repo -o /etc/yum.repos.d/negativo17-fedora-nvidia.repo
