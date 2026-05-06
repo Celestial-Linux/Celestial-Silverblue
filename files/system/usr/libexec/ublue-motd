@@ -5,6 +5,9 @@
 let deprecated_images_json_path = '/usr/libexec/deprecated-images.json'
 let motd_template_path = '/usr/share/ublue-os/motd/secureblue.md'
 let tips_path = '/usr/share/ublue-os/motd/tips.md'
+let glow_config_path = '/etc/glow/config.yml'
+let glow_dark_style_path = '/etc/glow/mocha.json'
+let glow_light_style_path = '/etc/glow/latte.json'
 
 # --- Get rpm-ostree Status ---
 let rpm_ostree_status = (
@@ -110,7 +113,28 @@ let has_glow = not (which 'glow' | is-empty)
 
 # Display the MOTD, using glow if available, otherwise cat (print)
 if $has_glow {
-    $motd_content | glow --config /usr/etc/glow/config.toml -w 78
+    const dark_theme = 1
+    const light_theme = 2
+    let system_theme = (
+        try {
+            term query "\e[?996n" --prefix "\e[?997;" --terminator "n" | decode | into int
+        } catch {
+            $dark_theme
+        }
+    )
+
+    let selected_glow_style_path = if $system_theme == $light_theme {
+        $glow_light_style_path
+    } else {
+        $glow_dark_style_path
+    }
+    let glow_style_path = if ($selected_glow_style_path | path exists) {
+        $selected_glow_style_path
+    } else {
+        $glow_dark_style_path
+    }
+
+    $motd_content | glow --config $glow_config_path --style $glow_style_path -w 78
 } else {
     print $motd_content
 }
