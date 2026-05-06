@@ -6,16 +6,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Celestial Linux is a set of custom immutable desktop Linux images built on Fedora Silverblue/Sericea using the **BlueBuild** framework. Images are based on SecureBlue hardened variants and published to `ghcr.io/celestial-linux`. There are multiple variants covering different desktop environments (GNOME/Silverblue, KDE/Kinoite, Hyprland, Cosmic) and GPU support (standard, NVIDIA), with optional CachyOS kernel variants.
 
-## Build & Lint Commands
+## Build & Validation Commands
 
 ```bash
-# Lint a recipe (run after every edit)
-podman run --rm --security-opt label=disable -v "$(pwd)":/workspace \
-  ghcr.io/blue-build/cli:latest lint --recipe recipes/recipe-silverblue.yml
+# Validate a recipe (run after every edit)
+podman run --rm --security-opt label=disable -v "$(pwd)":/workspace -w /workspace \
+  ghcr.io/blue-build/cli:latest bluebuild validate recipes/recipe-silverblue.yml
 
 # Build an image locally
-podman run --rm --security-opt label=disable -v "$(pwd)":/workspace \
-  ghcr.io/blue-build/cli:latest build --recipe recipes/recipe-silverblue.yml
+podman run --rm --security-opt label=disable -v "$(pwd)":/workspace -w /workspace \
+  ghcr.io/blue-build/cli:latest bluebuild build recipes/recipe-silverblue.yml
 
 # Shellcheck a script
 shellcheck files/scripts/<script>.sh
