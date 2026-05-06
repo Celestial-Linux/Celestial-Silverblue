@@ -44,8 +44,8 @@ def hsl(
     return rgb_to_hex(*colorsys.hls_to_rgb(hue, luminance, saturation))
 
 
-def build_nurture(source: dict[str, str]) -> dict[str, str]:
-    base = {
+def base_colours(source: dict[str, str]) -> dict[str, str]:
+    return {
         "bg": source["background"],
         "fg": source["onBackground"],
         "green": source["green"],
@@ -57,6 +57,16 @@ def build_nurture(source: dict[str, str]) -> dict[str, str]:
         "purple": source["mauve"],
         "grey": source["overlay2"],
     }
+
+
+def validate_scheme(source: dict[str, str], scheme: dict[str, str], name: str) -> None:
+    missing = set(source) - set(scheme)
+    if missing:
+        raise SystemExit(f"{name} is missing Caelestia colour roles: {sorted(missing)}")
+
+
+def build_nurture_light(source: dict[str, str]) -> dict[str, str]:
+    base = base_colours(source)
 
     def c(name: str, **kwargs: float) -> str:
         return hsl(base[name], **kwargs)
@@ -174,11 +184,138 @@ def build_nurture(source: dict[str, str]) -> dict[str, str]:
         "onSuccessContainer": c("green", sat_scale=0.82, light=0.18),
     }
 
-    missing = set(source) - set(scheme)
-    if missing:
-        raise SystemExit(f"Nurture scheme is missing Caelestia colour roles: {sorted(missing)}")
+    validate_scheme(source, scheme, "Nurture light scheme")
 
     return scheme
+
+
+def build_nurture_dark(source: dict[str, str]) -> dict[str, str]:
+    base = base_colours(source)
+
+    def c(name: str, **kwargs: float) -> str:
+        return hsl(base[name], **kwargs)
+
+    scheme = {
+        "primary_paletteKeyColor": c("green", sat_scale=0.64, light=0.64),
+        "secondary_paletteKeyColor": c("aqua", sat_scale=0.52, light=0.58),
+        "tertiary_paletteKeyColor": c("orange", sat_scale=0.54, light=0.60),
+        "neutral_paletteKeyColor": c("fg", sat_scale=0.34, light=0.62),
+        "neutral_variant_paletteKeyColor": c("grey", sat_scale=0.28, light=0.46),
+        "background": c("bg", sat_scale=0.82, light=0.12),
+        "onBackground": c("fg", sat_scale=0.66, light=0.86),
+        "surface": c("bg", sat_scale=0.76, light=0.13),
+        "surfaceDim": c("bg", sat_scale=0.70, light=0.10),
+        "surfaceBright": c("bg", sat_scale=0.64, light=0.24),
+        "surfaceContainerLowest": c("bg", sat_scale=0.74, light=0.08),
+        "surfaceContainerLow": c("bg", sat_scale=0.72, light=0.15),
+        "surfaceContainer": c("bg", sat_scale=0.70, light=0.17),
+        "surfaceContainerHigh": c("bg", sat_scale=0.66, light=0.20),
+        "surfaceContainerHighest": c("bg", sat_scale=0.62, light=0.24),
+        "onSurface": c("fg", sat_scale=0.66, light=0.86),
+        "surfaceVariant": c("grey", sat_scale=0.20, light=0.25),
+        "onSurfaceVariant": c("fg", sat_scale=0.42, light=0.72),
+        "inverseSurface": c("fg", sat_scale=0.62, light=0.86),
+        "inverseOnSurface": c("bg", sat_scale=0.80, light=0.14),
+        "outline": c("fg", sat_scale=0.24, light=0.56),
+        "outlineVariant": c("grey", sat_scale=0.18, light=0.30),
+        "shadow": "000000",
+        "scrim": "000000",
+        "surfaceTint": c("green", sat_scale=0.62, light=0.68),
+        "primary": c("green", sat_scale=0.62, light=0.68),
+        "onPrimary": c("bg", sat_scale=0.84, light=0.13),
+        "primaryContainer": c("green", sat_scale=0.42, light=0.28),
+        "onPrimaryContainer": c("green", sat_scale=0.56, light=0.88),
+        "inversePrimary": c("green", sat_scale=0.54, light=0.44),
+        "secondary": c("aqua", sat_scale=0.48, light=0.68),
+        "onSecondary": c("bg", sat_scale=0.84, light=0.13),
+        "secondaryContainer": c("aqua", sat_scale=0.34, light=0.26),
+        "onSecondaryContainer": c("aqua", sat_scale=0.48, light=0.87),
+        "tertiary": c("orange", sat_scale=0.58, light=0.70),
+        "onTertiary": c("bg", sat_scale=0.84, light=0.13),
+        "tertiaryContainer": c("orange", sat_scale=0.38, light=0.28),
+        "onTertiaryContainer": c("orange", sat_scale=0.52, light=0.88),
+        "error": c("red", sat_scale=0.70, light=0.72),
+        "onError": c("bg", sat_scale=0.84, light=0.13),
+        "errorContainer": c("red", sat_scale=0.48, light=0.28),
+        "onErrorContainer": c("red", sat_scale=0.68, light=0.88),
+        "primaryFixed": c("green", sat_scale=0.48, light=0.86),
+        "primaryFixedDim": c("green", sat_scale=0.54, light=0.74),
+        "onPrimaryFixed": c("green", sat_scale=0.82, light=0.16),
+        "onPrimaryFixedVariant": c("green", sat_scale=0.74, light=0.30),
+        "secondaryFixed": c("aqua", sat_scale=0.40, light=0.86),
+        "secondaryFixedDim": c("aqua", sat_scale=0.44, light=0.74),
+        "onSecondaryFixed": c("aqua", sat_scale=0.70, light=0.15),
+        "onSecondaryFixedVariant": c("aqua", sat_scale=0.62, light=0.29),
+        "tertiaryFixed": c("orange", sat_scale=0.48, light=0.87),
+        "tertiaryFixedDim": c("orange", sat_scale=0.54, light=0.75),
+        "onTertiaryFixed": c("orange", sat_scale=0.78, light=0.15),
+        "onTertiaryFixedVariant": c("orange", sat_scale=0.70, light=0.30),
+        "term0": c("bg", sat_scale=0.82, light=0.12),
+        "term1": c("red", sat_scale=0.68, light=0.66),
+        "term2": c("green", sat_scale=0.58, light=0.62),
+        "term3": c("yellow", sat_scale=0.56, light=0.66),
+        "term4": c("blue", sat_scale=0.52, light=0.64),
+        "term5": c("purple", sat_scale=0.52, light=0.66),
+        "term6": c("aqua", sat_scale=0.52, light=0.62),
+        "term7": c("fg", sat_scale=0.58, light=0.82),
+        "term8": c("fg", sat_scale=0.26, light=0.50),
+        "term9": c("red", sat_scale=0.62, light=0.76),
+        "term10": c("green", sat_scale=0.52, light=0.72),
+        "term11": c("yellow", sat_scale=0.50, light=0.76),
+        "term12": c("blue", sat_scale=0.46, light=0.74),
+        "term13": c("purple", sat_scale=0.46, light=0.76),
+        "term14": c("aqua", sat_scale=0.46, light=0.72),
+        "term15": c("fg", sat_scale=0.60, light=0.92),
+        "rosewater": c("orange", hue_shift=-12, sat_scale=0.36, light=0.78),
+        "flamingo": c("red", hue_shift=8, sat_scale=0.42, light=0.75),
+        "pink": c("purple", sat_scale=0.42, light=0.76),
+        "mauve": c("purple", hue_shift=18, sat_scale=0.44, light=0.72),
+        "red": c("red", sat_scale=0.62, light=0.68),
+        "maroon": c("red", hue_shift=-8, sat_scale=0.58, light=0.60),
+        "peach": c("orange", sat_scale=0.62, light=0.68),
+        "yellow": c("yellow", sat_scale=0.58, light=0.72),
+        "green": c("green", sat_scale=0.54, light=0.66),
+        "teal": c("aqua", sat_scale=0.48, light=0.66),
+        "sky": c("aqua", hue_shift=12, sat_scale=0.46, light=0.72),
+        "sapphire": c("blue", hue_shift=-8, sat_scale=0.50, light=0.66),
+        "blue": c("blue", sat_scale=0.50, light=0.68),
+        "lavender": c("purple", hue_shift=22, sat_scale=0.38, light=0.76),
+        "klink": c("blue", sat_scale=0.52, light=0.64),
+        "klinkSelection": c("blue", sat_scale=0.52, light=0.64),
+        "kvisited": c("aqua", sat_scale=0.50, light=0.60),
+        "kvisitedSelection": c("aqua", sat_scale=0.50, light=0.60),
+        "knegative": c("red", sat_scale=0.62, light=0.62),
+        "knegativeSelection": c("red", sat_scale=0.62, light=0.62),
+        "kneutral": c("yellow", sat_scale=0.58, light=0.62),
+        "kneutralSelection": c("yellow", sat_scale=0.58, light=0.62),
+        "kpositive": c("green", sat_scale=0.54, light=0.58),
+        "kpositiveSelection": c("green", sat_scale=0.54, light=0.58),
+        "text": c("fg", sat_scale=0.66, light=0.86),
+        "subtext1": c("fg", sat_scale=0.42, light=0.74),
+        "subtext0": c("fg", sat_scale=0.34, light=0.64),
+        "overlay2": c("fg", sat_scale=0.28, light=0.54),
+        "overlay1": c("fg", sat_scale=0.22, light=0.46),
+        "overlay0": c("fg", sat_scale=0.18, light=0.38),
+        "surface2": c("grey", sat_scale=0.20, light=0.30),
+        "surface1": c("bg", sat_scale=0.66, light=0.20),
+        "surface0": c("bg", sat_scale=0.70, light=0.17),
+        "base": c("bg", sat_scale=0.82, light=0.12),
+        "mantle": c("bg", sat_scale=0.74, light=0.10),
+        "crust": c("bg", sat_scale=0.76, light=0.08),
+        "success": c("green", sat_scale=0.54, light=0.58),
+        "onSuccess": c("bg", sat_scale=0.84, light=0.13),
+        "successContainer": c("green", sat_scale=0.40, light=0.27),
+        "onSuccessContainer": c("green", sat_scale=0.56, light=0.86),
+    }
+
+    validate_scheme(source, scheme, "Nurture dark scheme")
+
+    return scheme
+
+
+def write_scheme(source: dict[str, str], scheme: dict[str, str], destination: Path) -> None:
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text("\n".join(f"{key} {scheme[key]}" for key in source) + "\n")
 
 
 scheme_roots = sorted(Path("/usr/lib").glob("python*/site-packages/caelestia/data/schemes"))
@@ -186,13 +323,23 @@ if not scheme_roots:
     raise SystemExit("Caelestia scheme data directory was not found under /usr/lib/python*/site-packages")
 
 for scheme_root in scheme_roots:
-    source_path = scheme_root / "everforest" / "medium" / "light.txt"
-    if not source_path.exists():
-        raise SystemExit(f"Expected Everforest light scheme was not found at {source_path}")
+    light_source_path = scheme_root / "everforest" / "medium" / "light.txt"
+    dark_source_path = scheme_root / "everforest" / "medium" / "dark.txt"
+    if not light_source_path.exists():
+        raise SystemExit(f"Expected Everforest light scheme was not found at {light_source_path}")
+    if not dark_source_path.exists():
+        raise SystemExit(f"Expected Everforest dark scheme was not found at {dark_source_path}")
 
-    source = read_scheme(source_path)
-    scheme = build_nurture(source)
-    destination = scheme_root / "nurture" / "default" / "light.txt"
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_text("\n".join(f"{key} {scheme[key]}" for key in source) + "\n")
+    light_source = read_scheme(light_source_path)
+    dark_source = read_scheme(dark_source_path)
+    write_scheme(
+        light_source,
+        build_nurture_light(light_source),
+        scheme_root / "nurture" / "default" / "light.txt",
+    )
+    write_scheme(
+        dark_source,
+        build_nurture_dark(dark_source),
+        scheme_root / "nurture" / "default" / "dark.txt",
+    )
 PY
