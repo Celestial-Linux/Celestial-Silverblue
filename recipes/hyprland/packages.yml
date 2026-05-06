@@ -5,13 +5,13 @@ repos:
         - fury-nushell.repo
     copr:
         - name: lionheartp/Hyprland
-          chroot: fedora-43-x86_64
+          chroot: fedora-44-x86_64
         - name: lihaohong/yazi
-          chroot: fedora-43-x86_64
+          chroot: fedora-44-x86_64
         - name: atim/starship
-          chroot: fedora-43-x86_64
+          chroot: fedora-44-x86_64
         - name: celestelove/lidm
-          chroot: fedora-43-x86_64
+          chroot: fedora-44-x86_64
 remove:
     packages:
         - dunst

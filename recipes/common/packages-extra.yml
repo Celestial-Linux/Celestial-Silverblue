@@ -3,11 +3,11 @@ type: dnf
 repos:
     copr:
         - name: ublue-os/akmods
-          chroot: fedora-43-x86_64
+          chroot: fedora-44-x86_64
         - name: atim/starship
-          chroot: fedora-43-x86_64
+          chroot: fedora-44-x86_64
         - name: imput/helium
-          chroot: fedora-43-x86_64
+          chroot: fedora-44-x86_64
 
     files:
         - charm.repo

@@ -3,7 +3,7 @@ name: celestial-hyprland
 description: A custom image of Fedora and Hyprland with personal modifications.
 
 base-image: ghcr.io/secureblue/sericea-main-hardened
-image-version: 43
+image-version: 44
 
 modules:
     - from-file: hyprland/packages.yml

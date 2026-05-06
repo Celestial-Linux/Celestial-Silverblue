@@ -3,11 +3,11 @@ type: dnf
 repos:
     copr:
         - name: celestelove/app2unit
-          chroot: fedora-43-x86_64
+          chroot: fedora-44-x86_64
         - name: celestelove/libcava
-          chroot: fedora-43-x86_64
+          chroot: fedora-44-x86_64
         - name: celestelove/caelestia
-          chroot: fedora-43-x86_64
+          chroot: fedora-44-x86_64
 install:
     packages:
         - libcava-devel

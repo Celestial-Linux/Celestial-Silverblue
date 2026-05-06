@@ -3,7 +3,7 @@ name: celestial-kinoite
 description: A custom image of Fedora Kinoite with personal modifications.
 
 base-image: ghcr.io/secureblue/kinoite-nvidia-open-hardened
-image-version: 43
+image-version: 44
 
 modules:
   - from-file: kinoite/packages.yml
