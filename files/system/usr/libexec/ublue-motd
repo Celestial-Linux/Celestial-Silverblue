@@ -88,7 +88,7 @@ let tip = if $is_deprecated {
     '**Your current image is over 1 week old, run `rpm-ostree upgrade`.**'
 } else {
     try {
-        let tips = open $tips_path | lines
+        let tips = open --raw $tips_path | lines
         $tips | get (random int 0..(($tips | length) - 1))
     } catch {
         '**For secureblue release notifications,** [subscribe:](https://secureblue.dev/faq#releases)'
