@@ -62,10 +62,14 @@ install:
         - git-credential-libsecret
         - gcr
 
+        # Appearance
+        - nwg-look
+
         # General utilities and file explorer
         - yazi
         - podman-compose
         - mpv
+        - swayimg
         - neovim
 
         # Dependencies for Hyprland plugin manager:
@@ -73,4 +77,3 @@ install:
         - meson
         - gcc-c++
         - mesa-libGLES-devel
-
