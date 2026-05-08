@@ -64,7 +64,7 @@ if gtk_new not in content:
     else:
         raise SystemExit(f"Expected Caelestia GTK theme block not found in {theme_path}")
 
-terminal_new = '''def gen_kitty_config(colours: dict[str, str]) -> str:
+terminal_new = r'''def gen_kitty_config(colours: dict[str, str]) -> str:
     settings = {
         "foreground": colours["onSurface"],
         "background": colours["surface"],
@@ -80,7 +80,7 @@ terminal_new = '''def gen_kitty_config(colours: dict[str, str]) -> str:
         }
     )
 
-    return "\\n".join(f"{name} #{colour}" for name, colour in settings.items()) + "\\n"
+    return "\n".join(f"{name} #{colour}" for name, colour in settings.items()) + "\n"
 
 
 def write_file(path: Path, content: str) -> None:
@@ -107,14 +107,16 @@ def apply_terms(colours: dict[str, str]) -> None:
     )
 '''
 
-if "def gen_kitty_config(colours: dict[str, str]) -> str:" not in content:
+if terminal_new not in content:
     terminal_pattern = re.compile(
-        r"def \w+\(c: str, \*i: (?:list\[int\]|int)\) -> str:\n"
-        r".*?"
+        r"(?:"
+        r"def \w+\(c: str, \*i: (?:list\[int\]|int)\) -> str:"
+        r"|def gen_kitty_config\(colours: dict\[str, str\]\) -> str:"
+        r")\n.*?"
         r"\n(?=@log_exception\ndef apply_hypr\(conf: str\) -> None:\n)",
         re.DOTALL,
     )
-    content, terminal_count = terminal_pattern.subn(terminal_new, content, count=1)
+    content, terminal_count = terminal_pattern.subn(lambda _: terminal_new, content, count=1)
     if terminal_count != 1:
         raise SystemExit(f"Expected Caelestia terminal sequence block not found in {theme_path}")
 
@@ -135,7 +137,7 @@ if write_file_new not in content:
         r"\n(?=@log_exception\ndef apply_terms\()",
         re.DOTALL,
     )
-    content, write_file_count = write_file_pattern.subn(write_file_new, content, count=1)
+    content, write_file_count = write_file_pattern.subn(lambda _: write_file_new, content, count=1)
     if write_file_count != 1:
         raise SystemExit(f"Expected Caelestia write_file block not found in {theme_path}")
 
