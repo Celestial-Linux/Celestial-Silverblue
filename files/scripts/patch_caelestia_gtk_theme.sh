@@ -3,6 +3,7 @@
 set -euo pipefail
 
 python3 - <<'PY'
+import re
 from pathlib import Path
 
 matches = sorted(Path("/usr/lib").glob("python*/site-packages/caelestia/utils/theme.py"))
@@ -63,81 +64,6 @@ if gtk_new not in content:
     else:
         raise SystemExit(f"Expected Caelestia GTK theme block not found in {theme_path}")
 
-terminal_old = r'''def c2s(c: str, *i: list[int]) -> str:
-    """Hex to ANSI sequence (e.g. ffffff, 11 -> \x1b]11;rgb:ff/ff/ff\x1b\\)"""
-    return f"\x1b]{';'.join(map(str, i))};rgb:{c[0:2]}/{c[2:4]}/{c[4:6]}\x1b\\"
-
-
-def gen_sequences(colours: dict[str, str]) -> str:
-    """
-    10: foreground
-    11: background
-    12: cursor
-    17: selection
-    4:
-        0 - 7: normal colours
-        8 - 15: bright colours
-        16+: 256 colours
-    """
-    return (
-        c2s(colours["onSurface"], 10)
-        + c2s(colours["surface"], 11)
-        + c2s(colours["secondary"], 12)
-        + c2s(colours["secondary"], 17)
-        + c2s(colours["term0"], 4, 0)
-        + c2s(colours["term1"], 4, 1)
-        + c2s(colours["term2"], 4, 2)
-        + c2s(colours["term3"], 4, 3)
-        + c2s(colours["term4"], 4, 4)
-        + c2s(colours["term5"], 4, 5)
-        + c2s(colours["term6"], 4, 6)
-        + c2s(colours["term7"], 4, 7)
-        + c2s(colours["term8"], 4, 8)
-        + c2s(colours["term9"], 4, 9)
-        + c2s(colours["term10"], 4, 10)
-        + c2s(colours["term11"], 4, 11)
-        + c2s(colours["term12"], 4, 12)
-        + c2s(colours["term13"], 4, 13)
-        + c2s(colours["term14"], 4, 14)
-        + c2s(colours["term15"], 4, 15)
-        + c2s(colours["primary"], 4, 16)
-        + c2s(colours["secondary"], 4, 17)
-        + c2s(colours["tertiary"], 4, 18)
-    )
-
-
-def write_file(path: Path, content: str) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-
-    with tempfile.NamedTemporaryFile("w") as f:
-        f.write(content)
-        f.flush()
-        shutil.move(f.name, path)
-
-
-@log_exception
-def apply_terms(sequences: str) -> None:
-    state = c_state_dir / "sequences.txt"
-    state.parent.mkdir(parents=True, exist_ok=True)
-    state.write_text(sequences)
-
-    pts_path = Path("/dev/pts")
-    for pt in pts_path.iterdir():
-        if pt.name.isdigit():
-            try:
-                # Use non-blocking write with timeout to prevent hangs
-                import os
-
-                fd = os.open(str(pt), os.O_WRONLY | os.O_NONBLOCK | os.O_NOCTTY)
-                try:
-                    os.write(fd, sequences.encode())
-                finally:
-                    os.close(fd)
-            except (PermissionError, OSError, BlockingIOError):
-                # Skip terminals that are busy, closed, or inaccessible
-                pass
-'''
-
 terminal_new = '''def gen_kitty_config(colours: dict[str, str]) -> str:
     settings = {
         "foreground": colours["onSurface"],
@@ -162,10 +88,7 @@ def write_file(path: Path, content: str) -> None:
     if path.is_symlink():
         path.unlink()
 
-    with tempfile.NamedTemporaryFile("w") as f:
-        f.write(content)
-        f.flush()
-        shutil.move(f.name, path)
+    path.write_text(content)
 
 
 @log_exception
@@ -184,10 +107,16 @@ def apply_terms(colours: dict[str, str]) -> None:
     )
 '''
 
-if terminal_new not in content:
-    if terminal_old not in content:
+if "def gen_kitty_config(colours: dict[str, str]) -> str:" not in content:
+    terminal_pattern = re.compile(
+        r"def \w+\(c: str, \*i: (?:list\[int\]|int)\) -> str:\n"
+        r".*?"
+        r"\n(?=@log_exception\ndef apply_hypr\(conf: str\) -> None:\n)",
+        re.DOTALL,
+    )
+    content, terminal_count = terminal_pattern.subn(terminal_new, content, count=1)
+    if terminal_count != 1:
         raise SystemExit(f"Expected Caelestia terminal sequence block not found in {theme_path}")
-    content = content.replace(terminal_old, terminal_new)
 
 content = content.replace("apply_terms(gen_sequences(colours))", "apply_terms(colours)")
 
@@ -196,29 +125,18 @@ write_file_new = '''def write_file(path: Path, content: str) -> None:
     if path.is_symlink():
         path.unlink()
 
-    with tempfile.NamedTemporaryFile("w") as f:
-        f.write(content)
-        f.flush()
-        shutil.move(f.name, path)
+    path.write_text(content)
 '''
 
 if write_file_new not in content:
-    write_file_replacements = [
-        '''def write_file(path: Path, content: str) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-
-    with tempfile.NamedTemporaryFile("w") as f:
-        f.write(content)
-        f.flush()
-        shutil.move(f.name, path)
-''',
-    ]
-
-    for old in write_file_replacements:
-        if old in content:
-            content = content.replace(old, write_file_new)
-            break
-    else:
+    write_file_pattern = re.compile(
+        r"def write_file\(path: Path, content: str\) -> None:\n"
+        r".*?"
+        r"\n(?=@log_exception\ndef apply_terms\()",
+        re.DOTALL,
+    )
+    content, write_file_count = write_file_pattern.subn(write_file_new, content, count=1)
+    if write_file_count != 1:
         raise SystemExit(f"Expected Caelestia write_file block not found in {theme_path}")
 
 if content != original:
