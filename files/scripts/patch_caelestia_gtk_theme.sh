@@ -159,6 +159,8 @@ terminal_new = '''def gen_kitty_config(colours: dict[str, str]) -> str:
 
 def write_file(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
+    if path.is_symlink():
+        path.unlink()
 
     with tempfile.NamedTemporaryFile("w") as f:
         f.write(content)
@@ -188,6 +190,36 @@ if terminal_new not in content:
     content = content.replace(terminal_old, terminal_new)
 
 content = content.replace("apply_terms(gen_sequences(colours))", "apply_terms(colours)")
+
+write_file_new = '''def write_file(path: Path, content: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if path.is_symlink():
+        path.unlink()
+
+    with tempfile.NamedTemporaryFile("w") as f:
+        f.write(content)
+        f.flush()
+        shutil.move(f.name, path)
+'''
+
+if write_file_new not in content:
+    write_file_replacements = [
+        '''def write_file(path: Path, content: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    with tempfile.NamedTemporaryFile("w") as f:
+        f.write(content)
+        f.flush()
+        shutil.move(f.name, path)
+''',
+    ]
+
+    for old in write_file_replacements:
+        if old in content:
+            content = content.replace(old, write_file_new)
+            break
+    else:
+        raise SystemExit(f"Expected Caelestia write_file block not found in {theme_path}")
 
 if content != original:
     theme_path.write_text(content)
