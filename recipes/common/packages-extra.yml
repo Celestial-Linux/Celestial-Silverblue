@@ -19,6 +19,7 @@ install:
         - file-roller
         - fastfetch
         - gamemode
+        - mimalloc
         - glow
         - tailscale
         - starship

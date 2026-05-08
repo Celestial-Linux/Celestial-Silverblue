@@ -2,4 +2,4 @@
 modules:
   - type: script
     scripts:
-      - undo_hardened_malloc_pam.sh
+      - set_mimalloc_pam.sh

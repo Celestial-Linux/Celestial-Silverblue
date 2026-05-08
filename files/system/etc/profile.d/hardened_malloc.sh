@@ -1,2 +1,2 @@
 #!/usr/bin/sh
-export LD_PRELOAD='libno_rlimit_as.so'
+export LD_PRELOAD='libmimalloc.so.2 libno_rlimit_as.so'
