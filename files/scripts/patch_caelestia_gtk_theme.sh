@@ -17,6 +17,11 @@ theme_path = matches[0]
 content = theme_path.read_text()
 original = content
 
+if "import os\n" not in content:
+    if "import subprocess\n" not in content:
+        raise SystemExit(f"Expected subprocess import not found in {theme_path}")
+    content = content.replace("import subprocess\n", "import os\nimport subprocess\n", 1)
+
 gtk_new = """    gtk_theme = "adw-gtk3-dark" if mode == "dark" else "adw-gtk3"
     color_scheme = "prefer-dark" if mode == "dark" else "prefer-light"
     subprocess.run(["gsettings", "set", "org.gnome.desktop.interface", "gtk-theme", gtk_theme])
@@ -91,6 +96,29 @@ def write_file(path: Path, content: str) -> None:
     path.write_text(content)
 
 
+def kitty_remote_addresses() -> list[str]:
+    addresses: list[str] = []
+    seen: set[str] = set()
+
+    def add(address: str | None) -> None:
+        if address and address not in seen:
+            seen.add(address)
+            addresses.append(address)
+
+    add(os.environ.get("KITTY_LISTEN_ON"))
+
+    runtime_dir = os.environ.get("XDG_RUNTIME_DIR")
+    if runtime_dir:
+        for socket_path in sorted(Path(runtime_dir).glob("kitty*")):
+            try:
+                if socket_path.is_socket():
+                    add(f"unix:{socket_path}")
+            except OSError:
+                pass
+
+    return addresses
+
+
 @log_exception
 def apply_terms(colours: dict[str, str]) -> None:
     kitty_config = theme_dir / "kitty.conf"
@@ -100,6 +128,21 @@ def apply_terms(colours: dict[str, str]) -> None:
         (c_state_dir / "sequences.txt").unlink()
     except FileNotFoundError:
         pass
+
+    for address in kitty_remote_addresses():
+        subprocess.run(
+            [
+                "kitty",
+                "@",
+                "--to",
+                address,
+                "set-colors",
+                "--all",
+                "--configured",
+                str(kitty_config),
+            ],
+            stderr=subprocess.DEVNULL,
+        )
 
     subprocess.run(
         ["kitty", "@", "set-colors", "--all", "--configured", str(kitty_config)],
