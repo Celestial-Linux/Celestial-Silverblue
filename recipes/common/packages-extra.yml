@@ -15,6 +15,7 @@ repos:
 install:
     packages:
         - google-roboto-fonts
+        - google-noto-color-emoji-fonts
         - openssh-askpass
         - file-roller
         - fastfetch
