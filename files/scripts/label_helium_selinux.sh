@@ -2,6 +2,7 @@
 set -euo pipefail
 
 helium_dir="/usr/lib/opt/helium"
+helium_fcontext_dir="/opt/helium"
 
 if [[ ! -x "${helium_dir}/helium-wrapper" ]]; then
     echo "Helium is not installed; skipping SELinux labeling."
@@ -21,8 +22,10 @@ add_or_update_fcontext() {
 
 # Reuse secureblue's Trivalent browser domain so Helium can keep Chromium's
 # namespace sandbox while harden_userns blocks generic unconfined processes.
-add_or_update_fcontext trivalent_script_exec_t "${helium_dir}/helium-wrapper"
-add_or_update_fcontext trivalent_exec_t "${helium_dir}/(chrome|helium|helium_crashpad_handler)"
+# semanage has an equivalency rule mapping /usr/lib/opt to /opt, so fcontext
+# rules must be registered against the canonical /opt path.
+add_or_update_fcontext trivalent_script_exec_t "${helium_fcontext_dir}/helium-wrapper"
+add_or_update_fcontext trivalent_exec_t "${helium_fcontext_dir}/(chrome|helium|helium_crashpad_handler)"
 
 restorecon -v \
     "${helium_dir}/helium-wrapper" \
