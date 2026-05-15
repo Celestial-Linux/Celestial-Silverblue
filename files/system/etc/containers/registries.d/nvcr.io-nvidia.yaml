@@ -1,0 +1,3 @@
+docker:
+  nvcr.io/nvidia:
+    use-sigstore-attachments: true
