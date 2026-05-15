@@ -8,7 +8,6 @@ image-version: 44
 modules:
     - from-file: silverblue/packages.yml
     - from-file: common/packages-extra.yml
-    - from-file: common/helium.yml
     - from-file: common/fonts.yml
     - from-file: common/packages-nvidia.yml
     - from-file: common/files.yml

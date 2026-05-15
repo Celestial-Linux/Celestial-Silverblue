@@ -6,8 +6,6 @@ repos:
           chroot: fedora-44-x86_64
         - name: atim/starship
           chroot: fedora-44-x86_64
-        - name: imput/helium
-          chroot: fedora-44-x86_64
 
     files:
         - charm.repo
@@ -15,7 +13,6 @@ repos:
 install:
     packages:
         - google-roboto-fonts
-        - twitter-twemoji-fonts
         - openssh-askpass
         - file-roller
         - fastfetch
@@ -24,7 +21,6 @@ install:
         - glow
         - tailscale
         - starship
-        - helium-bin
         - wcurl
         - git-lfs
 
