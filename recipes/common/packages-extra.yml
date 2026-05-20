@@ -6,6 +6,8 @@ repos:
           chroot: fedora-44-x86_64
         - name: atim/starship
           chroot: fedora-44-x86_64
+        - name: sureclaw/codex
+          chroot: fedora-44-x86_64
 
     files:
         - charm.repo
@@ -22,6 +24,8 @@ install:
         - tailscale
         - starship
         - wcurl
+        - codex
+        - ripgrep
         - git-lfs
         - git-delta
 
