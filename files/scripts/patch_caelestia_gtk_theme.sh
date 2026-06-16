@@ -22,13 +22,25 @@ if "import os\n" not in content:
         raise SystemExit(f"Expected subprocess import not found in {theme_path}")
     content = content.replace("import subprocess\n", "import os\nimport subprocess\n", 1)
 
-gtk_new = """    gtk_theme = "adw-gtk3-dark" if mode == "dark" else "adw-gtk3"
+gtk_old = """    gtk_theme = "adw-gtk3-dark" if mode == "dark" else "adw-gtk3"
     color_scheme = "prefer-dark" if mode == "dark" else "prefer-light"
     subprocess.run(["gsettings", "set", "org.gnome.desktop.interface", "gtk-theme", gtk_theme])
     subprocess.run(["gsettings", "set", "org.gnome.desktop.interface", "color-scheme", color_scheme])
 """
 
+gtk_new = """    gtk_theme = "adw-gtk3-dark" if mode == "dark" else "adw-gtk3"
+    color_scheme = "prefer-dark" if mode == "dark" else "prefer-light"
+    gsettings = "/usr/bin/gsettings"
+    subprocess.run([gsettings, "set", "org.gnome.desktop.interface", "gtk-theme", gtk_theme])
+    subprocess.run([gsettings, "set", "org.gnome.desktop.interface", "color-scheme", color_scheme])
+"""
+
 gtk_replacements = [
+    # Previous Celestial patch that used PATH resolution for gsettings.
+    (
+        gtk_old,
+        gtk_new,
+    ),
     # Current upstream shape: hard-coded dark GTK theme followed by mode-derived color scheme.
     (
         """    subprocess.run(["dconf", "write", "/org/gnome/desktop/interface/gtk-theme", "'adw-gtk3-dark'"])
