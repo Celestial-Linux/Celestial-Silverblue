@@ -1,2 +1,0 @@
-/usr/bin/codex          --  gen_context(system_u:object_r:codex_exec_t,s0)
-/usr/bin/codex-sandbox  --  gen_context(system_u:object_r:codex_exec_t,s0)
