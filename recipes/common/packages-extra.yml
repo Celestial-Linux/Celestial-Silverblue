@@ -26,6 +26,15 @@ install:
         - git-lfs
         - git-delta
 
+        # Development tools
+        - clang-devel
+        - gdb
+        - gtest-devel
+        - alsa-lib-devel
+        - pipewire-devel
+        - libxkbcommon-x11-devel
+        - dangerzone
+
         # MusicPresence
         - https://github.com/ungive/discord-music-presence/releases/download/v2.3.5/musicpresence-2.3.5-linux-x86_64.rpm
         # DeckMaster
