@@ -132,15 +132,6 @@
           }
         }
       ],
-      "ghcr.io/freedomofpress/dangerzone": [
-        {
-          "type": "sigstoreSigned",
-          "keyPath": "/usr/etc/pki/containers/freedomofpress-dangerzone.pub",
-          "signedIdentity": {
-            "type": "matchRepository"
-          }
-        }
-      ],
       "": [
         {
           "type": "reject"
