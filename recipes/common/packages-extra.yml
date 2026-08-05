@@ -25,7 +25,6 @@ install:
         - ripgrep
         - git-lfs
         - git-delta
-        - incus
 
         # Development tools
         - clang-devel
