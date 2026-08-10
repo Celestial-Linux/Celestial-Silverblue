@@ -18,7 +18,3 @@ modules:
       - remove_unused_repos.sh
       - set_early_loading.sh
       - set_drm_variables.sh
-  - type: files
-    files:
-      - source: system/nvidia
-        destination: /

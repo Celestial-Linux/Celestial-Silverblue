@@ -3,3 +3,8 @@ modules:
   - type: script
     scripts:
       - install_nvidia_cdi.sh
+  - type: systemd
+    system:
+      enabled:
+        - nvidia-cdi-refresh.path
+        - nvidia-cdi-refresh.service
