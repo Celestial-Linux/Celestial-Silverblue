@@ -1,0 +1,29 @@
+# OpenRGB access for Celeste's RGB hardware.
+#
+# Keep this file immediately before 73-seat-late.rules so it filters earlier
+# device tags before systemd-logind grants access to the active local session.
+# I2C permissions cover the entire matched adapter; Linux cannot restrict an
+# i2c-dev node to individual bus addresses.
+
+# Remove access inherited from earlier rules before adding it back only for the
+# interfaces required below.
+SUBSYSTEM=="i2c-dev", TAG-="uaccess"
+KERNEL=="port", TAG-="uaccess"
+
+# ENE DRAM controllers at addresses 0x71 and 0x73 on the ASRock AMD SMBus.
+SUBSYSTEM=="i2c-dev", KERNEL=="i2c-*", ATTR{name}=="SMBus PIIX4 adapter port 0 at *", ATTRS{vendor}=="0x1022", ATTRS{device}=="0x790b", ATTRS{subsystem_vendor}=="0x1849", TAG+="uaccess"
+
+# EVGA GeForce RTX 3080 FTW3 Ultra RGB controller at address 0x2d.
+SUBSYSTEM=="i2c-dev", KERNEL=="i2c-*", ATTR{name}=="NVIDIA i2c adapter 1 at *", ATTRS{vendor}=="0x10de", ATTRS{device}=="0x2206", ATTRS{subsystem_vendor}=="0x3842", ATTRS{subsystem_device}=="0x3897", TAG+="uaccess"
+
+# DDC/CI adapters for monitors connected to the EVGA GeForce RTX 3080.
+SUBSYSTEM=="i2c-dev", KERNEL=="i2c-*", ATTR{name}=="NVIDIA i2c adapter [5-8] at *", ATTRS{vendor}=="0x10de", ATTRS{device}=="0x2206", ATTRS{subsystem_vendor}=="0x3842", ATTRS{subsystem_device}=="0x3897", TAG+="uaccess"
+
+# Razer DeathAdder Essential V2 RGB HID interface only. Reset access on all
+# interfaces first so older product-wide rules cannot expose interfaces 1/2.
+SUBSYSTEM=="hidraw", ENV{ID_VENDOR_ID}=="1532", ENV{ID_MODEL_ID}=="0098", TAG-="uaccess"
+SUBSYSTEM=="hidraw", ENV{ID_VENDOR_ID}=="1532", ENV{ID_MODEL_ID}=="0098", ENV{ID_USB_INTERFACE_NUM}=="00", TAG+="uaccess"
+
+# NZXT motherboard RGB controller HID interface only.
+SUBSYSTEM=="hidraw", ENV{ID_VENDOR_ID}=="1e71", ENV{ID_MODEL_ID}=="201b", TAG-="uaccess"
+SUBSYSTEM=="hidraw", ENV{ID_VENDOR_ID}=="1e71", ENV{ID_MODEL_ID}=="201b", ENV{ID_USB_INTERFACE_NUM}=="00", TAG+="uaccess"
