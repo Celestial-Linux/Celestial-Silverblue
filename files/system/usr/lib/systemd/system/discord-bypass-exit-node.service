@@ -1,0 +1,18 @@
+[Unit]
+Description=Route Discord traffic around Tailscale exit nodes
+# Discord rejects some exit node IPs. These rules sit ahead of Tailscale's
+# "lookup 52" rule (priority 5270), so Discord uses the main routing table.
+Before=network-pre.target tailscaled.service
+Wants=network-pre.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+# Discord web, gateway and CDN (Cloudflare) and voice servers.
+ExecStart=/usr/bin/ip -4 rule add priority 5200 to 162.159.128.0/20 lookup main
+ExecStart=/usr/bin/ip -4 rule add priority 5200 to 66.22.192.0/18 lookup main
+ExecStop=-/usr/bin/ip -4 rule del priority 5200 to 162.159.128.0/20 lookup main
+ExecStop=-/usr/bin/ip -4 rule del priority 5200 to 66.22.192.0/18 lookup main
+
+[Install]
+WantedBy=multi-user.target

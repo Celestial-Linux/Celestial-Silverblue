@@ -3,3 +3,4 @@ type: systemd
 system:
   enabled:
     - tailscaled.service
+    - discord-bypass-exit-node.service
