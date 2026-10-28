@@ -40,3 +40,7 @@ install:
         - https://github.com/muesli/deckmaster/releases/download/v0.9.0/deckmaster_0.9.0_linux_amd64.rpm
         # Sidra
         - https://github.com/wimpysworld/sidra/releases/download/0.3.5/Sidra-0.3.5-linux-x86_64.rpm
+        # OpenShell
+        - https://github.com/NVIDIA/OpenShell/releases/download/v0.1.6/openshell-0.1.6-1.fc44.x86_64.rpm
+        - https://github.com/NVIDIA/OpenShell/releases/download/v0.1.6/openshell-gateway-0.1.6-1.fc44.x86_64.rpm
+        - https://github.com/NVIDIA/OpenShell/releases/download/v0.1.6/openshell-prover-0.1.6-1.fc44.x86_64.rpm
