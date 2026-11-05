@@ -9,6 +9,8 @@ modules:
           chroot: fedora-45-x86_64
         - name: celestelove/caelestia
           chroot: fedora-45-x86_64
+        - name: deltacopy/darkly
+          chroot: fedora-45-x86_64
     install:
       packages:
         - libcava-devel
@@ -28,6 +30,7 @@ modules:
         - caelestia-cli
         - qtengine
         - papirus-icon-theme
+        - darkly-qt6
   - type: script
     scripts:
       - patch_caelestia_gtk_theme.sh
