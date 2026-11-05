@@ -26,6 +26,8 @@ modules:
         - qt6-qtbase
         - caelestia-shell
         - caelestia-cli
+        - qtengine
+        - papirus-icon-theme
   - type: script
     scripts:
       - patch_caelestia_gtk_theme.sh
