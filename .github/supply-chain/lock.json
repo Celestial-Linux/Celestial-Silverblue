@@ -1,0 +1,1778 @@
+{
+  "external_rpms": {
+    "https://github.com/muesli/deckmaster/releases/download/v0.9.0/deckmaster_0.9.0_linux_amd64.rpm": {
+      "latest_tag": "v0.9.0",
+      "pinned_sha256": "b7ef5a830afc806053bc34e2a308e1adf83a31ac3f229a5585c58a7709b9c941",
+      "pinned_tag": "v0.9.0",
+      "published_matches_pin": true
+    },
+    "https://github.com/ungive/discord-music-presence/releases/download/v2.3.6/musicpresence-2.3.6-linux-x86_64.rpm": {
+      "latest_tag": "v2.3.6",
+      "pinned_sha256": "10b3a459ae40d21cf8777c9ab137cff73bfd482d584f3b4df0631ec7b41dd89f",
+      "pinned_tag": "v2.3.6",
+      "published_matches_pin": true
+    },
+    "https://github.com/wimpysworld/sidra/releases/download/0.3.5/Sidra-0.3.5-linux-x86_64.rpm": {
+      "latest_tag": "1.2.1",
+      "pinned_sha256": "6bc9a260291583b0050525d18c50d82c49a85972d9265359a2c4f4e1ea9432bb",
+      "pinned_tag": "0.3.5",
+      "published_matches_pin": true
+    }
+  },
+  "releasever": "45",
+  "repos": {
+    "copr:copr.fedorainfracloud.org:atim:starship": {
+      "copr": {
+        "additional_repos": [],
+        "runtime_dependencies": "",
+        "sources": {
+          "starship": {
+            "source": {
+              "pkg": "starship.spec",
+              "tmp": "tmpyibd435c",
+              "url": "https://copr.fedorainfracloud.org/tmp/tmpyibd435c/starship.spec"
+            },
+            "source_type": "upload"
+          }
+        }
+      },
+      "file": "copr-atim-starship.repo",
+      "gpgkey_sha256": {
+        "https://download.copr.fedorainfracloud.org/results/atim/starship/pubkey.gpg": "50a10e5e873df17de2f660ac5be3ab15b4070e5acbea5a6728f8d39bdecbfe30"
+      },
+      "packages": {
+        "starship.x86_64": {
+          "buildtime": "1767123706",
+          "evr": "1.24.2-1.fc44",
+          "location": "https://download.copr.fedorainfracloud.org/results/atim/starship/fedora-45-x86_64/Packages/s/starship-1.24.2-1.fc44.x86_64.rpm",
+          "size": "3738628",
+          "sourcerpm": "starship-1.24.2-1.fc44.src.rpm"
+        }
+      },
+      "settings": {
+        "baseurl": "https://download.copr.fedorainfracloud.org/results/atim/starship/fedora-$releasever-$basearch/",
+        "enabled": "1",
+        "gpgcheck": "1",
+        "gpgkey": "https://download.copr.fedorainfracloud.org/results/atim/starship/pubkey.gpg",
+        "includepkgs": "starship",
+        "repo_gpgcheck": "0"
+      }
+    },
+    "copr:copr.fedorainfracloud.org:bieszczaders:kernel-cachyos-addons": {
+      "copr": {
+        "additional_repos": [
+          "copr://bieszczaders/kernel-cachyos-addons"
+        ],
+        "runtime_dependencies": "",
+        "sources": {
+          "cachyos-settings": {
+            "source": {
+              "clone_url": "https://github.com/CachyOS/copr-linux-cachyos",
+              "committish": "master",
+              "source_build_method": "rpkg",
+              "spec": "cachyos-settings.spec",
+              "subdirectory": "sources/cachyos-settings",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "scx-manager": {
+            "source": {
+              "pkg": "scx-manager.spec",
+              "tmp": "tmpp3p22sz7",
+              "url": "https://copr.fedorainfracloud.org/tmp/tmpp3p22sz7/scx-manager.spec"
+            },
+            "source_type": "upload"
+          },
+          "scx-scheds": {
+            "source": {
+              "clone_url": "https://github.com/CachyOS/copr-linux-cachyos",
+              "committish": "master",
+              "source_build_method": "rpkg",
+              "spec": "scx-scheds.spec",
+              "subdirectory": "sources/scx-scheds",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "scx-scheds-git": {
+            "source": {
+              "clone_url": "https://github.com/CachyOS/copr-linux-cachyos/",
+              "committish": "master",
+              "source_build_method": "rpkg",
+              "spec": "scx-scheds-git.spec",
+              "subdirectory": "sources/scx-scheds-git",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "scx-tools": {
+            "source": {
+              "pkg": "scx-tools.spec",
+              "tmp": "tmp_q7rbr90",
+              "url": "https://copr.fedorainfracloud.org/tmp/tmp_q7rbr90/scx-tools.spec"
+            },
+            "source_type": "upload"
+          },
+          "scx-tools-git": {
+            "source": {
+              "clone_url": "https://github.com/CachyOS/copr-linux-cachyos/",
+              "committish": "master",
+              "source_build_method": "rpkg",
+              "spec": "scx-tools-git.spec",
+              "subdirectory": "sources/scx-tools-git",
+              "type": "git"
+            },
+            "source_type": "scm"
+          }
+        }
+      },
+      "file": "copr-bieszczaders-kernel-cachyos-addons.repo",
+      "gpgkey_sha256": {
+        "https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-addons/pubkey.gpg": "4850af58883a4b8b6f3bfc64a576cb8d07b644bf2d554387d318804beb2ec496"
+      },
+      "packages": {
+        "cachyos-settings.x86_64": {
+          "buildtime": "1788287317",
+          "evr": "1.4.0-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-addons/fedora-45-x86_64/Packages/c/cachyos-settings-1.4.0-1.fc45.x86_64.rpm",
+          "size": "25863",
+          "sourcerpm": "cachyos-settings-1.4.0-1.fc45.src.rpm"
+        },
+        "scx-manager.x86_64": {
+          "buildtime": "1788784987",
+          "evr": "1.16.0-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-addons/fedora-45-x86_64/Packages/s/scx-manager-1.16.0-1.fc45.x86_64.rpm",
+          "size": "919800",
+          "sourcerpm": "scx-manager-1.16.0-1.fc45.src.rpm"
+        },
+        "scx-scheds-git.x86_64": {
+          "buildtime": "1792591906",
+          "evr": "1.1.4.20261021.1.git.b7ae70f-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-addons/fedora-45-x86_64/Packages/s/scx-scheds-git-1.1.4.20261021.1.git.b7ae70f-1.fc45.x86_64.rpm",
+          "size": "22352867",
+          "sourcerpm": "scx-scheds-git-1.1.4.20261021.1.git.b7ae70f-1.fc45.src.rpm"
+        },
+        "scx-scheds.x86_64": {
+          "buildtime": "1792101167",
+          "evr": "1.1.4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-addons/fedora-45-x86_64/Packages/s/scx-scheds-1.1.4-1.fc45.x86_64.rpm",
+          "size": "23762427",
+          "sourcerpm": "scx-scheds-1.1.4-1.fc45.src.rpm"
+        },
+        "scx-tools-git.x86_64": {
+          "buildtime": "1792506326",
+          "evr": "1.1.3.20261019.1.git.2c9c3ee-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-addons/fedora-45-x86_64/Packages/s/scx-tools-git-1.1.3.20261019.1.git.2c9c3ee-1.fc45.x86_64.rpm",
+          "size": "1880523",
+          "sourcerpm": "scx-tools-git-1.1.3.20261019.1.git.2c9c3ee-1.fc45.src.rpm"
+        },
+        "scx-tools.x86_64": {
+          "buildtime": "1788784891",
+          "evr": "1.1.3-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-addons/fedora-45-x86_64/Packages/s/scx-tools-1.1.3-1.fc45.x86_64.rpm",
+          "size": "2447511",
+          "sourcerpm": "scx-tools-1.1.3-1.fc45.src.rpm"
+        }
+      },
+      "settings": {
+        "baseurl": "https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-addons/fedora-$releasever-$basearch/",
+        "enabled": "1",
+        "gpgcheck": "1",
+        "gpgkey": "https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-addons/pubkey.gpg",
+        "includepkgs": "cachyos-settings scx-scheds* scx-manager scx-tools*",
+        "repo_gpgcheck": "0"
+      }
+    },
+    "copr:copr.fedorainfracloud.org:bieszczaders:kernel-cachyos-dev": {
+      "copr": {
+        "additional_repos": [],
+        "runtime_dependencies": "",
+        "sources": {
+          "akmods": {
+            "source": {
+              "clone_url": "https://github.com/CachyOS/copr-linux-cachyos",
+              "committish": "feat/akmods",
+              "source_build_method": "rpkg",
+              "spec": "akmods.spec",
+              "subdirectory": "sources/akmods",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "kernel-cachyos-lto": {
+            "source": {
+              "clone_url": "https://github.com/CachyOS/copr-linux-cachyos",
+              "committish": "kernel-upgrades",
+              "source_build_method": "rpkg",
+              "spec": "kernel-cachyos-lto.spec",
+              "subdirectory": "sources/kernel-cachyos-bore",
+              "type": "git"
+            },
+            "source_type": "scm"
+          }
+        }
+      },
+      "file": "copr-bieszczaders-kernel-cachyos-dev.repo",
+      "gpgkey_sha256": {
+        "https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-dev/pubkey.gpg": "fee06c06a36746b3be4807eb490c13f81add5762a12920a9df95ad6eea3ec8f4"
+      },
+      "packages": {
+        "akmods.noarch": {
+          "buildtime": "1736618873",
+          "evr": "0.6.0-cachyos2",
+          "location": "https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-dev/fedora-45-x86_64/Packages/a/akmods-0.6.0-cachyos2.noarch.rpm",
+          "size": "31624",
+          "sourcerpm": "akmods-0.6.0-cachyos2.src.rpm"
+        },
+        "kernel-cachyos-lto-core.x86_64": {
+          "buildtime": "1789741964",
+          "evr": "7.2.5-cachyos1.lto.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-dev/fedora-45-x86_64/Packages/k/kernel-cachyos-lto-core-7.2.5-cachyos1.lto.fc45.x86_64.rpm",
+          "size": "18082440",
+          "sourcerpm": "kernel-cachyos-lto-7.2.5-cachyos1.lto.fc45.src.rpm"
+        },
+        "kernel-cachyos-lto-devel-matched.x86_64": {
+          "buildtime": "1789741964",
+          "evr": "7.2.5-cachyos1.lto.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-dev/fedora-45-x86_64/Packages/k/kernel-cachyos-lto-devel-matched-7.2.5-cachyos1.lto.fc45.x86_64.rpm",
+          "size": "6641",
+          "sourcerpm": "kernel-cachyos-lto-7.2.5-cachyos1.lto.fc45.src.rpm"
+        },
+        "kernel-cachyos-lto-devel.x86_64": {
+          "buildtime": "1789741964",
+          "evr": "7.2.5-cachyos1.lto.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-dev/fedora-45-x86_64/Packages/k/kernel-cachyos-lto-devel-7.2.5-cachyos1.lto.fc45.x86_64.rpm",
+          "size": "18969345",
+          "sourcerpm": "kernel-cachyos-lto-7.2.5-cachyos1.lto.fc45.src.rpm"
+        },
+        "kernel-cachyos-lto-modules.x86_64": {
+          "buildtime": "1789741964",
+          "evr": "7.2.5-cachyos1.lto.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-dev/fedora-45-x86_64/Packages/k/kernel-cachyos-lto-modules-7.2.5-cachyos1.lto.fc45.x86_64.rpm",
+          "size": "139826097",
+          "sourcerpm": "kernel-cachyos-lto-7.2.5-cachyos1.lto.fc45.src.rpm"
+        },
+        "kernel-cachyos-lto.x86_64": {
+          "buildtime": "1789741964",
+          "evr": "7.2.5-cachyos1.lto.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-dev/fedora-45-x86_64/Packages/k/kernel-cachyos-lto-7.2.5-cachyos1.lto.fc45.x86_64.rpm",
+          "size": "6745",
+          "sourcerpm": "kernel-cachyos-lto-7.2.5-cachyos1.lto.fc45.src.rpm"
+        }
+      },
+      "settings": {
+        "baseurl": "https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-dev/fedora-$releasever-$basearch/",
+        "enabled": "1",
+        "gpgcheck": "1",
+        "gpgkey": "https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-dev/pubkey.gpg",
+        "includepkgs": "kernel-cachyos-lto* akmods",
+        "repo_gpgcheck": "0"
+      }
+    },
+    "copr:copr.fedorainfracloud.org:brycensranch:gpu-screen-recorder-git": {
+      "copr": {
+        "additional_repos": [],
+        "runtime_dependencies": "",
+        "sources": {
+          "gpu-screen-recorder": {
+            "source": {
+              "clone_url": "https://github.com/BrycensRanch/gpu-screen-recorder-git-copr/",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "gpu-screen-recorder.spec",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "gpu-screen-recorder-adwaita": {
+            "source": {
+              "clone_url": "https://github.com/BrycensRanch/gpu-screen-recorder-git-copr/",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "gpu-screen-recorder-adwaita.spec",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "gpu-screen-recorder-gtk": {
+            "source": {
+              "clone_url": "https://github.com/BrycensRanch/gpu-screen-recorder-git-copr/",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "gpu-screen-recorder-gtk.spec",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "gpu-screen-recorder-notification": {
+            "source": {
+              "clone_url": "https://github.com/BrycensRanch/gpu-screen-recorder-git-copr.git",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "gpu-screen-recorder-notification.spec",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "gpu-screen-recorder-ui": {
+            "source": {
+              "clone_url": "https://github.com/BrycensRanch/gpu-screen-recorder-git-copr.git",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "gpu-screen-recorder-ui.spec",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          }
+        }
+      },
+      "file": "copr-brycensranch-gpu-screen-recorder-git.repo",
+      "gpgkey_sha256": {
+        "https://download.copr.fedorainfracloud.org/results/brycensranch/gpu-screen-recorder-git/pubkey.gpg": "46f42b40d730066eb742d35b76707ff3cb09a9de05caf5c94ff3fbaef810fdb6"
+      },
+      "packages": {
+        "gpu-screen-recorder-adwaita.x86_64": {
+          "buildtime": "1793714951",
+          "evr": "1:2.0.1-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/brycensranch/gpu-screen-recorder-git/fedora-45-x86_64/Packages/g/gpu-screen-recorder-adwaita-2.0.1-1.fc45.x86_64.rpm",
+          "size": "110047",
+          "sourcerpm": "gpu-screen-recorder-adwaita-2.0.1-1.fc45.src.rpm"
+        },
+        "gpu-screen-recorder-gtk.x86_64": {
+          "buildtime": "1793714848",
+          "evr": "2:5.8.1-2.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/brycensranch/gpu-screen-recorder-git/fedora-45-x86_64/Packages/g/gpu-screen-recorder-gtk-5.8.1-2.fc45.x86_64.rpm",
+          "size": "148370",
+          "sourcerpm": "gpu-screen-recorder-gtk-5.8.1-2.fc45.src.rpm"
+        },
+        "gpu-screen-recorder-notification.x86_64": {
+          "buildtime": "1793714842",
+          "evr": "2:1.3.9-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/brycensranch/gpu-screen-recorder-git/fedora-45-x86_64/Packages/g/gpu-screen-recorder-notification-1.3.9-1.fc45.x86_64.rpm",
+          "size": "132145",
+          "sourcerpm": "gpu-screen-recorder-notification-1.3.9-1.fc45.src.rpm"
+        },
+        "gpu-screen-recorder-ui.x86_64": {
+          "buildtime": "1793714940",
+          "evr": "2:1.15.1-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/brycensranch/gpu-screen-recorder-git/fedora-45-x86_64/Packages/g/gpu-screen-recorder-ui-1.15.1-1.fc45.x86_64.rpm",
+          "size": "665947",
+          "sourcerpm": "gpu-screen-recorder-ui-1.15.1-1.fc45.src.rpm"
+        },
+        "gpu-screen-recorder.x86_64": {
+          "buildtime": "1793714837",
+          "evr": "2:6.1.7-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/brycensranch/gpu-screen-recorder-git/fedora-45-x86_64/Packages/g/gpu-screen-recorder-6.1.7-1.fc45.x86_64.rpm",
+          "size": "256897",
+          "sourcerpm": "gpu-screen-recorder-6.1.7-1.fc45.src.rpm"
+        }
+      },
+      "settings": {
+        "baseurl": "https://download.copr.fedorainfracloud.org/results/brycensranch/gpu-screen-recorder-git/fedora-$releasever-$basearch/",
+        "enabled": "1",
+        "gpgcheck": "1",
+        "gpgkey": "https://download.copr.fedorainfracloud.org/results/brycensranch/gpu-screen-recorder-git/pubkey.gpg",
+        "includepkgs": "gpu-screen-recorder*",
+        "repo_gpgcheck": "0"
+      }
+    },
+    "copr:copr.fedorainfracloud.org:celestelove:app2unit": {
+      "copr": {
+        "additional_repos": [],
+        "runtime_dependencies": "",
+        "sources": {
+          "app2unit": {
+            "source": {
+              "clone_url": "https://github.com/KernelFreeze/app2unit-fedora.git",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          }
+        }
+      },
+      "file": "copr-celestelove-app2unit.repo",
+      "gpgkey_sha256": {
+        "https://download.copr.fedorainfracloud.org/results/celestelove/app2unit/pubkey.gpg": "f4564004e1afffb47203e24a7a23e34592b4504cf45829a4f07514c21fd6bd5a"
+      },
+      "packages": {
+        "app2unit.noarch": {
+          "buildtime": "1774481123",
+          "evr": "1.4.0-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/app2unit/fedora-45-x86_64/Packages/a/app2unit-1.4.0-1.fc45.noarch.rpm",
+          "size": "38443",
+          "sourcerpm": "app2unit-1.4.0-1.fc45.src.rpm"
+        }
+      },
+      "settings": {
+        "baseurl": "https://download.copr.fedorainfracloud.org/results/celestelove/app2unit/fedora-$releasever-$basearch/",
+        "enabled": "1",
+        "gpgcheck": "1",
+        "gpgkey": "https://download.copr.fedorainfracloud.org/results/celestelove/app2unit/pubkey.gpg",
+        "includepkgs": "app2unit",
+        "repo_gpgcheck": "0"
+      }
+    },
+    "copr:copr.fedorainfracloud.org:celestelove:caelestia": {
+      "copr": {
+        "additional_repos": [
+          "https://download.copr.fedorainfracloud.org/results/celestelove/libcava/fedora-$releasever-$basearch/"
+        ],
+        "runtime_dependencies": "",
+        "sources": {
+          "caelestia-cli": {
+            "source": {
+              "clone_url": "https://github.com/KernelFreeze/caelestia-shell-fedora.git",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "caelestia-cli.spec",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "caelestia-cli-git": {
+            "source": {
+              "clone_url": "https://github.com/KernelFreeze/caelestia-shell-fedora.git",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "caelestia-cli-git.spec",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "caelestia-shell": {
+            "source": {
+              "clone_url": "https://github.com/KernelFreeze/caelestia-shell-fedora.git",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "caelestia-shell.spec",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "caelestia-shell-git": {
+            "source": {
+              "clone_url": "https://github.com/KernelFreeze/caelestia-shell-fedora.git",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "caelestia-shell-git.spec",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "cascadia-code-nerd-fonts": {
+            "source": {
+              "clone_url": "https://github.com/KernelFreeze/caelestia-shell-fedora.git",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "cascadia-code-nerd-fonts.spec",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "dart": {
+            "source": {
+              "clone_url": "https://github.com/KernelFreeze/caelestia-shell-fedora.git",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "dart.spec",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "dart-sass": {
+            "source": {
+              "clone_url": "https://github.com/KernelFreeze/caelestia-shell-fedora.git",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "dart-sass.spec",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "material-symbols-fonts": {
+            "source": {
+              "clone_url": "https://github.com/KernelFreeze/caelestia-shell-fedora.git",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "material-symbols-fonts.spec",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "python3-materialyoucolor": {
+            "source": {
+              "clone_url": "https://github.com/KernelFreeze/caelestia-shell-fedora.git",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "python3-materialyoucolor.spec",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "qtengine": {
+            "source": {
+              "clone_url": "https://github.com/KernelFreeze/caelestia-shell-fedora.git",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "qtengine.spec",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "rubik-fonts": {
+            "source": {
+              "clone_url": "https://github.com/KernelFreeze/caelestia-shell-fedora.git",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "rubik-fonts.spec",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          }
+        }
+      },
+      "file": "copr-celestelove-caelestia.repo",
+      "gpgkey_sha256": {
+        "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/pubkey.gpg": "5d3aa846bb39f0efd7023200263fadb80003af74845724b7e4ca94b07e9e471c"
+      },
+      "packages": {
+        "caelestia-cli-git.noarch": {
+          "buildtime": "1793899919",
+          "evr": "1.1.3^20261105git6bde2df-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/c/caelestia-cli-git-1.1.3^20261105git6bde2df-1.fc45.noarch.rpm",
+          "size": "324005",
+          "sourcerpm": "caelestia-cli-git-1.1.3^20261105git6bde2df-1.fc45.src.rpm"
+        },
+        "caelestia-cli.noarch": {
+          "buildtime": "1793899849",
+          "evr": "1.1.3-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/c/caelestia-cli-1.1.3-1.fc45.noarch.rpm",
+          "size": "321695",
+          "sourcerpm": "caelestia-cli-1.1.3-1.fc45.src.rpm"
+        },
+        "caelestia-shell-git.x86_64": {
+          "buildtime": "1793899915",
+          "evr": "2.5.0^20261102gitbcbb5d5-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/c/caelestia-shell-git-2.5.0^20261102gitbcbb5d5-1.fc45.x86_64.rpm",
+          "size": "10325530",
+          "sourcerpm": "caelestia-shell-git-2.5.0^20261102gitbcbb5d5-1.fc45.src.rpm"
+        },
+        "caelestia-shell.x86_64": {
+          "buildtime": "1793899862",
+          "evr": "2.5.0-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/c/caelestia-shell-2.5.0-1.fc45.x86_64.rpm",
+          "size": "9834308",
+          "sourcerpm": "caelestia-shell-2.5.0-1.fc45.src.rpm"
+        },
+        "cascadia-code-nerd-fonts.noarch": {
+          "buildtime": "1793899817",
+          "evr": "3.5.1-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/c/cascadia-code-nerd-fonts-3.5.1-1.fc45.noarch.rpm",
+          "size": "7646183",
+          "sourcerpm": "cascadia-code-nerd-fonts-3.5.1-1.fc45.src.rpm"
+        },
+        "dart-sass.x86_64": {
+          "buildtime": "1793899903",
+          "evr": "1.107.1-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/d/dart-sass-1.107.1-1.fc45.x86_64.rpm",
+          "size": "2110596",
+          "sourcerpm": "dart-sass-1.107.1-1.fc45.src.rpm"
+        },
+        "dart.x86_64": {
+          "buildtime": "1793899916",
+          "evr": "3.13.7-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/d/dart-3.13.7-1.fc45.x86_64.rpm",
+          "size": "168116765",
+          "sourcerpm": "dart-3.13.7-1.fc45.src.rpm"
+        },
+        "material-symbols-fonts.noarch": {
+          "buildtime": "1793899850",
+          "evr": "4.0.0^20261023git10ecc14-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/m/material-symbols-fonts-4.0.0^20261023git10ecc14-1.fc45.noarch.rpm",
+          "size": "14058788",
+          "sourcerpm": "material-symbols-fonts-4.0.0^20261023git10ecc14-1.fc45.src.rpm"
+        },
+        "python3-materialyoucolor.x86_64": {
+          "buildtime": "1793899910",
+          "evr": "3.0.4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/p/python3-materialyoucolor-3.0.4-1.fc45.x86_64.rpm",
+          "size": "307700",
+          "sourcerpm": "python3-materialyoucolor-3.0.4-1.fc45.src.rpm"
+        },
+        "qtengine.x86_64": {
+          "buildtime": "1793899950",
+          "evr": "0.2.4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/q/qtengine-0.2.4-1.fc45.x86_64.rpm",
+          "size": "181682",
+          "sourcerpm": "qtengine-0.2.4-1.fc45.src.rpm"
+        },
+        "rubik-fonts.noarch": {
+          "buildtime": "1793899846",
+          "evr": "0^20260325git5458429-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/r/rubik-fonts-0^20260325git5458429-1.fc45.noarch.rpm",
+          "size": "220139",
+          "sourcerpm": "rubik-fonts-0^20260325git5458429-1.fc45.src.rpm"
+        }
+      },
+      "settings": {
+        "baseurl": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-$releasever-$basearch/",
+        "enabled": "1",
+        "gpgcheck": "1",
+        "gpgkey": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/pubkey.gpg",
+        "includepkgs": "caelestia-* cascadia-code-nerd-fonts dart dart-sass material-symbols-fonts python3-materialyoucolor qtengine rubik-fonts",
+        "repo_gpgcheck": "0"
+      }
+    },
+    "copr:copr.fedorainfracloud.org:celestelove:libcava": {
+      "copr": {
+        "additional_repos": [],
+        "runtime_dependencies": "",
+        "sources": {
+          "libcava": {
+            "source": {
+              "clone_url": "https://github.com/KernelFreeze/libcava-fedora.git",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "libcava.spec",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "sndio": {
+            "source": {
+              "clone_url": "https://github.com/KernelFreeze/libcava-fedora.git",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "sndio.spec",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          }
+        }
+      },
+      "file": "copr-celestelove-libcava.repo",
+      "gpgkey_sha256": {
+        "https://download.copr.fedorainfracloud.org/results/celestelove/libcava/pubkey.gpg": "a4a2d7a0df09241822254d1c3213d4c00a7c718381a1b017f824ef40e2f11f4c"
+      },
+      "packages": {
+        "libcava-devel.x86_64": {
+          "buildtime": "1774481119",
+          "evr": "0.10.7-2.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/libcava/fedora-45-x86_64/Packages/l/libcava-devel-0.10.7-2.fc45.x86_64.rpm",
+          "size": "11382",
+          "sourcerpm": "libcava-0.10.7-2.fc45.src.rpm"
+        },
+        "libcava.x86_64": {
+          "buildtime": "1774481119",
+          "evr": "0.10.7-2.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/libcava/fedora-45-x86_64/Packages/l/libcava-0.10.7-2.fc45.x86_64.rpm",
+          "size": "78555",
+          "sourcerpm": "libcava-0.10.7-2.fc45.src.rpm"
+        },
+        "sndio-devel.x86_64": {
+          "buildtime": "1774481012",
+          "evr": "1.10.0-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/libcava/fedora-45-x86_64/Packages/s/sndio-devel-1.10.0-1.fc45.x86_64.rpm",
+          "size": "27109",
+          "sourcerpm": "sndio-1.10.0-1.fc45.src.rpm"
+        },
+        "sndio.x86_64": {
+          "buildtime": "1774481012",
+          "evr": "1.10.0-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/libcava/fedora-45-x86_64/Packages/s/sndio-1.10.0-1.fc45.x86_64.rpm",
+          "size": "138318",
+          "sourcerpm": "sndio-1.10.0-1.fc45.src.rpm"
+        }
+      },
+      "settings": {
+        "baseurl": "https://download.copr.fedorainfracloud.org/results/celestelove/libcava/fedora-$releasever-$basearch/",
+        "enabled": "1",
+        "gpgcheck": "1",
+        "gpgkey": "https://download.copr.fedorainfracloud.org/results/celestelove/libcava/pubkey.gpg",
+        "includepkgs": "libcava libcava-devel sndio sndio-devel",
+        "repo_gpgcheck": "0"
+      }
+    },
+    "copr:copr.fedorainfracloud.org:celestelove:lidm": {
+      "copr": {
+        "additional_repos": [],
+        "runtime_dependencies": "",
+        "sources": {
+          "lidm": {
+            "source": {
+              "clone_url": "https://github.com/KernelFreeze/lidm-copr",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "lidm.spec",
+              "subdirectory": "",
+              "type": "git"
+            },
+            "source_type": "scm"
+          }
+        }
+      },
+      "file": "copr-celestelove-lidm.repo",
+      "gpgkey_sha256": {
+        "https://download.copr.fedorainfracloud.org/results/celestelove/lidm/pubkey.gpg": "39b22551a8585b874ae867bf05f2927cd057591ddce82f47dbf1d4f3dd0f2910"
+      },
+      "packages": {
+        "lidm-selinux.noarch": {
+          "buildtime": "1769072274",
+          "evr": "2.0.0-1.fc44",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/lidm/fedora-45-x86_64/Packages/l/lidm-selinux-2.0.0-1.fc44.noarch.rpm",
+          "size": "17978",
+          "sourcerpm": "lidm-2.0.0-1.fc44.src.rpm"
+        },
+        "lidm.x86_64": {
+          "buildtime": "1769072274",
+          "evr": "2.0.0-1.fc44",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/lidm/fedora-45-x86_64/Packages/l/lidm-2.0.0-1.fc44.x86_64.rpm",
+          "size": "178439",
+          "sourcerpm": "lidm-2.0.0-1.fc44.src.rpm"
+        }
+      },
+      "settings": {
+        "baseurl": "https://download.copr.fedorainfracloud.org/results/celestelove/lidm/fedora-$releasever-$basearch/",
+        "enabled": "1",
+        "gpgcheck": "1",
+        "gpgkey": "https://download.copr.fedorainfracloud.org/results/celestelove/lidm/pubkey.gpg",
+        "includepkgs": "lidm lidm-selinux",
+        "repo_gpgcheck": "0"
+      }
+    },
+    "copr:copr.fedorainfracloud.org:deltacopy:darkly": {
+      "copr": {
+        "additional_repos": [],
+        "runtime_dependencies": "",
+        "sources": {
+          "darkly": {
+            "source": {
+              "clone_url": "https://github.com/DeltaCopy/darkly-fedora",
+              "committish": "",
+              "fedora_review": true,
+              "source_build_method": "rpkg",
+              "spec": "darkly.spec",
+              "subdirectory": "specs",
+              "type": "git"
+            },
+            "source_type": "scm"
+          }
+        }
+      },
+      "file": "copr-deltacopy-darkly.repo",
+      "gpgkey_sha256": {
+        "https://download.copr.fedorainfracloud.org/results/deltacopy/darkly/pubkey.gpg": "18e5072e1234716b4b3f78bc889f47e289adf9180cb52bd2ac5e42804ce05dc0"
+      },
+      "packages": {
+        "darkly-qt6.x86_64": {
+          "buildtime": "1792899897",
+          "evr": "0.5.42-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/deltacopy/darkly/fedora-45-x86_64/Packages/d/darkly-qt6-0.5.42-1.fc45.x86_64.rpm",
+          "size": "252317",
+          "sourcerpm": "darkly-0.5.42-1.fc45.src.rpm"
+        }
+      },
+      "settings": {
+        "baseurl": "https://download.copr.fedorainfracloud.org/results/deltacopy/darkly/fedora-$releasever-$basearch/",
+        "enabled": "1",
+        "gpgcheck": "1",
+        "gpgkey": "https://download.copr.fedorainfracloud.org/results/deltacopy/darkly/pubkey.gpg",
+        "includepkgs": "darkly-qt6",
+        "repo_gpgcheck": "0"
+      }
+    },
+    "copr:copr.fedorainfracloud.org:errornointernet:quickshell": {
+      "copr": {
+        "additional_repos": [],
+        "runtime_dependencies": "",
+        "sources": {
+          "cpptrace": {
+            "source": {
+              "clone_url": "https://github.com/ErrorNoInternet/rpm-packages",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "cpptrace.spec",
+              "subdirectory": "cpptrace",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "quickshell": {
+            "source": {
+              "clone_url": "https://github.com/ErrorNoInternet/rpm-packages",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "quickshell.spec",
+              "subdirectory": "quickshell",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "quickshell-git": {
+            "source": {
+              "clone_url": "https://github.com/ErrorNoInternet/rpm-packages",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "quickshell-git.spec",
+              "subdirectory": "quickshell",
+              "type": "git"
+            },
+            "source_type": "scm"
+          }
+        }
+      },
+      "file": "copr-errornointernet-quickshell.repo",
+      "gpgkey_sha256": {
+        "https://download.copr.fedorainfracloud.org/results/errornointernet/quickshell/pubkey.gpg": "8561c290ae26ec83a78c7f00bc677ceed27efdf98262edc84b8e1da470b5b7b3"
+      },
+      "packages": {
+        "cpptrace-devel.x86_64": {
+          "buildtime": "1788488730",
+          "evr": "1.0.4-1.patched.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/errornointernet/quickshell/fedora-45-x86_64/Packages/c/cpptrace-devel-1.0.4-1.patched.fc45.x86_64.rpm",
+          "size": "226261",
+          "sourcerpm": "cpptrace-1.0.4-1.patched.fc45.src.rpm"
+        },
+        "cpptrace.x86_64": {
+          "buildtime": "1788488730",
+          "evr": "1.0.4-1.patched.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/errornointernet/quickshell/fedora-45-x86_64/Packages/c/cpptrace-1.0.4-1.patched.fc45.x86_64.rpm",
+          "size": "213315",
+          "sourcerpm": "cpptrace-1.0.4-1.patched.fc45.src.rpm"
+        },
+        "quickshell-git.x86_64": {
+          "buildtime": "1792651808",
+          "evr": "0.3.2^879.gitbf6302e-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/errornointernet/quickshell/fedora-45-x86_64/Packages/q/quickshell-git-0.3.2^879.gitbf6302e-1.fc45.x86_64.rpm",
+          "size": "1962528",
+          "sourcerpm": "quickshell-git-0.3.2^879.gitbf6302e-1.fc45.src.rpm"
+        },
+        "quickshell.x86_64": {
+          "buildtime": "1792687527",
+          "evr": "0.3.2-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/errornointernet/quickshell/fedora-45-x86_64/Packages/q/quickshell-0.3.2-1.fc45.x86_64.rpm",
+          "size": "1956340",
+          "sourcerpm": "quickshell-0.3.2-1.fc45.src.rpm"
+        }
+      },
+      "settings": {
+        "baseurl": "https://download.copr.fedorainfracloud.org/results/errornointernet/quickshell/fedora-$releasever-$basearch/",
+        "enabled": "1",
+        "gpgcheck": "1",
+        "gpgkey": "https://download.copr.fedorainfracloud.org/results/errornointernet/quickshell/pubkey.gpg",
+        "includepkgs": "quickshell* cpptrace*",
+        "repo_gpgcheck": "0"
+      }
+    },
+    "copr:copr.fedorainfracloud.org:lihaohong:yazi": {
+      "copr": {
+        "additional_repos": [],
+        "runtime_dependencies": "",
+        "sources": {
+          "resvg": {
+            "source": {
+              "clone_url": "https://github.com/lihaohong6/COPR.git",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "resvg",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "yazi": {
+            "source": {
+              "clone_url": "https://github.com/lihaohong6/COPR.git",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "yazi",
+              "type": "git"
+            },
+            "source_type": "scm"
+          }
+        }
+      },
+      "file": "copr-lihaohong-yazi.repo",
+      "gpgkey_sha256": {
+        "https://download.copr.fedorainfracloud.org/results/lihaohong/yazi/pubkey.gpg": "68c36d92beb74d93aec207fce5e5b348ff4118cee3ec31143474911222e23c62"
+      },
+      "packages": {
+        "resvg.x86_64": {
+          "buildtime": "1770937762",
+          "evr": "0.47.0-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lihaohong/yazi/fedora-45-x86_64/Packages/r/resvg-0.47.0-1.fc45.x86_64.rpm",
+          "size": "1378287",
+          "sourcerpm": "resvg-0.47.0-1.fc45.src.rpm"
+        },
+        "yazi.x86_64": {
+          "buildtime": "1789333989",
+          "evr": "26.9.1-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lihaohong/yazi/fedora-45-x86_64/Packages/y/yazi-26.9.1-1.fc45.x86_64.rpm",
+          "size": "12302321",
+          "sourcerpm": "yazi-26.9.1-1.fc45.src.rpm"
+        }
+      },
+      "settings": {
+        "baseurl": "https://download.copr.fedorainfracloud.org/results/lihaohong/yazi/fedora-$releasever-$basearch/",
+        "enabled": "1",
+        "gpgcheck": "1",
+        "gpgkey": "https://download.copr.fedorainfracloud.org/results/lihaohong/yazi/pubkey.gpg",
+        "includepkgs": "yazi resvg",
+        "repo_gpgcheck": "0"
+      }
+    },
+    "copr:copr.fedorainfracloud.org:lionheartp:Hyprland": {
+      "copr": {
+        "additional_repos": [],
+        "runtime_dependencies": "",
+        "sources": {
+          "aquamarine": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "aquamarine",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "glaze": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "glaze.spec",
+              "subdirectory": "glaze",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprcursor": {
+            "source": {
+              "pkg": "hyprcursor-0.1.13-1.fc42.src.rpm",
+              "tmp": "tmp7jcapho5",
+              "url": "https://copr.fedorainfracloud.org/tmp/tmp7jcapho5/hyprcursor-0.1.13-1.fc42.src.rpm"
+            },
+            "source_type": "upload"
+          },
+          "hyprgraphics": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "hyprgraphics.spec",
+              "subdirectory": "hyprgraphics",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hypridle": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hypridle",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprland": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprland-git",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprland-contrib": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprland-contrib",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprland-git": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprland-git",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprland-guiutils": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprland-guiutils",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprland-plugins": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprland-plugins",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprland-plugins-git": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "hyprland-plugins.spec",
+              "subdirectory": "hyprland-plugins",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprland-protocols": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprland-protocols",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprland-qt-support": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprland-qt-support",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprlang": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprlang",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprlauncher": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprlauncher",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprlock": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "hyprlock.spec",
+              "subdirectory": "hyprlock",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprmod": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprmod",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprpaper": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprpaper",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprpicker": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprpicker",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprpolkitagent": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprpolkitagent",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprpwcenter": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprpwcenter",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprqt6engine": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprqt6engine",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprshot": {
+            "source": {
+              "pkg": "hyprshot-1.3.0-2.fc43.src.rpm",
+              "tmp": "tmp_pm_s_6e",
+              "url": "https://copr.fedorainfracloud.org/tmp/tmp_pm_s_6e/hyprshot-1.3.0-2.fc43.src.rpm"
+            },
+            "source_type": "upload"
+          },
+          "hyprshutdown": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprshutdown",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprsunset": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprsunset",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprsysteminfo": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprsysteminfo",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprtoolkit": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprtoolkit",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprutils": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprutils",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprwayland-scanner": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprwayland-scanner",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "hyprwire": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprwire",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "nwg-look": {
+            "source": {
+              "pkg": "nwg-look-1.0.6-1.fc43.src.rpm",
+              "tmp": "tmpxxl4iuty",
+              "url": "https://copr.fedorainfracloud.org/tmp/tmpxxl4iuty/nwg-look-1.0.6-1.fc43.src.rpm"
+            },
+            "source_type": "upload"
+          },
+          "shader-slang": {
+            "source": {
+              "pkg": "shader-slang-2026.18-1.fc44.src.rpm",
+              "tmp": "tmpviephdfl",
+              "url": "https://copr.fedorainfracloud.org/tmp/tmpviephdfl/shader-slang-2026.18-1.fc44.src.rpm"
+            },
+            "source_type": "upload"
+          },
+          "uwsm": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "uwsm",
+              "type": "git"
+            },
+            "source_type": "scm"
+          },
+          "xcur2png": {
+            "source": {
+              "pkg": "xcur2png-0.7.1-2.fc43.src.rpm",
+              "tmp": "tmp1occxj67",
+              "url": "https://copr.fedorainfracloud.org/tmp/tmp1occxj67/xcur2png-0.7.1-2.fc43.src.rpm"
+            },
+            "source_type": "upload"
+          },
+          "xdg-desktop-portal-hyprland": {
+            "source": {
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "xdg-desktop-portal-hyprland",
+              "type": "git"
+            },
+            "source_type": "scm"
+          }
+        }
+      },
+      "file": "copr-lionheartp-Hyprland.repo",
+      "gpgkey_sha256": {
+        "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/pubkey.gpg": "9f47c74eec4fea0f5a8cee1c6532bbeb33eee8134f762314bf16815a720dc047"
+      },
+      "packages": {
+        "aquamarine-devel.x86_64": {
+          "buildtime": "1793558466",
+          "evr": "0.16.0-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/a/aquamarine-devel-0.16.0-1.fc45.x86_64.rpm",
+          "size": "27776",
+          "sourcerpm": "aquamarine-0.16.0-1.fc45.src.rpm"
+        },
+        "aquamarine.x86_64": {
+          "buildtime": "1793558466",
+          "evr": "0.16.0-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/a/aquamarine-0.16.0-1.fc45.x86_64.rpm",
+          "size": "485071",
+          "sourcerpm": "aquamarine-0.16.0-1.fc45.src.rpm"
+        },
+        "glaze-devel.noarch": {
+          "buildtime": "1789446821",
+          "evr": "8.4.0-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/g/glaze-devel-8.4.0-1.fc45.noarch.rpm",
+          "size": "673118",
+          "sourcerpm": "glaze-8.4.0-1.fc45.src.rpm"
+        },
+        "hyprcursor-devel.x86_64": {
+          "buildtime": "1770911791",
+          "evr": "0.1.13-2.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprcursor-devel-0.1.13-2.fc45.x86_64.rpm",
+          "size": "10862",
+          "sourcerpm": "hyprcursor-0.1.13-2.fc45.src.rpm"
+        },
+        "hyprcursor.x86_64": {
+          "buildtime": "1770911791",
+          "evr": "0.1.13-2.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprcursor-0.1.13-2.fc45.x86_64.rpm",
+          "size": "248151",
+          "sourcerpm": "hyprcursor-0.1.13-2.fc45.src.rpm"
+        },
+        "hyprgraphics-devel.x86_64": {
+          "buildtime": "1793558338",
+          "evr": "0.6.0-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprgraphics-devel-0.6.0-1.fc45.x86_64.rpm",
+          "size": "13305",
+          "sourcerpm": "hyprgraphics-0.6.0-1.fc45.src.rpm"
+        },
+        "hyprgraphics.x86_64": {
+          "buildtime": "1793558338",
+          "evr": "0.6.0-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprgraphics-0.6.0-1.fc45.x86_64.rpm",
+          "size": "109026",
+          "sourcerpm": "hyprgraphics-0.6.0-1.fc45.src.rpm"
+        },
+        "hypridle.x86_64": {
+          "buildtime": "1785078463",
+          "evr": "0.1.8-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hypridle-0.1.8-1.fc45.x86_64.rpm",
+          "size": "213155",
+          "sourcerpm": "hypridle-0.1.8-1.fc45.src.rpm"
+        },
+        "hyprland-contrib.noarch": {
+          "buildtime": "1792757726",
+          "evr": "0.1^90.gita54daf8-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-contrib-0.1^90.gita54daf8-1.fc45.noarch.rpm",
+          "size": "9548",
+          "sourcerpm": "hyprland-contrib-0.1^90.gita54daf8-1.fc45.src.rpm"
+        },
+        "hyprland-devel.x86_64": {
+          "buildtime": "1793703624",
+          "evr": "0.57.1-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-devel-0.57.1-1.fc45.x86_64.rpm",
+          "size": "334325",
+          "sourcerpm": "hyprland-0.57.1-1.fc45.src.rpm"
+        },
+        "hyprland-git-devel.x86_64": {
+          "buildtime": "1793825043",
+          "evr": "0.57.1^4.git64bde62-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-git-devel-0.57.1^4.git64bde62-1.fc45.x86_64.rpm",
+          "size": "334665",
+          "sourcerpm": "hyprland-git-0.57.1^4.git64bde62-1.fc45.src.rpm"
+        },
+        "hyprland-git-uwsm.x86_64": {
+          "buildtime": "1793825043",
+          "evr": "0.57.1^4.git64bde62-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-git-uwsm-0.57.1^4.git64bde62-1.fc45.x86_64.rpm",
+          "size": "7319",
+          "sourcerpm": "hyprland-git-0.57.1^4.git64bde62-1.fc45.src.rpm"
+        },
+        "hyprland-git.x86_64": {
+          "buildtime": "1793825043",
+          "evr": "0.57.1^4.git64bde62-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-git-0.57.1^4.git64bde62-1.fc45.x86_64.rpm",
+          "size": "52887779",
+          "sourcerpm": "hyprland-git-0.57.1^4.git64bde62-1.fc45.src.rpm"
+        },
+        "hyprland-guiutils.x86_64": {
+          "buildtime": "1788980355",
+          "evr": "0.2.2-2.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-guiutils-0.2.2-2.fc45.x86_64.rpm",
+          "size": "210753",
+          "sourcerpm": "hyprland-guiutils-0.2.2-2.fc45.src.rpm"
+        },
+        "hyprland-plugin-borders-plus-plus-git.x86_64": {
+          "buildtime": "1793826580",
+          "evr": "0.1^1832.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-borders-plus-plus-git-0.1^1832.gitd2427d4-1.fc45.x86_64.rpm",
+          "size": "98319",
+          "sourcerpm": "hyprland-plugins-git-0.1^1832.gitd2427d4-1.fc45.src.rpm"
+        },
+        "hyprland-plugin-borders-plus-plus.x86_64": {
+          "buildtime": "1793705870",
+          "evr": "0.1^1124.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-borders-plus-plus-0.1^1124.gitd2427d4-1.fc45.x86_64.rpm",
+          "size": "98291",
+          "sourcerpm": "hyprland-plugins-0.1^1124.gitd2427d4-1.fc45.src.rpm"
+        },
+        "hyprland-plugin-csgo-vulkan-fix-git.x86_64": {
+          "buildtime": "1793826580",
+          "evr": "0.1^1832.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-csgo-vulkan-fix-git-0.1^1832.gitd2427d4-1.fc45.x86_64.rpm",
+          "size": "85422",
+          "sourcerpm": "hyprland-plugins-git-0.1^1832.gitd2427d4-1.fc45.src.rpm"
+        },
+        "hyprland-plugin-csgo-vulkan-fix.x86_64": {
+          "buildtime": "1793705870",
+          "evr": "0.1^1124.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-csgo-vulkan-fix-0.1^1124.gitd2427d4-1.fc45.x86_64.rpm",
+          "size": "85392",
+          "sourcerpm": "hyprland-plugins-0.1^1124.gitd2427d4-1.fc45.src.rpm"
+        },
+        "hyprland-plugin-hyprbars-git.x86_64": {
+          "buildtime": "1793826580",
+          "evr": "0.1^1832.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-hyprbars-git-0.1^1832.gitd2427d4-1.fc45.x86_64.rpm",
+          "size": "127577",
+          "sourcerpm": "hyprland-plugins-git-0.1^1832.gitd2427d4-1.fc45.src.rpm"
+        },
+        "hyprland-plugin-hyprbars.x86_64": {
+          "buildtime": "1793705870",
+          "evr": "0.1^1124.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-hyprbars-0.1^1124.gitd2427d4-1.fc45.x86_64.rpm",
+          "size": "127540",
+          "sourcerpm": "hyprland-plugins-0.1^1124.gitd2427d4-1.fc45.src.rpm"
+        },
+        "hyprland-plugin-hyprfocus-git.x86_64": {
+          "buildtime": "1793826580",
+          "evr": "0.1^1832.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-hyprfocus-git-0.1^1832.gitd2427d4-1.fc45.x86_64.rpm",
+          "size": "86819",
+          "sourcerpm": "hyprland-plugins-git-0.1^1832.gitd2427d4-1.fc45.src.rpm"
+        },
+        "hyprland-plugin-hyprfocus.x86_64": {
+          "buildtime": "1793705870",
+          "evr": "0.1^1124.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-hyprfocus-0.1^1124.gitd2427d4-1.fc45.x86_64.rpm",
+          "size": "86771",
+          "sourcerpm": "hyprland-plugins-0.1^1124.gitd2427d4-1.fc45.src.rpm"
+        },
+        "hyprland-plugins-git.x86_64": {
+          "buildtime": "1793826580",
+          "evr": "0.1^1832.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugins-git-0.1^1832.gitd2427d4-1.fc45.x86_64.rpm",
+          "size": "6817",
+          "sourcerpm": "hyprland-plugins-git-0.1^1832.gitd2427d4-1.fc45.src.rpm"
+        },
+        "hyprland-plugins.x86_64": {
+          "buildtime": "1793705870",
+          "evr": "0.1^1124.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugins-0.1^1124.gitd2427d4-1.fc45.x86_64.rpm",
+          "size": "6773",
+          "sourcerpm": "hyprland-plugins-0.1^1124.gitd2427d4-1.fc45.src.rpm"
+        },
+        "hyprland-protocols-devel.noarch": {
+          "buildtime": "1792610553",
+          "evr": "0.8.0-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-protocols-devel-0.8.0-1.fc45.noarch.rpm",
+          "size": "18964",
+          "sourcerpm": "hyprland-protocols-0.8.0-1.fc45.src.rpm"
+        },
+        "hyprland-qt-support.x86_64": {
+          "buildtime": "1788891265",
+          "evr": "0.1.0-12.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-qt-support-0.1.0-12.fc45.x86_64.rpm",
+          "size": "110331",
+          "sourcerpm": "hyprland-qt-support-0.1.0-12.fc45.src.rpm"
+        },
+        "hyprland-uwsm.x86_64": {
+          "buildtime": "1793703624",
+          "evr": "0.57.1-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-uwsm-0.57.1-1.fc45.x86_64.rpm",
+          "size": "7193",
+          "sourcerpm": "hyprland-0.57.1-1.fc45.src.rpm"
+        },
+        "hyprland.x86_64": {
+          "buildtime": "1793703624",
+          "evr": "0.57.1-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-0.57.1-1.fc45.x86_64.rpm",
+          "size": "52882516",
+          "sourcerpm": "hyprland-0.57.1-1.fc45.src.rpm"
+        },
+        "hyprlang-devel.x86_64": {
+          "buildtime": "1784370769",
+          "evr": "0.6.8-4.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprlang-devel-0.6.8-4.fc45.x86_64.rpm",
+          "size": "11709",
+          "sourcerpm": "hyprlang-0.6.8-4.fc45.src.rpm"
+        },
+        "hyprlang.x86_64": {
+          "buildtime": "1784370769",
+          "evr": "0.6.8-4.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprlang-0.6.8-4.fc45.x86_64.rpm",
+          "size": "127190",
+          "sourcerpm": "hyprlang-0.6.8-4.fc45.src.rpm"
+        },
+        "hyprlauncher.x86_64": {
+          "buildtime": "1792471869",
+          "evr": "0.1.7-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprlauncher-0.1.7-1.fc45.x86_64.rpm",
+          "size": "195134",
+          "sourcerpm": "hyprlauncher-0.1.7-1.fc45.src.rpm"
+        },
+        "hyprlock.x86_64": {
+          "buildtime": "1793558552",
+          "evr": "0.9.7-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprlock-0.9.7-1.fc45.x86_64.rpm",
+          "size": "398952",
+          "sourcerpm": "hyprlock-0.9.7-1.fc45.src.rpm"
+        },
+        "hyprmod.noarch": {
+          "buildtime": "1791406642",
+          "evr": "0.5.0-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprmod-0.5.0-1.fc45.noarch.rpm",
+          "size": "1105719",
+          "sourcerpm": "hyprmod-0.5.0-1.fc45.src.rpm"
+        },
+        "hyprpaper.x86_64": {
+          "buildtime": "1793559061",
+          "evr": "0.8.5-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprpaper-0.8.5-1.fc45.x86_64.rpm",
+          "size": "175928",
+          "sourcerpm": "hyprpaper-0.8.5-1.fc45.src.rpm"
+        },
+        "hyprpicker.x86_64": {
+          "buildtime": "1793558030",
+          "evr": "0.4.8-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprpicker-0.4.8-1.fc45.x86_64.rpm",
+          "size": "116371",
+          "sourcerpm": "hyprpicker-0.4.8-1.fc45.src.rpm"
+        },
+        "hyprpolkitagent.x86_64": {
+          "buildtime": "1793559089",
+          "evr": "0.2.0-2.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprpolkitagent-0.2.0-2.fc45.x86_64.rpm",
+          "size": "138407",
+          "sourcerpm": "hyprpolkitagent-0.2.0-2.fc45.src.rpm"
+        },
+        "hyprprop.noarch": {
+          "buildtime": "1792757726",
+          "evr": "0.1^90.gita54daf8-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprprop-0.1^90.gita54daf8-1.fc45.noarch.rpm",
+          "size": "9396",
+          "sourcerpm": "hyprland-contrib-0.1^90.gita54daf8-1.fc45.src.rpm"
+        },
+        "hyprpwcenter.x86_64": {
+          "buildtime": "1788980423",
+          "evr": "0.1.2-5.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprpwcenter-0.1.2-5.fc45.x86_64.rpm",
+          "size": "187009",
+          "sourcerpm": "hyprpwcenter-0.1.2-5.fc45.src.rpm"
+        },
+        "hyprqt6engine.x86_64": {
+          "buildtime": "1784371920",
+          "evr": "0.1.0-12.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprqt6engine-0.1.0-12.fc45.x86_64.rpm",
+          "size": "129166",
+          "sourcerpm": "hyprqt6engine-0.1.0-12.fc45.src.rpm"
+        },
+        "hyprshot.noarch": {
+          "buildtime": "1772742015",
+          "evr": "1.3.0-2.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprshot-1.3.0-2.fc45.noarch.rpm",
+          "size": "23253",
+          "sourcerpm": "hyprshot-1.3.0-2.fc45.src.rpm"
+        },
+        "hyprshutdown.x86_64": {
+          "buildtime": "1793558047",
+          "evr": "0.1.2-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprshutdown-0.1.2-1.fc45.x86_64.rpm",
+          "size": "168738",
+          "sourcerpm": "hyprshutdown-0.1.2-1.fc45.src.rpm"
+        },
+        "hyprsunset.x86_64": {
+          "buildtime": "1784371932",
+          "evr": "0.4.0-2.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprsunset-0.4.0-2.fc45.x86_64.rpm",
+          "size": "115755",
+          "sourcerpm": "hyprsunset-0.4.0-2.fc45.src.rpm"
+        },
+        "hyprsysteminfo.x86_64": {
+          "buildtime": "1788980373",
+          "evr": "0.2.0-6.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprsysteminfo-0.2.0-6.fc45.x86_64.rpm",
+          "size": "138238",
+          "sourcerpm": "hyprsysteminfo-0.2.0-6.fc45.src.rpm"
+        },
+        "hyprtoolkit-devel.x86_64": {
+          "buildtime": "1793558761",
+          "evr": "0.6.0-2.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprtoolkit-devel-0.6.0-2.fc45.x86_64.rpm",
+          "size": "25190",
+          "sourcerpm": "hyprtoolkit-0.6.0-2.fc45.src.rpm"
+        },
+        "hyprtoolkit.x86_64": {
+          "buildtime": "1793558761",
+          "evr": "0.6.0-2.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprtoolkit-0.6.0-2.fc45.x86_64.rpm",
+          "size": "557010",
+          "sourcerpm": "hyprtoolkit-0.6.0-2.fc45.src.rpm"
+        },
+        "hyprutils-devel.x86_64": {
+          "buildtime": "1792732116",
+          "evr": "0.14.3-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprutils-devel-0.14.3-1.fc45.x86_64.rpm",
+          "size": "36426",
+          "sourcerpm": "hyprutils-0.14.3-1.fc45.src.rpm"
+        },
+        "hyprutils.x86_64": {
+          "buildtime": "1792732116",
+          "evr": "0.14.3-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprutils-0.14.3-1.fc45.x86_64.rpm",
+          "size": "215458",
+          "sourcerpm": "hyprutils-0.14.3-1.fc45.src.rpm"
+        },
+        "hyprwayland-scanner-devel.x86_64": {
+          "buildtime": "1777174085",
+          "evr": "0.4.6-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprwayland-scanner-devel-0.4.6-1.fc45.x86_64.rpm",
+          "size": "109934",
+          "sourcerpm": "hyprwayland-scanner-0.4.6-1.fc45.src.rpm"
+        },
+        "hyprwire-devel.x86_64": {
+          "buildtime": "1784371496",
+          "evr": "0.3.1-3.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprwire-devel-0.3.1-3.fc45.x86_64.rpm",
+          "size": "97385",
+          "sourcerpm": "hyprwire-0.3.1-3.fc45.src.rpm"
+        },
+        "hyprwire.x86_64": {
+          "buildtime": "1784371496",
+          "evr": "0.3.1-3.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprwire-0.3.1-3.fc45.x86_64.rpm",
+          "size": "149866",
+          "sourcerpm": "hyprwire-0.3.1-3.fc45.src.rpm"
+        },
+        "nwg-look.x86_64": {
+          "buildtime": "1778227602",
+          "evr": "1.1.1-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/n/nwg-look-1.1.1-1.fc45.x86_64.rpm",
+          "size": "1518655",
+          "sourcerpm": "nwg-look-1.1.1-1.fc45.src.rpm"
+        },
+        "shader-slang-devel.x86_64": {
+          "buildtime": "1793816389",
+          "evr": "2026.21-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/s/shader-slang-devel-2026.21-1.fc45.x86_64.rpm",
+          "size": "2076136",
+          "sourcerpm": "shader-slang-2026.21-1.fc45.src.rpm"
+        },
+        "shader-slang.x86_64": {
+          "buildtime": "1793816389",
+          "evr": "2026.21-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/s/shader-slang-2026.21-1.fc45.x86_64.rpm",
+          "size": "14473556",
+          "sourcerpm": "shader-slang-2026.21-1.fc45.src.rpm"
+        },
+        "uwsm.noarch": {
+          "buildtime": "1792309596",
+          "evr": "0.27.1-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/u/uwsm-0.27.1-1.fc45.noarch.rpm",
+          "size": "180297",
+          "sourcerpm": "uwsm-0.27.1-1.fc45.src.rpm"
+        },
+        "xcur2png.x86_64": {
+          "buildtime": "1772742279",
+          "evr": "0.7.1-2.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/x/xcur2png-0.7.1-2.fc45.x86_64.rpm",
+          "size": "30461",
+          "sourcerpm": "xcur2png-0.7.1-2.fc45.src.rpm"
+        },
+        "xdg-desktop-portal-hyprland.x86_64": {
+          "buildtime": "1793186666",
+          "evr": "1:1.5.0-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/x/xdg-desktop-portal-hyprland-1.5.0-1.fc45.x86_64.rpm",
+          "size": "458851",
+          "sourcerpm": "xdg-desktop-portal-hyprland-1.5.0-1.fc45.src.rpm"
+        }
+      },
+      "settings": {
+        "baseurl": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-$releasever-$basearch/",
+        "enabled": "1",
+        "gpgcheck": "1",
+        "gpgkey": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/pubkey.gpg",
+        "includepkgs": "aquamarine* glaze-devel hypr* nwg-look shader-slang* uwsm xcur2png xdg-desktop-portal-hyprland",
+        "repo_gpgcheck": "0"
+      }
+    },
+    "gemfury-nushell": {
+      "file": "fury-nushell.repo",
+      "gpgkey_sha256": {
+        "https://yum.fury.io/nushell/gpg.key": "f4e531487a24270a83b8a84cb314b4f6ce373e6adf690c4d6d694798936bd32f"
+      },
+      "packages": {
+        "nushell.x86_64": {
+          "buildtime": "0",
+          "evr": "0.116.1-0",
+          "location": "https://yum.fury.io/nushell/files/ver_1iZvf0/nushell-0.116.1-0.x86_64.rpm",
+          "size": "79249798",
+          "sourcerpm": ""
+        }
+      },
+      "settings": {
+        "baseurl": "https://yum.fury.io/nushell/",
+        "enabled": "1",
+        "gpgcheck": "0",
+        "gpgkey": "https://yum.fury.io/nushell/gpg.key",
+        "includepkgs": "nushell"
+      }
+    },
+    "tailscale-stable": {
+      "file": "tailscale.repo",
+      "gpgkey_sha256": {
+        "https://pkgs.tailscale.com/stable/fedora/repo.gpg": "53c6f7dfbd774839d9f37e6c5022ba952108aba9a0e556a56f292a9eb605d7cf"
+      },
+      "packages": {
+        "tailscale.x86_64": {
+          "buildtime": "315532800",
+          "evr": "1.104.5-1",
+          "location": "https://pkgs.tailscale.com/stable/fedora/x86_64/tailscale_1.104.5_x86_64.rpm",
+          "size": "40775828",
+          "sourcerpm": "tailscale-1.104.5-1.src.rpm"
+        }
+      },
+      "settings": {
+        "baseurl": "https://pkgs.tailscale.com/stable/fedora/$basearch",
+        "enabled": "1",
+        "gpgcheck": "1",
+        "gpgkey": "https://pkgs.tailscale.com/stable/fedora/repo.gpg",
+        "includepkgs": "tailscale",
+        "repo_gpgcheck": "1"
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+name: supply-chain-audit
+on:
+    schedule:
+        - cron: "0 5 * * 1" # Mondays at 05:00 UTC
+    workflow_dispatch:
+permissions: {}
+concurrency:
+    group: supply-chain-audit
+jobs:
+    audit:
+        name: Compare third-party sources with the reviewed lock
+        runs-on: ubuntu-latest
+        container: registry.fedoraproject.org/fedora:latest
+        permissions:
+            contents: write # push the proposed lock to supply-chain/lock-update
+            issues: write # open or update the report issue
+        env:
+            BRANCH: supply-chain/lock-update
+            GH_TOKEN: ${{ github.token }}
+            GH_REPO: ${{ github.repository }}
+        steps:
+            - name: Install tools
+              run: dnf -y install git gh python3
+
+            - name: Checkout repo
+              uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+            - name: Run audit
+              id: audit
+              run: |
+                  set +e
+                  python3 .github/supply-chain/audit.py check \
+                      --report "$RUNNER_TEMP/report.md" --new-lock "$RUNNER_TEMP/lock.json"
+                  code=$?
+                  set -e
+                  case "$code" in
+                      0) echo "changed=false" >>"$GITHUB_OUTPUT" ;;
+                      2) echo "changed=true" >>"$GITHUB_OUTPUT" ;;
+                      *) exit "$code" ;;
+                  esac
+
+            - name: Push proposed lock
+              if: steps.audit.outputs.changed == 'true'
+              run: |
+                  git config --global --add safe.directory "$GITHUB_WORKSPACE"
+                  git config user.name "github-actions[bot]"
+                  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+                  git switch -C "$BRANCH"
+                  cp "$RUNNER_TEMP/lock.json" .github/supply-chain/lock.json
+                  git add .github/supply-chain/lock.json
+                  git commit -m "chore(supply-chain): update reviewed lock"
+                  git push --force origin "$BRANCH"
+
+            - name: Open or update report issue
+              if: steps.audit.outputs.changed == 'true'
+              run: |
+                  gh label create supply-chain --color B60205 \
+                      --description "Third-party package changes awaiting review" --force
+                  {
+                      echo "The weekly audit found changes in third-party package sources."
+                      echo "Review them, then approve by opening a PR from \`$BRANCH\`:"
+                      echo "$GITHUB_SERVER_URL/$GH_REPO/compare/main...$BRANCH?expand=1"
+                      echo
+                      echo "Run: $GITHUB_SERVER_URL/$GH_REPO/actions/runs/$GITHUB_RUN_ID"
+                      echo
+                      head -c 60000 "$RUNNER_TEMP/report.md"
+                  } >"$RUNNER_TEMP/body.md"
+                  issue=$(gh issue list --label supply-chain --state open --json number -q '.[0].number')
+                  if [ -n "$issue" ]; then
+                      gh issue edit "$issue" --body-file "$RUNNER_TEMP/body.md"
+                      gh issue comment "$issue" --body "Report updated by run $GITHUB_RUN_ID."
+                  else
+                      gh issue create --label supply-chain \
+                          --title "Supply-chain audit: third-party package changes to review" \
+                          --body-file "$RUNNER_TEMP/body.md"
+                  fi
