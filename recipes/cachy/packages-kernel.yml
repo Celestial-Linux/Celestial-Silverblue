@@ -3,13 +3,14 @@ type: dnf
 repos:
     copr:
         - name: bieszczaders/kernel-cachyos-dev
-          chroot: fedora-44-x86_64
+          chroot: fedora-45-x86_64
 install:
     packages:
         - kernel-cachyos-lto
         - kernel-cachyos-lto-modules
         - kernel-cachyos-lto-devel-matched
-        - kernel-cachyos-lto-nvidia-open
+        # Not built for Fedora 45 in kernel-cachyos-dev yet
+        # - kernel-cachyos-lto-nvidia-open
         - akmods
 remove:
     packages:

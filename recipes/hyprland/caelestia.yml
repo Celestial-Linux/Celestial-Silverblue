@@ -4,11 +4,11 @@ modules:
     repos:
       copr:
         - name: celestelove/app2unit
-          chroot: fedora-44-x86_64
+          chroot: fedora-45-x86_64
         - name: celestelove/libcava
-          chroot: fedora-44-x86_64
+          chroot: fedora-45-x86_64
         - name: celestelove/caelestia
-          chroot: fedora-44-x86_64
+          chroot: fedora-45-x86_64
     install:
       packages:
         - libcava-devel
