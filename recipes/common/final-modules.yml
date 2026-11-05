@@ -1,2 +1,6 @@
-# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
-type: initramfs
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+  - type: script
+    scripts:
+      - write_package_manifest.sh
+  - type: initramfs
