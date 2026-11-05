@@ -1,0 +1,12 @@
+# Runtime dependency of caelestia-shell. The celestelove/caelestia COPR lists it as an external repo with gpgcheck=0; it is declared here so packages are signature-checked.
+[copr:copr.fedorainfracloud.org:errornointernet:quickshell]
+name=Copr repo for quickshell owned by errornointernet
+baseurl=https://download.copr.fedorainfracloud.org/results/errornointernet/quickshell/fedora-$releasever-$basearch/
+type=rpm-md
+skip_if_unavailable=False
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/errornointernet/quickshell/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1
+includepkgs=quickshell* cpptrace*

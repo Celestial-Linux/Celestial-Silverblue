@@ -2,15 +2,13 @@
 modules:
   - type: dnf
     repos:
-      copr:
-        - name: celestelove/app2unit
-          chroot: fedora-45-x86_64
-        - name: celestelove/libcava
-          chroot: fedora-45-x86_64
-        - name: celestelove/caelestia
-          chroot: fedora-45-x86_64
-        - name: deltacopy/darkly
-          chroot: fedora-45-x86_64
+      files:
+        - copr-celestelove-app2unit.repo
+        - copr-celestelove-libcava.repo
+        - copr-celestelove-caelestia.repo
+        - copr-errornointernet-quickshell.repo
+        - copr-brycensranch-gpu-screen-recorder-git.repo
+        - copr-deltacopy-darkly.repo
     install:
       packages:
         - libcava-devel

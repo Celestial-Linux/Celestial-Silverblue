@@ -1,9 +1,8 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 type: dnf
 repos:
-    copr:
-        - name: bieszczaders/kernel-cachyos-addons
-          chroot: fedora-45-x86_64
+    files:
+        - copr-bieszczaders-kernel-cachyos-addons.repo
 install:
     packages:
         - cachyos-settings

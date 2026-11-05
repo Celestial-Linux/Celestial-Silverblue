@@ -1,0 +1,12 @@
+# kitty is excluded on purpose so the Fedora build is used.
+[copr:copr.fedorainfracloud.org:lionheartp:Hyprland]
+name=Copr repo for Hyprland owned by lionheartp
+baseurl=https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-$releasever-$basearch/
+type=rpm-md
+skip_if_unavailable=False
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1
+includepkgs=aquamarine* glaze-devel hypr* nwg-look shader-slang* uwsm xcur2png xdg-desktop-portal-hyprland

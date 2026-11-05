@@ -1,0 +1,11 @@
+# Vendored from https://pkgs.tailscale.com/stable/fedora/tailscale.repo so the
+# package allowlist below is applied.
+[tailscale-stable]
+name=Tailscale stable
+baseurl=https://pkgs.tailscale.com/stable/fedora/$basearch
+enabled=1
+type=rpm
+repo_gpgcheck=1
+gpgcheck=1
+gpgkey=https://pkgs.tailscale.com/stable/fedora/repo.gpg
+includepkgs=tailscale

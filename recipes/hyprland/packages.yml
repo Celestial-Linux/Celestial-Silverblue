@@ -3,15 +3,10 @@ type: dnf
 repos:
     files:
         - fury-nushell.repo
-    copr:
-        - name: lionheartp/Hyprland
-          chroot: fedora-45-x86_64
-        - name: lihaohong/yazi
-          chroot: fedora-45-x86_64
-        - name: atim/starship
-          chroot: fedora-45-x86_64
-        - name: celestelove/lidm
-          chroot: fedora-45-x86_64
+        - copr-lionheartp-Hyprland.repo
+        - copr-lihaohong-yazi.repo
+        - copr-atim-starship.repo
+        - copr-celestelove-lidm.repo
 remove:
     packages:
         - dunst

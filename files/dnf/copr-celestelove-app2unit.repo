@@ -1,0 +1,11 @@
+[copr:copr.fedorainfracloud.org:celestelove:app2unit]
+name=Copr repo for app2unit owned by celestelove
+baseurl=https://download.copr.fedorainfracloud.org/results/celestelove/app2unit/fedora-$releasever-$basearch/
+type=rpm-md
+skip_if_unavailable=False
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/celestelove/app2unit/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1
+includepkgs=app2unit

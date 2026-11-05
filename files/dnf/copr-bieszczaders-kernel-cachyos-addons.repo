@@ -1,0 +1,11 @@
+[copr:copr.fedorainfracloud.org:bieszczaders:kernel-cachyos-addons]
+name=Copr repo for kernel-cachyos-addons owned by bieszczaders
+baseurl=https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-addons/fedora-$releasever-$basearch/
+type=rpm-md
+skip_if_unavailable=False
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos-addons/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1
+includepkgs=cachyos-settings scx-scheds* scx-manager scx-tools*

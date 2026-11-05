@@ -1,0 +1,7 @@
+# RPMs installed straight from upstream release assets.
+# Format: <sha256> <url>
+# install_external_rpms.sh refuses to install a file whose hash differs, and
+# the supply-chain audit re-checks these hashes and looks for new releases.
+10b3a459ae40d21cf8777c9ab137cff73bfd482d584f3b4df0631ec7b41dd89f https://github.com/ungive/discord-music-presence/releases/download/v2.3.6/musicpresence-2.3.6-linux-x86_64.rpm
+b7ef5a830afc806053bc34e2a308e1adf83a31ac3f229a5585c58a7709b9c941 https://github.com/muesli/deckmaster/releases/download/v0.9.0/deckmaster_0.9.0_linux_amd64.rpm
+6bc9a260291583b0050525d18c50d82c49a85972d9265359a2c4f4e1ea9432bb https://github.com/wimpysworld/sidra/releases/download/0.3.5/Sidra-0.3.5-linux-x86_64.rpm

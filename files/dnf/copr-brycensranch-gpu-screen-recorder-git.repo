@@ -1,0 +1,12 @@
+# Runtime dependency of caelestia-shell, declared explicitly for the same reason as quickshell.
+[copr:copr.fedorainfracloud.org:brycensranch:gpu-screen-recorder-git]
+name=Copr repo for gpu-screen-recorder-git owned by brycensranch
+baseurl=https://download.copr.fedorainfracloud.org/results/brycensranch/gpu-screen-recorder-git/fedora-$releasever-$basearch/
+type=rpm-md
+skip_if_unavailable=False
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/brycensranch/gpu-screen-recorder-git/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1
+includepkgs=gpu-screen-recorder*
