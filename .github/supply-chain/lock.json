@@ -1751,6 +1751,50 @@
         "includepkgs": "nushell"
       }
     },
+    "nvidia-container-toolkit": {
+      "file": "nvidia-container-toolkit.repo",
+      "gpgkey_sha256": {
+        "https://nvidia.github.io/libnvidia-container/gpgkey": "c880576d6cf75a48e5027a871bac70fd0421ab07d2b55f30877b21f1c87959c9"
+      },
+      "packages": {
+        "libnvidia-container-tools.x86_64": {
+          "buildtime": "1789593257",
+          "evr": "1.20.1-1",
+          "location": "https://nvidia.github.io/libnvidia-container/stable/rpm/x86_64/libnvidia-container-tools-1.20.1-1.x86_64.rpm",
+          "size": "44697",
+          "sourcerpm": "libnvidia-container-tools-1.20.1-1.src.rpm"
+        },
+        "libnvidia-container1.x86_64": {
+          "buildtime": "1789593257",
+          "evr": "1.20.1-1",
+          "location": "https://nvidia.github.io/libnvidia-container/stable/rpm/x86_64/libnvidia-container1-1.20.1-1.x86_64.rpm",
+          "size": "1364725",
+          "sourcerpm": "libnvidia-container1-1.20.1-1.src.rpm"
+        },
+        "nvidia-container-toolkit-base.x86_64": {
+          "buildtime": "1789593261",
+          "evr": "1.20.1-1",
+          "location": "https://nvidia.github.io/libnvidia-container/stable/rpm/x86_64/nvidia-container-toolkit-base-1.20.1-1.x86_64.rpm",
+          "size": "8462501",
+          "sourcerpm": "nvidia-container-toolkit-base-1.20.1-1.src.rpm"
+        },
+        "nvidia-container-toolkit.x86_64": {
+          "buildtime": "1789593259",
+          "evr": "1.20.1-1",
+          "location": "https://nvidia.github.io/libnvidia-container/stable/rpm/x86_64/nvidia-container-toolkit-1.20.1-1.x86_64.rpm",
+          "size": "1643737",
+          "sourcerpm": "nvidia-container-toolkit-1.20.1-1.src.rpm"
+        }
+      },
+      "settings": {
+        "baseurl": "https://nvidia.github.io/libnvidia-container/stable/rpm/$basearch",
+        "enabled": "1",
+        "gpgcheck": "1",
+        "gpgkey": "https://nvidia.github.io/libnvidia-container/gpgkey",
+        "includepkgs": "nvidia-container-toolkit nvidia-container-toolkit-base libnvidia-container-tools libnvidia-container1",
+        "repo_gpgcheck": "1"
+      }
+    },
     "tailscale-stable": {
       "file": "tailscale.repo",
       "gpgkey_sha256": {

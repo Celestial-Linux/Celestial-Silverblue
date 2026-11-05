@@ -1,5 +1,15 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
 modules:
+  - type: dnf
+    repos:
+      files:
+        - nvidia-container-toolkit.repo
+    install:
+      packages:
+        - nvidia-container-toolkit-1.20.1-1
+        - nvidia-container-toolkit-base-1.20.1-1
+        - libnvidia-container-tools-1.20.1-1
+        - libnvidia-container1-1.20.1-1
   - type: script
     scripts:
       - install_nvidia_cdi.sh

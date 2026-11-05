@@ -1,0 +1,11 @@
+# Vendored from https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo
+# with package signature checks enabled (upstream ships gpgcheck=0) and an
+# allowlist. Release 1.18.0 and older lack the SHA-256 digest rpm 6 requires.
+[nvidia-container-toolkit]
+name=nvidia-container-toolkit
+baseurl=https://nvidia.github.io/libnvidia-container/stable/rpm/$basearch
+repo_gpgcheck=1
+gpgcheck=1
+enabled=1
+gpgkey=https://nvidia.github.io/libnvidia-container/gpgkey
+includepkgs=nvidia-container-toolkit nvidia-container-toolkit-base libnvidia-container-tools libnvidia-container1
