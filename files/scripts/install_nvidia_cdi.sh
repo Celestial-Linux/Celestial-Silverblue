@@ -15,8 +15,10 @@ dnf install -y --setopt=tsflags=nocrypto ${nvidia_packages_list[@]}
 rm /etc/rpm/macros.verify
 
 echo "Downloading SELinux Policy"
-curl -L https://raw.githubusercontent.com/NVIDIA/dgx-selinux/master/bin/RHEL9/nvidia-container.pp \
+# Pinned to a commit and hash so a change upstream cannot alter the policy.
+curl -fL https://raw.githubusercontent.com/NVIDIA/dgx-selinux/b988ea65e7b43009a705eb5e5d7e94048f916734/bin/RHEL9/nvidia-container.pp \
     -o nvidia-container.pp
+echo "d131ebd51b74e5aae881ae88ae9670426e584036347aa5f346bf8448fe0256c7  nvidia-container.pp" | sha256sum --check --strict -
 echo "Installing SELinux Policy"
 semodule -i nvidia-container.pp
 
