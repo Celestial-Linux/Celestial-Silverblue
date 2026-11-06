@@ -1,0 +1,6 @@
+# Scope matching is case-sensitive. The file the BlueBuild signing module
+# generates uses the GitHub owner as written (Celestial-Linux), which does not
+# match the lowercase image references, so cosign signatures are never fetched.
+docker:
+  ghcr.io/celestial-linux:
+    use-sigstore-attachments: true
