@@ -13,7 +13,7 @@
       "published_matches_pin": true
     },
     "https://github.com/wimpysworld/sidra/releases/download/0.3.5/Sidra-0.3.5-linux-x86_64.rpm": {
-      "latest_tag": "1.2.1",
+      "latest_tag": "1.3.0",
       "pinned_sha256": "6bc9a260291583b0050525d18c50d82c49a85972d9265359a2c4f4e1ea9432bb",
       "pinned_tag": "0.3.5",
       "published_matches_pin": true
@@ -558,80 +558,80 @@
       },
       "packages": {
         "caelestia-cli-git.noarch": {
-          "buildtime": "1793899919",
-          "evr": "1.1.3^20261105git6bde2df-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/c/caelestia-cli-git-1.1.3^20261105git6bde2df-1.fc45.noarch.rpm",
-          "size": "324005",
-          "sourcerpm": "caelestia-cli-git-1.1.3^20261105git6bde2df-1.fc45.src.rpm"
+          "buildtime": "1794154098",
+          "evr": "1.1.3^20261108gitbf6dd70-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/c/caelestia-cli-git-1.1.3^20261108gitbf6dd70-1.fc45.noarch.rpm",
+          "size": "324043",
+          "sourcerpm": "caelestia-cli-git-1.1.3^20261108gitbf6dd70-1.fc45.src.rpm"
         },
         "caelestia-cli.noarch": {
-          "buildtime": "1793899849",
+          "buildtime": "1794154008",
           "evr": "1.1.3-1.fc45",
           "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/c/caelestia-cli-1.1.3-1.fc45.noarch.rpm",
-          "size": "321695",
+          "size": "321778",
           "sourcerpm": "caelestia-cli-1.1.3-1.fc45.src.rpm"
         },
         "caelestia-shell-git.x86_64": {
-          "buildtime": "1793899915",
-          "evr": "2.5.0^20261102gitbcbb5d5-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/c/caelestia-shell-git-2.5.0^20261102gitbcbb5d5-1.fc45.x86_64.rpm",
-          "size": "10325530",
-          "sourcerpm": "caelestia-shell-git-2.5.0^20261102gitbcbb5d5-1.fc45.src.rpm"
+          "buildtime": "1794154106",
+          "evr": "2.5.0^20261108gitf80a980-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/c/caelestia-shell-git-2.5.0^20261108gitf80a980-1.fc45.x86_64.rpm",
+          "size": "10325807",
+          "sourcerpm": "caelestia-shell-git-2.5.0^20261108gitf80a980-1.fc45.src.rpm"
         },
         "caelestia-shell.x86_64": {
-          "buildtime": "1793899862",
+          "buildtime": "1794154019",
           "evr": "2.5.0-1.fc45",
           "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/c/caelestia-shell-2.5.0-1.fc45.x86_64.rpm",
-          "size": "9834308",
+          "size": "9835122",
           "sourcerpm": "caelestia-shell-2.5.0-1.fc45.src.rpm"
         },
         "cascadia-code-nerd-fonts.noarch": {
-          "buildtime": "1793899817",
+          "buildtime": "1794154018",
           "evr": "3.5.1-1.fc45",
           "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/c/cascadia-code-nerd-fonts-3.5.1-1.fc45.noarch.rpm",
-          "size": "7646183",
+          "size": "7646072",
           "sourcerpm": "cascadia-code-nerd-fonts-3.5.1-1.fc45.src.rpm"
         },
         "dart-sass.x86_64": {
-          "buildtime": "1793899903",
-          "evr": "1.107.1-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/d/dart-sass-1.107.1-1.fc45.x86_64.rpm",
-          "size": "2110596",
-          "sourcerpm": "dart-sass-1.107.1-1.fc45.src.rpm"
+          "buildtime": "1794154052",
+          "evr": "1.108.1-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/d/dart-sass-1.108.1-1.fc45.x86_64.rpm",
+          "size": "2110470",
+          "sourcerpm": "dart-sass-1.108.1-1.fc45.src.rpm"
         },
         "dart.x86_64": {
-          "buildtime": "1793899916",
+          "buildtime": "1794154107",
           "evr": "3.13.7-1.fc45",
           "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/d/dart-3.13.7-1.fc45.x86_64.rpm",
-          "size": "168116765",
+          "size": "168116551",
           "sourcerpm": "dart-3.13.7-1.fc45.src.rpm"
         },
         "material-symbols-fonts.noarch": {
-          "buildtime": "1793899850",
+          "buildtime": "1794154029",
           "evr": "4.0.0^20261023git10ecc14-1.fc45",
           "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/m/material-symbols-fonts-4.0.0^20261023git10ecc14-1.fc45.noarch.rpm",
-          "size": "14058788",
+          "size": "14058752",
           "sourcerpm": "material-symbols-fonts-4.0.0^20261023git10ecc14-1.fc45.src.rpm"
         },
         "python3-materialyoucolor.x86_64": {
-          "buildtime": "1793899910",
+          "buildtime": "1794154062",
           "evr": "3.0.4-1.fc45",
           "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/p/python3-materialyoucolor-3.0.4-1.fc45.x86_64.rpm",
-          "size": "307700",
+          "size": "307616",
           "sourcerpm": "python3-materialyoucolor-3.0.4-1.fc45.src.rpm"
         },
         "qtengine.x86_64": {
-          "buildtime": "1793899950",
+          "buildtime": "1794154103",
           "evr": "0.2.4-1.fc45",
           "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/q/qtengine-0.2.4-1.fc45.x86_64.rpm",
-          "size": "181682",
+          "size": "181736",
           "sourcerpm": "qtengine-0.2.4-1.fc45.src.rpm"
         },
         "rubik-fonts.noarch": {
-          "buildtime": "1793899846",
+          "buildtime": "1794154024",
           "evr": "0^20260325git5458429-1.fc45",
           "location": "https://download.copr.fedorainfracloud.org/results/celestelove/caelestia/fedora-45-x86_64/Packages/r/rubik-fonts-0^20260325git5458429-1.fc45.noarch.rpm",
-          "size": "220139",
+          "size": "220149",
           "sourcerpm": "rubik-fonts-0^20260325git5458429-1.fc45.src.rpm"
         }
       },
@@ -788,11 +788,11 @@
       },
       "packages": {
         "darkly-qt6.x86_64": {
-          "buildtime": "1792899897",
-          "evr": "0.5.42-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/deltacopy/darkly/fedora-45-x86_64/Packages/d/darkly-qt6-0.5.42-1.fc45.x86_64.rpm",
-          "size": "252317",
-          "sourcerpm": "darkly-0.5.42-1.fc45.src.rpm"
+          "buildtime": "1794028072",
+          "evr": "0.5.43-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/deltacopy/darkly/fedora-45-x86_64/Packages/d/darkly-qt6-0.5.43-1.fc45.x86_64.rpm",
+          "size": "252229",
+          "sourcerpm": "darkly-0.5.43-1.fc45.src.rpm"
         }
       },
       "settings": {
@@ -974,11 +974,14 @@
           },
           "hyprcursor": {
             "source": {
-              "pkg": "hyprcursor-0.1.13-1.fc42.src.rpm",
-              "tmp": "tmp7jcapho5",
-              "url": "https://copr.fedorainfracloud.org/tmp/tmp7jcapho5/hyprcursor-0.1.13-1.fc42.src.rpm"
+              "clone_url": "https://github.com/LionHeartP/hyprlandRPM",
+              "committish": "",
+              "source_build_method": "rpkg",
+              "spec": "",
+              "subdirectory": "hyprcursor",
+              "type": "git"
             },
-            "source_type": "upload"
+            "source_type": "scm"
           },
           "hyprgraphics": {
             "source": {
@@ -1349,18 +1352,18 @@
           "sourcerpm": "glaze-8.4.0-1.fc45.src.rpm"
         },
         "hyprcursor-devel.x86_64": {
-          "buildtime": "1770911791",
-          "evr": "0.1.13-2.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprcursor-devel-0.1.13-2.fc45.x86_64.rpm",
-          "size": "10862",
-          "sourcerpm": "hyprcursor-0.1.13-2.fc45.src.rpm"
+          "buildtime": "1794223569",
+          "evr": "0.1.14-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprcursor-devel-0.1.14-1.fc45.x86_64.rpm",
+          "size": "10842",
+          "sourcerpm": "hyprcursor-0.1.14-1.fc45.src.rpm"
         },
         "hyprcursor.x86_64": {
-          "buildtime": "1770911791",
-          "evr": "0.1.13-2.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprcursor-0.1.13-2.fc45.x86_64.rpm",
-          "size": "248151",
-          "sourcerpm": "hyprcursor-0.1.13-2.fc45.src.rpm"
+          "buildtime": "1794223569",
+          "evr": "0.1.14-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprcursor-0.1.14-1.fc45.x86_64.rpm",
+          "size": "250686",
+          "sourcerpm": "hyprcursor-0.1.14-1.fc45.src.rpm"
         },
         "hyprgraphics-devel.x86_64": {
           "buildtime": "1793558338",
@@ -1391,32 +1394,32 @@
           "sourcerpm": "hyprland-contrib-0.1^90.gita54daf8-1.fc45.src.rpm"
         },
         "hyprland-devel.x86_64": {
-          "buildtime": "1793703624",
-          "evr": "0.57.1-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-devel-0.57.1-1.fc45.x86_64.rpm",
-          "size": "334325",
-          "sourcerpm": "hyprland-0.57.1-1.fc45.src.rpm"
+          "buildtime": "1794223987",
+          "evr": "0.57.2-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-devel-0.57.2-1.fc45.x86_64.rpm",
+          "size": "334434",
+          "sourcerpm": "hyprland-0.57.2-1.fc45.src.rpm"
         },
         "hyprland-git-devel.x86_64": {
-          "buildtime": "1793825043",
-          "evr": "0.57.1^4.git64bde62-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-git-devel-0.57.1^4.git64bde62-1.fc45.x86_64.rpm",
-          "size": "334665",
-          "sourcerpm": "hyprland-git-0.57.1^4.git64bde62-1.fc45.src.rpm"
+          "buildtime": "1794208565",
+          "evr": "0.57.1^8.git151b043-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-git-devel-0.57.1^8.git151b043-1.fc45.x86_64.rpm",
+          "size": "334733",
+          "sourcerpm": "hyprland-git-0.57.1^8.git151b043-1.fc45.src.rpm"
         },
         "hyprland-git-uwsm.x86_64": {
-          "buildtime": "1793825043",
-          "evr": "0.57.1^4.git64bde62-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-git-uwsm-0.57.1^4.git64bde62-1.fc45.x86_64.rpm",
-          "size": "7319",
-          "sourcerpm": "hyprland-git-0.57.1^4.git64bde62-1.fc45.src.rpm"
+          "buildtime": "1794208565",
+          "evr": "0.57.1^8.git151b043-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-git-uwsm-0.57.1^8.git151b043-1.fc45.x86_64.rpm",
+          "size": "7320",
+          "sourcerpm": "hyprland-git-0.57.1^8.git151b043-1.fc45.src.rpm"
         },
         "hyprland-git.x86_64": {
-          "buildtime": "1793825043",
-          "evr": "0.57.1^4.git64bde62-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-git-0.57.1^4.git64bde62-1.fc45.x86_64.rpm",
-          "size": "52887779",
-          "sourcerpm": "hyprland-git-0.57.1^4.git64bde62-1.fc45.src.rpm"
+          "buildtime": "1794208565",
+          "evr": "0.57.1^8.git151b043-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-git-0.57.1^8.git151b043-1.fc45.x86_64.rpm",
+          "size": "52883559",
+          "sourcerpm": "hyprland-git-0.57.1^8.git151b043-1.fc45.src.rpm"
         },
         "hyprland-guiutils.x86_64": {
           "buildtime": "1788980355",
@@ -1426,74 +1429,74 @@
           "sourcerpm": "hyprland-guiutils-0.2.2-2.fc45.src.rpm"
         },
         "hyprland-plugin-borders-plus-plus-git.x86_64": {
-          "buildtime": "1793826580",
-          "evr": "0.1^1832.gitd2427d4-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-borders-plus-plus-git-0.1^1832.gitd2427d4-1.fc45.x86_64.rpm",
-          "size": "98319",
-          "sourcerpm": "hyprland-plugins-git-0.1^1832.gitd2427d4-1.fc45.src.rpm"
+          "buildtime": "1794210113",
+          "evr": "0.1^1836.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-borders-plus-plus-git-0.1^1836.gitd2427d4-1.fc45.x86_64.rpm",
+          "size": "98329",
+          "sourcerpm": "hyprland-plugins-git-0.1^1836.gitd2427d4-1.fc45.src.rpm"
         },
         "hyprland-plugin-borders-plus-plus.x86_64": {
-          "buildtime": "1793705870",
-          "evr": "0.1^1124.gitd2427d4-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-borders-plus-plus-0.1^1124.gitd2427d4-1.fc45.x86_64.rpm",
-          "size": "98291",
-          "sourcerpm": "hyprland-plugins-0.1^1124.gitd2427d4-1.fc45.src.rpm"
+          "buildtime": "1794226595",
+          "evr": "0.1^1125.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-borders-plus-plus-0.1^1125.gitd2427d4-1.fc45.x86_64.rpm",
+          "size": "98271",
+          "sourcerpm": "hyprland-plugins-0.1^1125.gitd2427d4-1.fc45.src.rpm"
         },
         "hyprland-plugin-csgo-vulkan-fix-git.x86_64": {
-          "buildtime": "1793826580",
-          "evr": "0.1^1832.gitd2427d4-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-csgo-vulkan-fix-git-0.1^1832.gitd2427d4-1.fc45.x86_64.rpm",
-          "size": "85422",
-          "sourcerpm": "hyprland-plugins-git-0.1^1832.gitd2427d4-1.fc45.src.rpm"
+          "buildtime": "1794210113",
+          "evr": "0.1^1836.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-csgo-vulkan-fix-git-0.1^1836.gitd2427d4-1.fc45.x86_64.rpm",
+          "size": "85440",
+          "sourcerpm": "hyprland-plugins-git-0.1^1836.gitd2427d4-1.fc45.src.rpm"
         },
         "hyprland-plugin-csgo-vulkan-fix.x86_64": {
-          "buildtime": "1793705870",
-          "evr": "0.1^1124.gitd2427d4-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-csgo-vulkan-fix-0.1^1124.gitd2427d4-1.fc45.x86_64.rpm",
-          "size": "85392",
-          "sourcerpm": "hyprland-plugins-0.1^1124.gitd2427d4-1.fc45.src.rpm"
+          "buildtime": "1794226595",
+          "evr": "0.1^1125.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-csgo-vulkan-fix-0.1^1125.gitd2427d4-1.fc45.x86_64.rpm",
+          "size": "85089",
+          "sourcerpm": "hyprland-plugins-0.1^1125.gitd2427d4-1.fc45.src.rpm"
         },
         "hyprland-plugin-hyprbars-git.x86_64": {
-          "buildtime": "1793826580",
-          "evr": "0.1^1832.gitd2427d4-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-hyprbars-git-0.1^1832.gitd2427d4-1.fc45.x86_64.rpm",
-          "size": "127577",
-          "sourcerpm": "hyprland-plugins-git-0.1^1832.gitd2427d4-1.fc45.src.rpm"
+          "buildtime": "1794210113",
+          "evr": "0.1^1836.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-hyprbars-git-0.1^1836.gitd2427d4-1.fc45.x86_64.rpm",
+          "size": "127584",
+          "sourcerpm": "hyprland-plugins-git-0.1^1836.gitd2427d4-1.fc45.src.rpm"
         },
         "hyprland-plugin-hyprbars.x86_64": {
-          "buildtime": "1793705870",
-          "evr": "0.1^1124.gitd2427d4-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-hyprbars-0.1^1124.gitd2427d4-1.fc45.x86_64.rpm",
-          "size": "127540",
-          "sourcerpm": "hyprland-plugins-0.1^1124.gitd2427d4-1.fc45.src.rpm"
+          "buildtime": "1794226595",
+          "evr": "0.1^1125.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-hyprbars-0.1^1125.gitd2427d4-1.fc45.x86_64.rpm",
+          "size": "127546",
+          "sourcerpm": "hyprland-plugins-0.1^1125.gitd2427d4-1.fc45.src.rpm"
         },
         "hyprland-plugin-hyprfocus-git.x86_64": {
-          "buildtime": "1793826580",
-          "evr": "0.1^1832.gitd2427d4-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-hyprfocus-git-0.1^1832.gitd2427d4-1.fc45.x86_64.rpm",
-          "size": "86819",
-          "sourcerpm": "hyprland-plugins-git-0.1^1832.gitd2427d4-1.fc45.src.rpm"
+          "buildtime": "1794210113",
+          "evr": "0.1^1836.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-hyprfocus-git-0.1^1836.gitd2427d4-1.fc45.x86_64.rpm",
+          "size": "87083",
+          "sourcerpm": "hyprland-plugins-git-0.1^1836.gitd2427d4-1.fc45.src.rpm"
         },
         "hyprland-plugin-hyprfocus.x86_64": {
-          "buildtime": "1793705870",
-          "evr": "0.1^1124.gitd2427d4-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-hyprfocus-0.1^1124.gitd2427d4-1.fc45.x86_64.rpm",
-          "size": "86771",
-          "sourcerpm": "hyprland-plugins-0.1^1124.gitd2427d4-1.fc45.src.rpm"
+          "buildtime": "1794226595",
+          "evr": "0.1^1125.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugin-hyprfocus-0.1^1125.gitd2427d4-1.fc45.x86_64.rpm",
+          "size": "86768",
+          "sourcerpm": "hyprland-plugins-0.1^1125.gitd2427d4-1.fc45.src.rpm"
         },
         "hyprland-plugins-git.x86_64": {
-          "buildtime": "1793826580",
-          "evr": "0.1^1832.gitd2427d4-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugins-git-0.1^1832.gitd2427d4-1.fc45.x86_64.rpm",
+          "buildtime": "1794210113",
+          "evr": "0.1^1836.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugins-git-0.1^1836.gitd2427d4-1.fc45.x86_64.rpm",
           "size": "6817",
-          "sourcerpm": "hyprland-plugins-git-0.1^1832.gitd2427d4-1.fc45.src.rpm"
+          "sourcerpm": "hyprland-plugins-git-0.1^1836.gitd2427d4-1.fc45.src.rpm"
         },
         "hyprland-plugins.x86_64": {
-          "buildtime": "1793705870",
-          "evr": "0.1^1124.gitd2427d4-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugins-0.1^1124.gitd2427d4-1.fc45.x86_64.rpm",
-          "size": "6773",
-          "sourcerpm": "hyprland-plugins-0.1^1124.gitd2427d4-1.fc45.src.rpm"
+          "buildtime": "1794226595",
+          "evr": "0.1^1125.gitd2427d4-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-plugins-0.1^1125.gitd2427d4-1.fc45.x86_64.rpm",
+          "size": "6765",
+          "sourcerpm": "hyprland-plugins-0.1^1125.gitd2427d4-1.fc45.src.rpm"
         },
         "hyprland-protocols-devel.noarch": {
           "buildtime": "1792610553",
@@ -1510,18 +1513,18 @@
           "sourcerpm": "hyprland-qt-support-0.1.0-12.fc45.src.rpm"
         },
         "hyprland-uwsm.x86_64": {
-          "buildtime": "1793703624",
-          "evr": "0.57.1-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-uwsm-0.57.1-1.fc45.x86_64.rpm",
-          "size": "7193",
-          "sourcerpm": "hyprland-0.57.1-1.fc45.src.rpm"
+          "buildtime": "1794223987",
+          "evr": "0.57.2-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-uwsm-0.57.2-1.fc45.x86_64.rpm",
+          "size": "7202",
+          "sourcerpm": "hyprland-0.57.2-1.fc45.src.rpm"
         },
         "hyprland.x86_64": {
-          "buildtime": "1793703624",
-          "evr": "0.57.1-1.fc45",
-          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-0.57.1-1.fc45.x86_64.rpm",
-          "size": "52882516",
-          "sourcerpm": "hyprland-0.57.1-1.fc45.src.rpm"
+          "buildtime": "1794223987",
+          "evr": "0.57.2-1.fc45",
+          "location": "https://download.copr.fedorainfracloud.org/results/lionheartp/Hyprland/fedora-45-x86_64/Packages/h/hyprland-0.57.2-1.fc45.x86_64.rpm",
+          "size": "52880314",
+          "sourcerpm": "hyprland-0.57.2-1.fc45.src.rpm"
         },
         "hyprlang-devel.x86_64": {
           "buildtime": "1784370769",
