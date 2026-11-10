@@ -1,74 +1,80 @@
-# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
-type: dnf
-repos:
-    files:
-        - fury-nushell.repo
-        - copr-lionheartp-Hyprland.repo
-        - copr-lihaohong-yazi.repo
-        - copr-atim-starship.repo
-        - copr-celestelove-lidm.repo
-remove:
-    packages:
-        - dunst
-        - sway
-        - swaylock
-        - hardened_malloc
-install:
-    packages:
-        # Hyprland
-        - hyprutils
-        - hyprland
-        - hyprland-devel
-        - xdg-desktop-portal-hyprland
-        - xdg-desktop-portal-gtk
-        - hyprpaper
-        - hyprgraphics
-        - hyprlang
-        - aquamarine
-        - hyprpicker
-        - hyprland-qt-support
-        - hyprpicker
-        - hyprpolkitagent
-        - qalculate
-        - hyprshot
-        - hyprsunset
-        - hyprland-guiutils
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+  # Must run before hardened_malloc is removed below
+  - type: script
+    scripts:
+      - drop_hardened_malloc_preload.sh
 
-        # Session manager
-        - greetd
-        - greetd-selinux
-        - gtkgreet
-        - cage
+  - type: dnf
+    repos:
+        files:
+            - fury-nushell.repo
+            - copr-lionheartp-Hyprland.repo
+            - copr-lihaohong-yazi.repo
+            - copr-atim-starship.repo
+            - copr-celestelove-lidm.repo
+    remove:
+        packages:
+            - dunst
+            - sway
+            - swaylock
+            - hardened_malloc
+    install:
+        packages:
+            # Hyprland
+            - hyprutils
+            - hyprland
+            - hyprland-devel
+            - xdg-desktop-portal-hyprland
+            - xdg-desktop-portal-gtk
+            - hyprpaper
+            - hyprgraphics
+            - hyprlang
+            - aquamarine
+            - hyprpicker
+            - hyprland-qt-support
+            - hyprpicker
+            - hyprpolkitagent
+            - qalculate
+            - hyprshot
+            - hyprsunset
+            - hyprland-guiutils
 
-        # XWayland
-        - wayland-protocols-devel
+            # Session manager
+            - greetd
+            - greetd-selinux
+            - gtkgreet
+            - cage
 
-        # Session launcher
-        - uwsm
-        - hyprland-uwsm
+            # XWayland
+            - wayland-protocols-devel
 
-        # Terminal
-        - nushell
-        - starship
+            # Session launcher
+            - uwsm
+            - hyprland-uwsm
 
-        # Gnome keyring
-        - libsecret
-        - gnome-keyring
-        - git-credential-libsecret
-        - gcr
+            # Terminal
+            - nushell
+            - starship
 
-        # Appearance
-        - nwg-look
+            # Gnome keyring
+            - libsecret
+            - gnome-keyring
+            - git-credential-libsecret
+            - gcr
 
-        # General utilities and file explorer
-        - yazi
-        - podman-compose
-        - mpv
-        - swayimg
-        - neovim
+            # Appearance
+            - nwg-look
 
-        # Dependencies for Hyprland plugin manager:
-        - cmake
-        - meson
-        - gcc-c++
-        - mesa-libGLES-devel
+            # General utilities and file explorer
+            - yazi
+            - podman-compose
+            - mpv
+            - swayimg
+            - neovim
+
+            # Dependencies for Hyprland plugin manager:
+            - cmake
+            - meson
+            - gcc-c++
+            - mesa-libGLES-devel
