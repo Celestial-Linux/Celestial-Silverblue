@@ -21,6 +21,9 @@ modules:
         - git-lfs
         - git-delta
 
+        # krun runtime for Podman: containers as libkrun microVMs (needs /dev/kvm)
+        - crun-krun
+
         # Development tools
         - clang-devel
         - gdb
