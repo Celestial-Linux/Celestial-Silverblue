@@ -1,0 +1,6 @@
+# svirt_t can only be entered from a qemu_exec_t file.
+/usr/lib/lsw/accel-virt/qemu/qemu-system-x86_64	--	gen_context(system_u:object_r:qemu_exec_t,s0)
+
+HOME_DIR/\.local/share/lsw(/.*)?	gen_context(system_u:object_r:lsw_data_t,s0)
+HOME_DIR/\.local/share/lsw/logs(/.*)?	gen_context(system_u:object_r:lsw_log_t,s0)
+HOME_DIR/\.cache/lsw(/.*)?	gen_context(system_u:object_r:lsw_cache_t,s0)

@@ -1,0 +1,103 @@
+policy_module(lsw, 1.0.0)
+
+# libvirt runs every QEMU process as svirt_t, including the session-mode
+# VMs that LSW defines. LSW passes QEMU its log file, shader cache and
+# GPU executor through <qemu:commandline>, which libvirt does not relabel,
+# so svirt_t needs these rules on top of the stock virt policy. libvirt
+# picks svirt_t itself, so they apply to every svirt_t VM, not only LSW's.
+
+gen_require(`
+	type svirt_t;
+	type svirt_tmpfs_t;
+	type tmpfs_t;
+	type unconfined_t;
+	type cache_home_t;
+	type data_home_t;
+	type security_t;
+	type nsfs_t;
+	type device_t;
+	type session_dbusd_tmp_t;
+	type xserver_exec_t;
+	class process execmem;
+	class dir { add_name create getattr open read remove_name search write };
+	class file { append create execute getattr lock map open read rename setattr unlink write };
+	class sock_file { create getattr setattr unlink write };
+	class chr_file getattr;
+')
+
+########################################
+#
+# Declarations
+#
+
+# ~/.local/share/lsw: disks, ISOs, NVRAM and settings. VMs only traverse it;
+# libvirt relabels the disks and NVRAM it hands to QEMU.
+type lsw_data_t;
+userdom_user_home_content(lsw_data_t)
+
+# ~/.local/share/lsw/logs: QEMU appends the paravirtual GPU's log here.
+type lsw_log_t;
+userdom_user_home_content(lsw_log_t)
+
+# ~/.cache/lsw: the DXVK, vkd3d-proton, Mesa and NVIDIA shader caches.
+type lsw_cache_t;
+userdom_user_home_content(lsw_cache_t)
+
+########################################
+#
+# Labeling of directories lsw-manager creates
+#
+
+# lsw-manager runs unconfined and creates these directories before the VM
+# starts, so they get their types at creation without a relabel.
+type_transition unconfined_t data_home_t:dir lsw_data_t "lsw";
+type_transition unconfined_t lsw_data_t:dir lsw_log_t "logs";
+type_transition unconfined_t cache_home_t:dir lsw_cache_t "lsw";
+
+########################################
+#
+# svirt_t local policy
+#
+
+manage_dirs_pattern(svirt_t, lsw_log_t, lsw_log_t)
+manage_files_pattern(svirt_t, lsw_log_t, lsw_log_t)
+
+manage_dirs_pattern(svirt_t, lsw_cache_t, lsw_cache_t)
+manage_files_pattern(svirt_t, lsw_cache_t, lsw_cache_t)
+allow svirt_t lsw_cache_t:file map;
+
+# The GPU executor and the host's Vulkan and OpenGL drivers JIT-compile
+# shaders into anonymous and memfd mappings.
+allow svirt_t self:process execmem;
+allow svirt_t svirt_tmpfs_t:file execute;
+
+# The executor publishes state sockets as /dev/shm/av-state-*.sock, which
+# lsw-manager reads when it collects diagnostics.
+type_transition svirt_t tmpfs_t:sock_file svirt_tmpfs_t;
+allow svirt_t svirt_tmpfs_t:sock_file { create getattr setattr unlink write };
+
+# PipeWire raises its audio threads to real-time priority through rtkit.
+optional_policy(`
+	dbus_system_bus_client(svirt_t)
+	rtkit_daemon_dbus_chat(svirt_t)
+	rtkit_scheduled(svirt_t)
+')
+
+# Probes that fail harmlessly: the session bus (PipeWire tries the realtime
+# portal before rtkit), user Vulkan layers such as Steam's overlay, NVIDIA
+# application profiles and the CUDA compute cache in ~/.nv, nvidia-modprobe,
+# the deny_execmem boolean, and process and namespace metadata.
+dontaudit svirt_t unconfined_t:dir search;
+dontaudit svirt_t unconfined_t:file read;
+dontaudit svirt_t data_home_t:dir read;
+dontaudit svirt_t data_home_t:file { getattr open read };
+dontaudit svirt_t cache_home_t:dir read;
+dontaudit svirt_t cache_home_t:file { getattr lock open read write };
+dontaudit svirt_t xserver_exec_t:file getattr;
+dontaudit svirt_t security_t:file { open read };
+dontaudit svirt_t nsfs_t:file getattr;
+dontaudit svirt_t device_t:chr_file getattr;
+dontaudit svirt_t session_dbusd_tmp_t:sock_file { getattr write };
+optional_policy(`
+	dbus_dontaudit_stream_connect_session_bus(svirt_t)
+')

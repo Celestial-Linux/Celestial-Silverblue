@@ -36,4 +36,4 @@ modules:
   - type: script
     scripts:
       - install_external_rpms.sh
-      - fix_lsw_selinux.sh
+      - install_lsw_selinux.sh
