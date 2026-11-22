@@ -32,7 +32,7 @@ modules:
         - pipewire-devel
         - libxkbcommon-x11-devel
 
-  # MusicPresence, DeckMaster and Sidra, pinned by SHA-256 in external-rpms.txt
+  # MusicPresence, DeckMaster, Sidra and LSW, pinned by SHA-256 in external-rpms.txt
   - type: script
     scripts:
       - install_external_rpms.sh
