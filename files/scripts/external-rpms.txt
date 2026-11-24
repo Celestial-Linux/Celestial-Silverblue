@@ -5,4 +5,4 @@
 10b3a459ae40d21cf8777c9ab137cff73bfd482d584f3b4df0631ec7b41dd89f https://github.com/ungive/discord-music-presence/releases/download/v2.3.6/musicpresence-2.3.6-linux-x86_64.rpm
 b7ef5a830afc806053bc34e2a308e1adf83a31ac3f229a5585c58a7709b9c941 https://github.com/muesli/deckmaster/releases/download/v0.9.0/deckmaster_0.9.0_linux_amd64.rpm
 6bc9a260291583b0050525d18c50d82c49a85972d9265359a2c4f4e1ea9432bb https://github.com/wimpysworld/sidra/releases/download/0.3.5/Sidra-0.3.5-linux-x86_64.rpm
-cb3733d7cf08da0047086bd54cc91faaededae5d16f572e8aaef1a8893840395 https://github.com/acceleration3/linux-subsystem-windows/releases/download/v0.3.3/lsw-0.3.3-1.fc45.x86_64.rpm
+d7e1be9a4c32f98a3e2b5ee5309cbed3fcef002d2e69cead49eca8006d5dbd0b https://github.com/acceleration3/linux-subsystem-windows/releases/download/v0.3.5/lsw-0.3.5-1.fc45.x86_64.rpm
